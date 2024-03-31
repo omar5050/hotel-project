@@ -9,6 +9,8 @@ import { RegisterComponent } from './modules/auth/components/register/register.c
 import { ForgotPasswrodComponent } from './modules/auth/components/forgot-passwrod/forgot-passwrod.component';
 import { ResetPasswordComponent } from './modules/auth/components/reset-password/reset-password.component';
 import { NotFoundComponent } from './modules/auth/components/not-found/not-found.component';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { GlobalInterceptor } from './core/global.interceptor';
 
 @NgModule({
   declarations: [
@@ -24,7 +26,13 @@ import { NotFoundComponent } from './modules/auth/components/not-found/not-found
     AppRoutingModule,
     BrowserAnimationsModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GlobalInterceptor,
+      multi: true,
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
