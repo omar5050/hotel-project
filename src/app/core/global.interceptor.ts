@@ -16,9 +16,11 @@ export class GlobalInterceptor implements HttpInterceptor {
 
     const token = localStorage.getItem('userToken');
     
-    let baseUrlDev='https://154.41.228.234:3000';
+    // let baseUrlDev='https://154.41.228.234:3000';
+    // https://upskilling-egypt.com:3000/api/v0/
 
-    const baseUrl: string =`${baseUrlDev}/api/v0/`;
+    // // const baseUrl: string =`${baseUrlDev}/api/v0/`;
+    const baseUrl: string =`https://upskilling-egypt.com:3000/api/v0/`;
 
   
   

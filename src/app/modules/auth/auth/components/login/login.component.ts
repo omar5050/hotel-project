@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { AuthService } from '../../auth/service/auth.service';
+import { AuthService } from '../../service/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -21,6 +21,8 @@ loginForm=new FormGroup({
 
 onLogin(loginForm:FormGroup){
 console.log(loginForm.value);
+if(loginForm.valid){
+
 
 this._autServ.onLogin(loginForm.value).subscribe({
 
@@ -38,6 +40,11 @@ console.log('compplet login---');
 },
 
 })
+}
+else{
+  console.log('un vaild');
+  
+}
 
 }
 
