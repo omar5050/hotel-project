@@ -7,7 +7,6 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { GlobalInterceptor } from './core/global.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -18,7 +17,9 @@ import { ToastrModule } from 'ngx-toastr';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
-    ToastrModule.forRoot()
+    ToastrModule.forRoot(),
+    HttpClientModule
+
   ],
   providers: [
     {

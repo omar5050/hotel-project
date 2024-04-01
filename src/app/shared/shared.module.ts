@@ -3,6 +3,9 @@ import { MatInputModule } from '@angular/material/input';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SharedComponent } from './shared.component';
+import { NgxDropzoneModule } from 'ngx-dropzone';
+import { ToastrModule } from 'ngx-toastr';
+
 
 
 @NgModule({
@@ -13,13 +16,19 @@ import { SharedComponent } from './shared.component';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
+    ReactiveFormsModule,
+    NgxDropzoneModule,
+
 
   ],
   exports: [
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgxDropzoneModule,
+
+
   ]
 })
 export class SharedModule { }
