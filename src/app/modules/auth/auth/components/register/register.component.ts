@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { AuthRegisterService } from './service/auth-register.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
-import { ToastrService } from 'ngx-toastr';
+
 
 @Component({
   selector: 'app-register',
@@ -23,7 +23,7 @@ export class RegisterComponent {
     profileImage: new FormControl(null)
   })
 
-  constructor(private _ToastrService: ToastrService, private _Router: Router, private _AuthRegisterService: AuthRegisterService) { }
+  constructor(private _Router: Router, private _AuthRegisterService: AuthRegisterService) { }
   onRegister(data: FormGroup) {
     let dataSend = new FormData()
     dataSend.append('userName', data.value.userName)
@@ -37,11 +37,11 @@ export class RegisterComponent {
 
     this._AuthRegisterService.register(dataSend).subscribe({
       next: (res) => {
-        this._ToastrService.success('Account create success', 'Great')
         this._Router.navigate(['/auth/login'])
+        console.log(res);
+
       },
       error: (err) => {
-        this._ToastrService.error(err, 'Error')
         console.log(err);
 
       }
