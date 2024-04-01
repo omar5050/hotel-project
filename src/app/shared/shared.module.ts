@@ -13,11 +13,13 @@ import { SharedComponent } from './shared.component';
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
+
   ],
   exports: [
     MatInputModule,
     MatFormFieldModule,
-    FormsModule
+    FormsModule,
+
   ]
 })
 export class SharedModule { }
