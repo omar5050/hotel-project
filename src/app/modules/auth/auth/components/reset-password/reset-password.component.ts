@@ -36,7 +36,7 @@ export class ResetPasswordComponent {
       complete:()=>{
         
         this._ToastrService.success('Your Password Changed Successfully','Success')
-        this._Router.navigate(['/login'])
+        this._Router.navigate(['/auth/login'])
 
 
       }

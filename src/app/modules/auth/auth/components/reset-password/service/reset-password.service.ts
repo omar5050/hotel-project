@@ -11,7 +11,7 @@ export class ResetPasswordService {
   constructor(private _HttpClient:HttpClient) { }
 
   onResetPassword(data: FormGroup): Observable<any> {
-    return this._HttpClient.post('users/reset-password', data)
+    return this._HttpClient.post('portal/users/reset-password', data)
   }
 
 }
