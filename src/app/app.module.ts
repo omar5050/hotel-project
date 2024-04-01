@@ -11,6 +11,7 @@ import { ResetPasswordComponent } from './modules/auth/components/reset-password
 import { NotFoundComponent } from './modules/auth/components/not-found/not-found.component';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { GlobalInterceptor } from './core/global.interceptor';
+import { SharedModule } from './modules/auth/shared/shared.module';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { GlobalInterceptor } from './core/global.interceptor';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    SharedModule
   ],
   providers: [
     {
