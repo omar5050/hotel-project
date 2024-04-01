@@ -18,7 +18,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     NgxDropzoneModule,
-    ToastrModule
+
 
   ],
   exports: [
@@ -27,7 +27,7 @@ import { ToastrModule } from 'ngx-toastr';
     FormsModule,
     ReactiveFormsModule,
     NgxDropzoneModule,
-    ToastrModule
+
 
   ]
 })
