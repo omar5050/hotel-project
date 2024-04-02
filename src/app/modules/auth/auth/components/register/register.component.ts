@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { AuthRegisterService } from './service/auth-register.service';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ToastrService } from 'ngx-toastr';
 
 
 @Component({
@@ -12,6 +13,9 @@ import { Router } from '@angular/router';
 export class RegisterComponent {
   profileImgValue: any
   files: File[] = [];
+  hidePassword: boolean = false
+  hideConfirmPass: boolean = false
+
   registerForm: FormGroup = new FormGroup({
     userName: new FormControl(null, [Validators.required]),
     email: new FormControl(null, [Validators.required]),
@@ -23,7 +27,7 @@ export class RegisterComponent {
     profileImage: new FormControl(null)
   })
 
-  constructor(private _Router: Router, private _AuthRegisterService: AuthRegisterService) { }
+  constructor(private _ToastrService: ToastrService, private _Router: Router, private _AuthRegisterService: AuthRegisterService) { }
   onRegister(data: FormGroup) {
     let dataSend = new FormData()
     dataSend.append('userName', data.value.userName)
@@ -44,6 +48,9 @@ export class RegisterComponent {
       error: (err) => {
         console.log(err);
 
+      },
+      complete: () => {
+        this._ToastrService.success('Account create susccess')
       }
 
     })

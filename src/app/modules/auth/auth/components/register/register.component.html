@@ -1,6 +1,6 @@
 <section id="design-auth" class="p-3 ">
     <h2>Stay<span>cation.</span></h2>
-    <div class="container">
+    <div class="">
         <div class="row  ">
             <div class="col-md-6">
                 <div class="auth-form p-5">
@@ -9,11 +9,10 @@
                         <div class="my-3">
                             <p class="m-0 p-0 ">If you already have an account register </p>
                             <p class="m-0 p-0 ">You can <a routerLink="/auth/login"><span
-                                        class="text-danger fw-bold ">Login her
-                                        !</span></a></p>
+                                        class="text-danger fw-bold ">Login here !</span></a></p>
                         </div>
 
-                        <div>
+                        <div class="label_custom-style">
                             <ngx-dropzone [multiple]="false" no_multiple (change)="onSelect($event)">
 
                                 <ngx-dropzone-label>
@@ -23,6 +22,7 @@
                                     </p>
 
                                 </ngx-dropzone-label>
+
 
 
                                 <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files"
@@ -35,41 +35,49 @@
                         </div>
 
                         <div>
-                            <label for="user-name">User Name</label>
-                            <input type="text" id="user-name" class="form-control " required formControlName="userName">
+                            <label for="user-name" class="my-2">User Name</label>
+                            <input type="text" id="user-name" class="form-control " required formControlName="userName"
+                                placeholder="Please type here">
                         </div>
 
                         <div class="d-flex justify-content-between ">
                             <div class="custom-input-group">
-                                <label for="phone">Phone Number</label>
-                                <input type="tel" class="form-control " id="phone" formControlName="phoneNumber">
+                                <label for="phone" class="my-2">Phone Number</label>
+                                <input type="tel" class="form-control " id="phone" formControlName="phoneNumber"
+                                    placeholder="Please type here">
                             </div>
 
                             <div class="custom-input-group">
-                                <label for="country">Country</label>
-                                <input type="txt" class="form-control " id="country" formControlName="country">
+                                <label for="country" class="my-2">Country</label>
+                                <input type="txt" class="form-control " id="country" formControlName="country"
+                                    placeholder="Please type here">
                             </div>
                         </div>
 
                         <div>
-                            <label for="email">Email Address</label>
-                            <input type="email" class="form-control " id="email" formControlName="email">
+                            <label for="email" class="my-2">Email Address</label>
+                            <input type="email" class="form-control " id="email" formControlName="email"
+                                placeholder="Please type here">
                         </div>
 
                         <div>
-                            <label for="password">Password</label>
+                            <label for="password" class="my-2">Password</label>
                             <div class="position-relative ">
-                                <input type="password" id="password" class="form-control " formControlName="password">
-                                <span class="eye"><i class="fa-regular fa-eye"></i></span>
+                                <input [type]="!hidePassword ? 'password' : 'text'" class="form-control "
+                                    formControlName="password" placeholder="Please type here">
+                                <span class="eye" (click)="hidePassword = !hideConfirmPass"><i
+                                        [class]="!hidePassword ? 'fa-solid fa-eye-slash' : 'fa-regular fa-eye' "></i></span>
                             </div>
                         </div>
 
                         <div>
-                            <label for="confirm-password">Confirm Password</label>
+                            <label for="confirm-password" class="my-2">Confirm Password</label>
                             <div class="position-relative ">
-                                <input type="password" id="confirm-password" class="form-control "
-                                    formControlName="confirmPassword">
-                                <span class="eye"><i class="fa-regular fa-eye"></i></span>
+                                <input [type]="!hideConfirmPass ? 'password' : 'text'" id="confirm-password"
+                                    class="form-control " formControlName="confirmPassword"
+                                    placeholder="Please type here">
+                                <span class="eye" (click)="hideConfirmPass = !hideConfirmPass"><i
+                                        [class]="!hideConfirmPass ? 'fa-solid fa-eye-slash' : 'fa-regular fa-eye' "></i></span>
                             </div>
                         </div>
 
@@ -79,9 +87,8 @@
                     </form>
                 </div>
             </div>
-            <div class="col-md-6  ">
-                <img class="ms-3" src="../../../../../../assets/images/register-background.png" alt="">
-
+            <div class="col-md-6 bg-danger px-0">
+                <img src="../../../../../../assets/images/register-background.png" alt="">
             </div>
         </div>
     </div>
