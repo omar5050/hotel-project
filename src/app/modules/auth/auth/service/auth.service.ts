@@ -7,14 +7,13 @@ import { Observable } from 'rxjs';
 })
 export class AuthService {
 
-  constructor(private _http:HttpClient) 
-  { }
-onLogin(data:any):Observable<any>{
- 
-  
-console.log(data);
+  constructor(private _http: HttpClient) { }
+  onLogin(data: any): Observable<any> {
 
-return this._http.post(`portal/users/login`,data);
-}
+
+    console.log(data);
+
+    return this._http.post(`portal/users/login`, data);
+  }
 
 }
