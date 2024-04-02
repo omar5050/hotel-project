@@ -2,14 +2,17 @@
     <h2>Stay<span>cation.</span></h2>
     <div class="container">
         <div class="row  ">
+
             <div class="col-md-6">
                 <div class="auth-form p-5">
-                    <form>
+                    <form [formGroup]="loginForm"
+                     (ngSubmit)="onLogin(loginForm)">
+
                         <h3>Sign In</h3>
                         <div class="my-3">
                             <p class="m-0 p-0 ">If you already have an account register </p>
                             <p class="m-0 p-0 ">You can <a routerLink="/auth/register"><span
-                                        class="text-second fw-bold ">Register her
+                                        class="text-second fw-bold ">Login
                                         !</span></a></p>
 
 
@@ -17,12 +20,16 @@
 
                         <div class="my-5 ">
                             <label for="email">Email Address</label>
-                            <input type="email" class="form-control " id="email">
+                            <input type="email" class="form-control " 
+                             formControlName="email" id="email">
                         </div>
                         <div>
+
                             <label for="password">Password</label>
                             <div class="position-relative ">
-                                <input type="password" id="password" class="form-control ">
+                                <input type="password"
+                                 formControlName="password" 
+                                id="password" class="form-control ">
                                 <span class="eye"><i class="fa-regular fa-eye"></i></span>
                             </div>
                         </div>
