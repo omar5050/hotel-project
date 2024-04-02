@@ -7,7 +7,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 import { RegisterComponent } from './components/register/register.component';
 import { LoginComponent } from './components/login/login.component';
 import { ResetPasswordComponent } from './components/reset-password/reset-password.component';
-import { ForgotPasswrodComponent } from './components/forgot-passwrod/forgot-passwrod.component';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 
 
@@ -17,7 +17,7 @@ import { ForgotPasswrodComponent } from './components/forgot-passwrod/forgot-pas
     RegisterComponent,
     LoginComponent,
     ResetPasswordComponent,
-    ForgotPasswrodComponent,
+    ForgotPasswordComponent,
   ],
   imports: [
     CommonModule,
