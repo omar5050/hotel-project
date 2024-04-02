@@ -17,7 +17,7 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
     RegisterComponent,
     LoginComponent,
     ResetPasswordComponent,
-    ForgotPasswordComponent,
+  ForgotPasswordComponent
   ],
   imports: [
     CommonModule,
