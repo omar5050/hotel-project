@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-
+import { IMenu } from '../sidebar/models/imenu'
 @Component({
   selector: 'app-sidebar',
   templateUrl: './sidebar.component.html',
@@ -7,47 +7,40 @@ import { Component } from '@angular/core';
 })
 export class SidebarComponent {
 
-  Menu: any[] = [
+  Menu: IMenu[] = [
     {
 
       text: 'Home',
-      link: '/dashboard/home',
+      link: '/admin/home',
       icon: 'fa-solid fa-house',
       // isActive: this.isAdmin() || this.isUser() ,
     },
     {
 
       text: 'Users',
-      link: '/dashboard/admin/users',
+      link: '/admin/users',
       icon: 'fa-solid fa-users',
       // isActive: this.isAdmin()  ,
     },
     {
 
-      text: 'Recipes',
-      link: '/dashboard/admin/recipes',
-      icon: "fa-solid fa-utensils",
+      text: 'Rooms',
+      link: '/admin/room',
+      icon: "fa-solid fa-hotel",
       // isActive: this.isAdmin()  ,
     },
     {
 
-      text: 'Categories',
-      link: '/dashboard/admin/category',
-      icon: "fa-solid fa-layer-group",
+      text: 'Ads',
+      link: '/admin/ads',
+      icon: "fa-solid fa-calendar-days",
       // isActive: this.isAdmin()  ,
     },
     {
 
-      text: 'UserRecipes',
-      link: '/dashboard/user/recipes',
-      icon: 'fa-solid fa-utensils',
-      // isActive: this.isUser(),
-    },
-    {
-
-      text: 'Favorite',
-      link: '/dashboard/user/favorites',
-      icon: 'fa-solid fa-heart-circle-check',
+      text: 'Booking',
+      link: '/admin/booking',
+      icon: 'fa-solid fa-users',
       // isActive: this.isUser(),
     },
 
