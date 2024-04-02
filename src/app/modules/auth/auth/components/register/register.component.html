@@ -14,7 +14,8 @@
                         </div>
 
                         <div>
-                            <ngx-dropzone [multiple]="false" no_multiple (change)="onSelect($event)">
+                            <ngx-dropzone [multiple]="false"
+                             no_multiple (change)="onSelect($event)">
 
                                 <ngx-dropzone-label>
 
@@ -47,19 +48,20 @@
 
                             <div class="custom-input-group">
                                 <label for="country">Country</label>
-                                <input type="txt" class="form-control " id="country" formControlName="country">
+                                <input type="txt" class="form-control "  id="country" formControlName="country">
                             </div>
                         </div>
 
                         <div>
                             <label for="email">Email Address</label>
-                            <input type="email" class="form-control " id="email" formControlName="email">
+                            <input type="email" class="form-control " id="email" 
+                            formControlName="email">
                         </div>
 
                         <div>
                             <label for="password">Password</label>
                             <div class="position-relative ">
-                                <input type="password" id="password" class="form-control " formControlName="password">
+                                <input type="password" formControlName="password" id="password" class="form-control " formControlName="password">
                                 <span class="eye"><i class="fa-regular fa-eye"></i></span>
                             </div>
                         </div>
