@@ -1,19 +1,34 @@
-<p>navbar works! admin</p>
-
- <nav class="navbar navbar-expand-lg bg-body-tertiary px-4">
-    <div class="container-fluid ">
 
 
+      
+   
+<nav class="navbar navbar-expand-lg bg-body-tertiary px-4">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Staycation</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ms-auto px-3 mb-2 mb-lg-0 ">
+         
+          <li class="nav-item">
+            <a class="nav-link" >Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" >Explore</a>
+          </li>
 
+          <li class="nav-item">
+            <a class="nav-link" >Reviews</a>
+          </li>
+          
+          <li class="nav-item" *ngIf="isLogin ">
+            <a class="nav-link" >Favorites</a>
+          </li>
 
-      <div class="collapse navbar-collapse d-flex justify-content-between" id="navbarSupportedContent">
-        <a class="navbar-brand" href="#">Staycation</a>
-
+        </ul>
       
-        <div class="col-md-2 d-flex  justify-content-between align-items-center leftNav">
+        <div *ngIf="isLogin  " class="col-md-2 d-flex bg-warning  justify-content-between align-items-center leftNav">
    
             <div class="profImg">
                 <img src="../../../../../assets/images/profoileImg.png" class="img-fluid" alt="">
@@ -49,10 +64,10 @@
          </div>
          
         </div>
-      
+        <div  *ngIf="!isLogin" class="btn-main col-md-2">
+            <button class="px-5 btn text-white" type="submit" routerLink="/auth">Login</button>
+        </div>
        
       </div>
-
-
     </div>
-  </nav> 
+  </nav>
