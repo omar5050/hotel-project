@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
   
 isLogin:any;
 
-isRole=localStorage.getItem('role');
+isRole=false;
 
 
 ngOnInit(): void {
@@ -29,6 +29,16 @@ this.isLogin=behValue;
   }
 })
 
+
+
+if(localStorage.getItem('userToken')!==null){
+console.log(localStorage.getItem('userToken'));
+this.isRole=true
+}
+else{
+  console.log('not found');
+  this.isRole=false
+}
 }
   
 
@@ -39,6 +49,7 @@ is_logOut() {
   localStorage.removeItem('userToken');
   localStorage.removeItem('role');
   localStorage.removeItem('userName');
+  this.isRole=false;
    this._Router.navigate(['/landing-page']);
   }
   

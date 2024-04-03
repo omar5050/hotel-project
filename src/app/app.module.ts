@@ -28,7 +28,7 @@ import { GlobalInterceptor } from './core/interceptor/global.interceptor';
       useClass: GlobalInterceptor,
       multi: true,
     }
-  ],
+      ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
