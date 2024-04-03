@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
+import { Route, Router } from '@angular/router';
+import { BehaviorSubject } from 'rxjs';
 import { AuthService } from 'src/app/modules/auth/auth/service/auth.service';
 
 @Component({
@@ -13,16 +14,29 @@ export class NavbarComponent implements OnInit {
     ){
 
   }
+  
+isLogin:any;
+
+isRole=localStorage.getItem('role');
+
 
 ngOnInit(): void {
-  
+console.log(this.isRole);
+
+this._auth.behLogin.subscribe({
+next:(behValue:any)=>{
+this.isLogin=behValue;
+  }
+})
+
 }
+  
+
 is_logOut() {
 
   this._auth.behLogin.next(false);
   this._auth.isRole.next('')
    this._Router.navigate(['/landing-page']);
- 
   }
+  
 }
-
