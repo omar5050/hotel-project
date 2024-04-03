@@ -35,7 +35,10 @@ this.isLogin=behValue;
 is_logOut() {
 
   this._auth.behLogin.next(false);
-  this._auth.isRole.next('')
+  this._auth.isRole.next('');
+  localStorage.removeItem('userToken');
+  localStorage.removeItem('role');
+  localStorage.removeItem('userName');
    this._Router.navigate(['/landing-page']);
   }
   

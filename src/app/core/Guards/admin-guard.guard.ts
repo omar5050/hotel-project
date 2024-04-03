@@ -6,15 +6,15 @@ export const adminGuardGuard: CanActivateFn = (route, state) => {
   let auth=inject(AuthService)
   let _Router=inject(Router)
   
-  if(auth.isRole.value=='admin'){
-    console.log(auth.isRole.value);
-   
+
+if(localStorage.getItem('role')=='admin'){
+  console.log(auth.isRole.value);
+ 
 return true;
-  }
-  else{
-    _Router.navigate(['/landing-page']);
-    return false
-  }
-  
+}
+else{
+  _Router.navigate(['/landing-page']);
+  return false
+}
   
 };
