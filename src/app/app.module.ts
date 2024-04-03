@@ -1,3 +1,4 @@
+import { LoadingInterceptor } from './core/interceptor/loadingInterceptor/loading.interceptor';
 import { ToastrModule } from 'ngx-toastr';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -6,7 +7,7 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { GlobalInterceptor } from './core/interceptor/global.interceptor';
-
+import { NgxSpinnerModule } from "ngx-spinner";
 
 
 
@@ -20,6 +21,7 @@ import { GlobalInterceptor } from './core/interceptor/global.interceptor';
     AppRoutingModule,
     BrowserAnimationsModule,
     HttpClientModule,
+    NgxSpinnerModule,
     ToastrModule.forRoot()
   ],
   providers: [
@@ -27,6 +29,11 @@ import { GlobalInterceptor } from './core/interceptor/global.interceptor';
       provide: HTTP_INTERCEPTORS,
       useClass: GlobalInterceptor,
       multi: true,
+    },
+    {
+      provide:HTTP_INTERCEPTORS,
+      useClass:LoadingInterceptor,
+      multi:true
     }
       ],
   bootstrap: [AppComponent]
