@@ -8,10 +8,12 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 
+
 @NgModule({
   declarations: [
   ],
   imports: [
+  
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
@@ -25,6 +27,7 @@ import { MatMenuModule } from '@angular/material/menu';
 
   ],
   exports: [
+  
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
@@ -36,5 +39,6 @@ import { MatMenuModule } from '@angular/material/menu';
 
 
   ]
+ 
 })
 export class SharedModule { }
