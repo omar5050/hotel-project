@@ -20,13 +20,13 @@
   ::placeholder {
     color: rgb(52, 52, 52);
     opacity: 0.5;}
-  .form-control{
-    background-color:$bg-input-color !important;
-    border: none;
-    padding: 10px 10px;
-    width:76%;
+  // .form-control{
+  //   background-color:$bg-input-color !important;
+  //   border: none;
+  //   padding: 10px 10px;
+  //   width:76%;
  
-  }
+  // }
   label {
     font-family: "Poppins", sans-serif;
     font-weight: 400;
@@ -38,7 +38,7 @@
   }
   button {
 
-  padding: 10px 14.5rem;
+  padding: 10px 14rem;
   background-color: $bg-main ;
   border: none;
   color: white;
