@@ -41,20 +41,42 @@
                         <div class="mb-1">
                             <label class="my-1" for="user-name">User Name</label>
                             <input type="text" id="user-name"
-                            placeholder="Please type here ......" class="form-control " required formControlName="userName">
+                            placeholder="Please type here ......" minlength="3" class="form-control "
+                             required formControlName="userName">
+                             <div *ngIf="registerForm.controls['userName']?.errors && registerForm.controls['userName']?.touched" 
+                             class="w-100 ">
+                               <p class="text-danger mb-0 mt-1" *ngIf="registerForm.controls['userName']?.errors?.['required']">
+                                 User Name is required</p>
+                               <p class="text-danger mb-0 mt-1" *ngIf="registerForm.controls['userName']?.errors?.['pattern']">
+                                 User Name must be greater than 3 letters</p>
+                             </div>
                         </div>
                      
                         <div class="row group-input-design mb-1">
                             <div class=" col-6 ">
-                                <label for="phone "  class="my-1">Phone Number</label>
+                                <label for="phone "  class="mb-1">Phone Number</label>
                                 <input type="tel" class="form-control me-0  w-100"
                                 placeholder="Please type here ......"
                                  id="phone" formControlName="phoneNumber">
+                                 <div *ngIf="registerForm.controls['phoneNumber']?.errors && registerForm.controls['phoneNumber']?.touched" 
+                                 class="w-100 ">
+                                   <p class="text-danger mb-0" *ngIf="registerForm.controls['phoneNumber']?.errors?.['required']">
+                                     phoneNumber is required</p>
+                                   <p class="text-danger mb-0" *ngIf="registerForm.controls['phoneNumber']?.errors?.['pattern']">
+                                     phoneNumber must be number </p>
+                                 </div>
                             </div>
 
                             <div class="col-6 ">
                                 <label  class="mb-1" for="country">Country</label>
-                                <input type="txt" class="form-control me-0 w-100 "  placeholder="Please type here ......" id="country" formControlName="country">
+                                <input type="txt" class="form-control me-0 w-100 " 
+                                 placeholder="Please type here ......" id="country" 
+                                 formControlName="country">
+                                <div *ngIf="registerForm.controls['country']?.errors && registerForm.controls['country']?.touched" 
+                                class="w-100 ">
+                                  <p class="text-danger mb-0" *ngIf="registerForm.controls['country']?.errors?.['required']">
+                                    Country is required</p>
+                            
                             </div>
                         </div>
 
@@ -64,6 +86,16 @@
                             placeholder="Please type here ......"
                              class="form-control " id="email" 
                             formControlName="email">
+                            <div *ngIf="registerForm.controls['email'].touched&&registerForm.controls['email'].errors"
+                            class=" w-100 ">
+                       <p class="text-danger mb-0" 
+                       *ngIf="registerForm.controls['email'].errors['email']">
+                       Email should be valid </p>
+                       <p class="text-danger mb-0"
+                        *ngIf="registerForm.controls['email'].errors['required']">
+                        Email is required</p>
+                      
+                   </div>
                         </div>
 
                         <div class="mb-1">
@@ -75,6 +107,13 @@
                                 placeholder="Please type here ......"
                                  id="password" class="form-control " formControlName="password">
                                 <!-- <span class="eye"><i class="fa-regular fa-eye"></i></span> -->
+                                <div *ngIf="registerForm.controls['password']?.errors && registerForm.controls['password']?.touched" 
+                                class="w-100 ">
+                                  <p class="text-danger mb-0" *ngIf="registerForm.controls['password']?.errors?.['required']">
+                                    Password is required</p>
+                                  <p class="text-danger mb-0" *ngIf="registerForm.controls['password']?.errors?.['pattern']">
+                                    Password must be contain special character</p></div>
+                                </div>
                             </div>
                         </div>
 
@@ -86,25 +125,37 @@
                                 class="form-control "
                                     formControlName="confirmPassword">
                                 <!-- <span class="eye"><i class="fa-regular fa-eye"></i></span> -->
+                                <div *ngIf="registerForm.controls['confirmPassword']?.errors && registerForm.controls['confirmPassword']?.touched" 
+                                class="w-100 ">
+                                  <p class="text-danger mb-0" *ngIf="registerForm.controls['confirmPassword']?.errors?.['required']">
+                                    Password is required</p>
+                                  <p class="text-danger mb-0" *ngIf="registerForm.controls['confirmPassword']?.errors?.['pattern']">
+                                    Password must be contain special character</p>
+                                </div>
                             </div>
                         </div>
 
-                        <div class="mt-5">
+                        <div class="mt-5 mb-5">
                             <button class="custom-btn" type="submit">Sign Up</button>
                         </div>
                     </form>
                 </div> </div></div>
             </div>
-            <div class="col-lg-6 my-1 position-relative">
-                <img
-                src="../../../../../../assets/images/signUp-img.png"
-                  width="100%"
-                  alt=""
-                />
-                <div class="layer">
-                  <h1>Sign up to Roamhome</h1>
-                  <p>Homes as unique as you.</p>
+            <div class="col-lg-6 my-1 ">
+                <div class="position-relative">
+                    <img 
+                    src="../../../../../../assets/images/signUp-img.png"
+                      width="100%" 
+                     
+                      alt=""
+                    />
+                    <div class="layer">
+                      <h1 >Sign up to Roamhome</h1>
+                      <p>Homes as unique as you.</p>
+                    </div>
+
                 </div>
+            
               </div>
            
         </div>
