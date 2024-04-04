@@ -19,18 +19,8 @@
                      (ngSubmit)="onLogin(loginForm)">
                         <div class="my-1 ">
                             <label for="email">Email Address</label>
-                            <input type="email" class="form-control mb-1" 
+                            <input type="email" class="form-control mt-1" 
                              formControlName="email" id="email">
-                             <div *ngIf="loginForm.controls['email'].touched&&loginForm.controls['email'].errors"
-                             class=" w-100 ">
-                        <p class="text-danger" 
-                        *ngIf="loginForm.controls['email'].errors['email']">
-                        Email should be valid </p>
-                        <p class="text-danger"
-                         *ngIf="loginForm.controls['email'].errors['required']">
-                         Email is required</p>
-                       
-                    </div>
                         </div>
                         <div>
 
@@ -38,24 +28,15 @@
                             <div class="position-relative mt-1">
                                 <input type="password"
                                  formControlName="password" 
-                                id="password" class="form-control mb-1 ">
+                                id="password" class="form-control ">
                                 <!-- <span class="eye"><i class="fa-regular fa-eye"></i></span> -->
-                                <div *ngIf="loginForm.controls['password']?.errors && loginForm.controls['password']?.touched" 
-                                class="w-100 ">
-                                  <p class="text-danger" *ngIf="loginForm.controls['password']?.errors?.['required']">
-                                    Password is required</p>
-                                  <p class="text-danger" *ngIf="loginForm.controls['password']?.errors?.['pattern']">
-                                    Password must be contain special character</p>
-                                </div>
                             </div>
                         </div>
-                        
-                        <div class="w-75 text-end pe-2 pt-1 pb-4 ">
+                        <div class="w-75 text-end pe-2 pt-2 ">
                             <a class="anchor-color"  routerLink="/auth/forgot-password">Forget password</a>
                         </div>
-
-                        <div class="mt-5 position-fixed btn-position ">
-                            <button  type="submit">Login</button>
+                        <div class="mt-5">
+                            <button class="custom-btn" type="submit">Login</button>
                         </div>
 
                       
