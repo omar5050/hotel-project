@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { ToastrService } from 'ngx-toastr';
 import { Router } from '@angular/router';
+import { ResetPasswordService } from './service/reset-password.service';
 
 
 const RegxPassword: RegExp = /^(?=[^A-Z]*[A-Z])(?=[^a-z]*[a-z])(?=\D*\d).{8,20}$/;
