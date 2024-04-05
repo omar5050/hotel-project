@@ -48,3 +48,4 @@ export class SidebarComponent {
   ]
 
 }
+// Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2NWExNGIxYTI4M2I1NmY1NjgyMTMyNGYiLCJyb2xlIjoiYWRtaW4iLCJ2ZXJpZmllZCI6ZmFsc2UsImlhdCI6MTcxMjI5MTcyMCwiZXhwIjoxNzEzNTAxMzIwfQ.4JHMgWkr3IZ6ESlbaJFc8ZLVp1MiKiKLFQL4W2qJmRw
