@@ -1,7 +1,7 @@
-@import "../../../../../assets/styles/layout";
+// @import "../../../../../assets/styles/layout";
 
 .sidebar {
-  background-color: $bg-main;
+  background-color: blue;
   height: 100vh;
   padding: 1px;
   ul {
@@ -15,5 +15,7 @@
   a {
     color: #fff;
     padding: 0.5rem;
+    text-decoration: none;
+    list-style: none;
   }
 }
