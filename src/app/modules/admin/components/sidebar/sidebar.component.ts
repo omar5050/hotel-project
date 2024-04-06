@@ -15,13 +15,13 @@ export class SidebarComponent {
       icon: 'fa-solid fa-house',
       // isActive: this.isAdmin() || this.isUser() ,
     },
-    {
+    // {
 
-      text: 'Users',
-      link: '/admin/users',
-      icon: 'fa-solid fa-users',
-      // isActive: this.isAdmin()  ,
-    },
+    //   text: 'Users',
+    //   link: '/admin/users',
+    //   icon: 'fa-solid fa-users',
+    //   // isActive: this.isAdmin()  ,
+    // },
     {
 
       text: 'Rooms',
@@ -29,7 +29,7 @@ export class SidebarComponent {
       icon: "fa-solid fa-hotel",
       // isActive: this.isAdmin()  ,
     },
-    
+
     {
 
       text: 'Ads',
