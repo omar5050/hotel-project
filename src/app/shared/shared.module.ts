@@ -7,10 +7,13 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
+import { DeleteComponent } from './delete/delete.component';
 
 
 @NgModule({
   declarations: [
+  
+    DeleteComponent
   ],
   imports: [
   

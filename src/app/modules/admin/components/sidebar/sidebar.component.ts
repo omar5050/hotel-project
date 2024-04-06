@@ -29,11 +29,19 @@ export class SidebarComponent {
       icon: "fa-solid fa-hotel",
       // isActive: this.isAdmin()  ,
     },
+    
     {
 
       text: 'Ads',
       link: '/admin/ads',
       icon: "fa-solid fa-calendar-days",
+      // isActive: this.isAdmin()  ,
+    },
+    {
+
+      text: 'Room Facility',
+      link: '/admin/room-facility',
+      icon: "fa-solid fa-cubes-stacked",
       // isActive: this.isAdmin()  ,
     },
     {
