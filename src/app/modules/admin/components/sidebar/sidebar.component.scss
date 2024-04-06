@@ -1,11 +1,17 @@
 // @import "../../../../../assets/styles/layout";
 
 .sidebar {
+<<<<<<< HEAD
   background-color: blue;
+=======
+  background-color: #3252df;
+>>>>>>> a7485adaadb9cf651b610395114b8479b5482276
   height: 100vh;
   padding: 1px;
+  position: fixed;
   ul {
     margin: 5rem 0;
+    list-style: none;
   }
   li {
     width: 100%;
@@ -16,6 +22,14 @@
     color: #fff;
     padding: 0.5rem;
     text-decoration: none;
+<<<<<<< HEAD
     list-style: none;
+=======
+>>>>>>> a7485adaadb9cf651b610395114b8479b5482276
   }
 }
+
+// .bg-layer-active {
+//   background-color: rgba(26, 27, 30, 0.17);
+//   color: rgba(255, 255, 255, 0.17);
+// }
