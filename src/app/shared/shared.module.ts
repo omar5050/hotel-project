@@ -31,7 +31,7 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatDialogModule,
     MatMenuModule,
-
+    MatSelectModule
 
 
   ],
@@ -46,8 +46,8 @@ import {MatSelectModule} from '@angular/material/select';
     NgxDropzoneModule,
     MatIconModule,
     MatDialogModule,
-    MatMenuModule
-
+    MatMenuModule,
+    MatSelectModule
 
   ]
  

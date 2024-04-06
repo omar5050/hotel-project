@@ -1,1 +1,90 @@
-<p>room works!</p>
+<section>
+
+    <div class="title-page px-5 w-100 d-flex justify-content-between align-items-center">
+        <div>
+            <h3>Rooms Table Details</h3>
+            <p>You can check all details</p>
+        </div>
+        <div>
+            <button [routerLink]="'add'" class="p-3"><span>
+                    <i class="fa-solid fa-plus"></i>
+                </span> Add New room</button>
+        </div>
+
+    </div>
+
+    <div class="row mx-5 align-items-center">
+        <div class="col-6">
+
+            <div class="input-group mb-3">
+                <span class="input-group-text" id="basic-addon1"><i class="fa-solid fa-magnifying-glass"></i></span>
+                <input [(ngModel)]="searchKey" (keyup.enter)="getAllrooms()" type="text" class="form-control"
+                    placeholder="Search By number" aria-label="Username" aria-describedby="basic-addon1">
+
+            </div>
+        </div>
+
+        <div class="col-2 ps-4">
+            <mat-form-field>
+                <mat-label>Choose Facility</mat-label>
+                <mat-select multiple>
+                    <mat-option *ngFor="let item of facilities" [value]="item._id">{{item.name}}</mat-option>
+                </mat-select>
+            </mat-form-field>
+
+        </div>
+    </div>
+
+    <div class="table-container mx-5 text-center">
+
+
+        <table class="table table-striped my-3 table-head">
+            <thead>
+                <th>room Number</th>
+                <th>Image</th>
+                <th>Price</th>
+                <th>Discount</th>
+                <th>Capacity</th>
+                <th>Facilicty</th>
+            </thead>
+            <tbody>
+                <tr *ngFor="let item of tableData">
+                    <td>{{item.roomNumber}}</td>
+                    <td>
+                        <img class="imageTable" *ngFor="let element of item.images" [src]="element" alt="">
+                    </td>
+                    <td>{{item.price}}</td>
+                    <td>{{item.discount}}</td>
+                    <td>{{item.capacity}}</td>
+                    <td>{{ show( item.facilities)}}</td>
+                   <!-- <td *ngFor="let element of item.facilities">
+                        {{element.name}}
+                    </td>-->
+                    <td><button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                            <mat-icon>more_vert</mat-icon>
+                        </button>
+                        <mat-menu #menu="matMenu">
+                            <button mat-menu-item (click)="openRoomsDetailes(item)">
+                                <mat-icon>visibility</mat-icon>
+                                <span>View</span>
+                            </button>
+                            <button mat-menu-item [routerLink]="['edit',item._id]">
+                                <mat-icon color="primary">edit_square</mat-icon>
+                                <span>Edit</span>
+                            </button>
+                            <button mat-menu-item (click)="openDeleteRoomDialog(item)">
+                                <mat-icon color="primary">delete</mat-icon>
+                                <span>Delete</span>
+                            </button>
+                        </mat-menu>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+
+
+
+    </div>
+
+</section>
