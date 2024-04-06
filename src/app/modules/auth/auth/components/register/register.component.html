@@ -1,112 +1,107 @@
-<section id="register" >
-     <div class="container-fluid auth-form">
+<section id="register">
+    <div class="container-fluid auth-form">
         <div class="row mt-1">
             <div class="col-lg-6   ps-5">
-              <h3><span>Stay</span>cation.</h3>
-              <div
-                class="container mt-1 ms-5 pt-3 d-flex justify-content-center align-items-center"
-              >
-                <div class="row">
-                  <div class="col-12">
-                    <h2 class="mb-1">Sign up</h2>
-                    <p class="fs-6">If you already have an account register</p>
-                    <p class="fs-6 mb-1"> You can <a  routerLink="/auth/login" class="text-decoration-none text-danger fw-bold">Login here !</a></p>
-                  </div> 
-
-                <div class="auth-form">
-                    <form [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm)">
-                    
-                        <div class=" d-flex justify-content-center ">
-                            <ngx-dropzone  [multiple]="false"
-                             no_multiple (change)="onSelect($event)">
-
-                                <ngx-dropzone-label>
-
-                                    <p>
-                                        Choose Image Profile
-                                    </p>
-
-                                </ngx-dropzone-label>
-
-
-                                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files"
-                                    [file]="f" [removable]="true" (removed)="onRemove(f)">
-                                    <ngx-dropzone-label></ngx-dropzone-label>
-                                </ngx-dropzone-image-preview>
-
-
-                            </ngx-dropzone>
+                <h3><span>Stay</span>cation.</h3>
+                <div class="container mt-1 ms-5 pt-3 d-flex justify-content-center align-items-center">
+                    <div class="row">
+                        <div class="col-12">
+                            <h2 class="mb-1">Sign up</h2>
+                            <p class="fs-6">If you already have an account register</p>
+                            <p class="fs-6 mb-1"> You can <a routerLink="/auth/login"
+                                    class="text-decoration-none text-danger fw-bold">Login here !</a></p>
                         </div>
 
-                        <div class="mb-1">
-                            <label class="my-1" for="user-name">User Name</label>
-                            <input type="text" id="user-name"
-                            placeholder="Please type here ......" class="form-control " required formControlName="userName">
-                        </div>
-                     
-                        <div class="row group-input-design mb-1">
-                            <div class=" col-6 ">
-                                <label for="phone "  class="my-1">Phone Number</label>
-                                <input type="tel" class="form-control me-0  w-100"
-                                placeholder="Please type here ......"
-                                 id="phone" formControlName="phoneNumber">
-                            </div>
+                        <div class="auth-form">
+                            <form [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm)">
 
-                            <div class="col-6 ">
-                                <label  class="mb-1" for="country">Country</label>
-                                <input type="txt" class="form-control me-0 w-100 "  placeholder="Please type here ......" id="country" formControlName="country">
-                            </div>
-                        </div>
+                                <div class=" d-flex justify-content-center ">
+                                    <ngx-dropzone [multiple]="false" no_multiple (change)="onSelect($event)">
 
-                        <div class="mb-1">
-                            <label  class="my-1" for="email">Email Address</label>
-                            <input type="email"
-                            placeholder="Please type here ......"
-                             class="form-control " id="email" 
-                            formControlName="email">
-                        </div>
+                                        <ngx-dropzone-label>
 
-                        <div class="mb-1">
-                            <label  class="my-1" for="password">Password</label>
-                            
-                            <div class="position-relative ">
-                                <input type="password" 
-                                formControlName="password"
-                                placeholder="Please type here ......"
-                                 id="password" class="form-control " formControlName="password">
-                                <!-- <span class="eye"><i class="fa-regular fa-eye"></i></span> -->
-                            </div>
-                        </div>
+                                            <p>
+                                                Choose Image Profile
+                                            </p>
 
-                        <div class="mb-1">
-                            <label  class="my-1" for="confirm-password">Confirm Password</label>
-                            <div class="position-relative ">
-                                <input type="password" id="confirm-password" 
-                                placeholder="Please type here ......"
-                                class="form-control "
-                                    formControlName="confirmPassword">
-                                <!-- <span class="eye"><i class="fa-regular fa-eye"></i></span> -->
-                            </div>
-                        </div>
+                                        </ngx-dropzone-label>
 
-                        <div class="mt-5">
-                            <button class="custom-btn" type="submit">Sign Up</button>
+
+                                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview"
+                                            *ngFor="let f of files" [file]="f" [removable]="true"
+                                            (removed)="onRemove(f)">
+                                            <ngx-dropzone-label></ngx-dropzone-label>
+                                        </ngx-dropzone-image-preview>
+
+
+                                    </ngx-dropzone>
+                                </div>
+
+                                <div class="mb-1">
+                                    <label class="my-1" for="user-name">User Name</label>
+                                    <input type="text" id="user-name" placeholder="Please type here ......"
+                                        class="form-control " required formControlName="userName">
+                                </div>
+
+                                <div class="row group-input-design mb-1">
+                                    <div class=" col-6 ">
+                                        <label for="phone " class="my-1">Phone Number</label>
+                                        <input type="tel" class="form-control me-0  w-100"
+                                            placeholder="Please type here ......" id="phone"
+                                            formControlName="phoneNumber">
+                                    </div>
+
+                                    <div class="col-6 ">
+                                        <label class="mb-1" for="country">Country</label>
+                                        <input type="txt" class="form-control me-0 w-100 "
+                                            placeholder="Please type here ......" id="country"
+                                            formControlName="country">
+                                    </div>
+                                </div>
+
+                                <div class="mb-1">
+                                    <label class="my-1" for="email">Email Address</label>
+                                    <input type="email" placeholder="Please type here ......" class="form-control "
+                                        id="email" formControlName="email">
+                                </div>
+
+                                <div class="mb-1">
+                                    <label class="my-1" for="password">Password</label>
+
+                                    <div class="position-relative ">
+                                        <input type="password" formControlName="password"
+                                            placeholder="Please type here ......" id="password" class="form-control "
+                                            formControlName="password">
+                                        <!-- <span class="eye"><i class="fa-regular fa-eye"></i></span> -->
+                                    </div>
+                                </div>
+
+                                <div class="mb-1">
+                                    <label class="my-1" for="confirm-password">Confirm Password</label>
+                                    <div class="position-relative ">
+                                        <input type="password" id="confirm-password"
+                                            placeholder="Please type here ......" class="form-control "
+                                            formControlName="confirmPassword">
+                                        <!-- <span class="eye"><i class="fa-regular fa-eye"></i></span> -->
+                                    </div>
+                                </div>
+
+                                <div class="my-3">
+                                    <button class="custom-btn" type="submit">Sign Up</button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                </div> </div></div>
+                    </div>
+                </div>
             </div>
             <div class="col-lg-6 my-1 position-relative">
-                <img
-                src="../../../../../../assets/images/signUp-img.png"
-                  width="100%"
-                  alt=""
-                />
+                <img src="../../../../../../assets/images/signUp-img.png" width="100%" alt="" />
                 <div class="layer">
-                  <h1>Sign up to Roamhome</h1>
-                  <p>Homes as unique as you.</p>
+                    <h1>Sign up to Roamhome</h1>
+                    <p>Homes as unique as you.</p>
                 </div>
-              </div>
-           
+            </div>
+
         </div>
     </div>
 
