@@ -7,8 +7,7 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
-
-@NgModule({
+import {MatSelectModule} from '@angular/material/select';@NgModule({
   declarations: [
   ],
   imports: [
@@ -20,7 +19,7 @@ import { MatMenuModule } from '@angular/material/menu';
     MatIconModule,
     MatDialogModule,
     MatMenuModule,
-
+    MatSelectModule
 
 
   ],
@@ -32,8 +31,8 @@ import { MatMenuModule } from '@angular/material/menu';
     NgxDropzoneModule,
     MatIconModule,
     MatDialogModule,
-    MatMenuModule
-
+    MatMenuModule,
+    MatSelectModule
 
   ]
 })
