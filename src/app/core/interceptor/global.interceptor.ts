@@ -26,8 +26,6 @@ export class GlobalInterceptor implements HttpInterceptor {
       }
     })
 
-
-
     return next.handle(Headers);
   }
 }

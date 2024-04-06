@@ -1,0 +1,67 @@
+
+
+
+
+.btnadd{
+    background-color:#3252df;
+    border: none;
+    color: white;
+    border-radius:4px ;
+    box-shadow: 5px 10px 18px  rgba(50, 82, 223, 0.3);
+    text-align: center;
+    font-size: 20px
+}
+.is-image{
+    width: 40px;
+    height: 40px;
+    padding-inline: 2px;
+
+}
+
+.table-head{
+    background-color: #E2E5EB;
+    height: 88px;
+    border-radius: 10px;
+
+    & th{
+        padding-block: 15px;
+    }
+}
+
+
+.imageTable{
+    width: 50px;
+    height:50px;
+    padding: 2px;
+
+}
+// -------------------
+.titel{
+color: #1F263E;
+;
+}
+table, th, td {
+    border: 1px solid blue;
+    border-collapse: collapse;
+    border-radius: 10px !important;
+  text-align: center;
+  
+  }
+  td{
+    
+    vertical-align: middle;
+
+  }
+  th{
+    color: blue;
+    font-size: 14px;
+
+  }
+
+table {
+    border-collapse: collapse;
+    border: 2px;
+    border-radius: 1em;
+   
+    
+  }
