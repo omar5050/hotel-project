@@ -18,7 +18,7 @@ export class NavbarComponent implements OnInit {
 isLogin:any;
 
 isRole=false;
-
+isAdmin=localStorage.getItem('role');
 
 ngOnInit(): void {
 console.log(this.isRole);
