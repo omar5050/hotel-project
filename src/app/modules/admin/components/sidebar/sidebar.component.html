@@ -1,4 +1,4 @@
-<section class="sidebar">
+<section class="sidebar" #side>
     <ul>
         <li *ngFor=" let item of Menu " routerLinkActive="bg-layer-active">
             <a [routerLink]="item.link">
@@ -9,13 +9,17 @@
         </li>
 
         <li>
-            <a  routerLink="/landing-page" class="  d-flex"
-             routerLinkActive="router-link-active" >
-          <span class=""> Landing-page</span> 
-             <span>
-    <mat-icon class="text-white ">logout</mat-icon>
+            <a routerLink="/landing-page" class="  d-flex" routerLinkActive="router-link-active">
+                <span class=""> Landing-page</span>
+                <span>
+                    <mat-icon class="text-white ">logout</mat-icon>
 
-                  </span>
-        </a></li>
+                </span>
+            </a>
+        </li>
     </ul>
+    <div class="arrow-right">
+        <i [class]="expnadSideBar ? 'fa-solid fa-circle-chevron-left fa-2x' : 'fa-solid fa-circle-chevron-right fa-2x'"
+            (click)="expnadSideBar = !expnadSideBar" (click)="onClick()"></i>
+    </div>
 </section>

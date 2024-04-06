@@ -4,6 +4,7 @@
   background-color: $bg-main;
   height: 100vh;
   padding: 1px;
+  position: relative;
   ul {
     margin: 5rem 0;
   }
@@ -15,5 +16,14 @@
   a {
     color: #fff;
     padding: 0.5rem;
+  }
+  .arrow-right {
+    position: absolute;
+    // width: 200px;
+    // height: 200px;
+    background-color: red;
+    // left: 175px;
+    // top: 50%;
+    // transform: translate(50%, -100%);
   }
 }

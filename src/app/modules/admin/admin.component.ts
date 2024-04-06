@@ -7,19 +7,22 @@ import { AuthService } from '../auth/auth/service/auth.service';
   styleUrls: ['./admin.component.scss']
 })
 export class AdminComponent implements OnInit {
- 
-constructor(private _auth:AuthService){
 
-}
+  constructor(private _auth: AuthService) {
 
-isRole=this._auth.isRole.value;
-
-  
-  ngOnInit(): void {
-    
   }
 
+  isRole = this._auth.isRole.value;
 
+
+  ngOnInit(): void {
+
+  }
+
+  handleEvent(data: any): void {
+    console.log('fromChild: ' + data);
+
+  }
 
 
 }
