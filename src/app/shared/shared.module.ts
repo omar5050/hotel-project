@@ -9,10 +9,14 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatTableModule } from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSelectModule} from '@angular/material/select';
+
 @NgModule({
   declarations: [
   ],
   imports: [
+    
+    MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
     MatInputModule,
@@ -28,6 +32,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 
   ],
   exports: [
+    MatSelectModule,
     MatPaginatorModule,
     MatTableModule,
     MatInputModule,
