@@ -7,10 +7,22 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
-import {MatSelectModule} from '@angular/material/select';@NgModule({
+import { DeleteComponent } from './delete/delete.component';
+import { MatTableModule } from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
+import {MatSelectModule} from '@angular/material/select';
+
+
+@NgModule({
   declarations: [
+  
+    DeleteComponent
   ],
   imports: [
+    
+    MatSelectModule,
+    MatTableModule,
+    MatPaginatorModule,
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
@@ -24,6 +36,9 @@ import {MatSelectModule} from '@angular/material/select';@NgModule({
 
   ],
   exports: [
+    MatSelectModule,
+    MatPaginatorModule,
+    MatTableModule,
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
@@ -35,5 +50,6 @@ import {MatSelectModule} from '@angular/material/select';@NgModule({
     MatSelectModule
 
   ]
+ 
 })
 export class SharedModule { }

@@ -1,0 +1,101 @@
+<section id="AddEditFacilities" class="rounded-3 mx-1  ">
+    <div class="container">
+        <div class="container">
+
+        </div>
+        <div class="row  d-flex justify-content-between">
+            <div class="col-9">
+                <h3 class="ps-3 mt-5 mb-4">Add Ads</h3>
+            </div>
+            <div class="col-3 pt-5">
+                <a (click)="onNoClick()" class="d-block text-end ">
+                    <i class="fa-regular fa-circle-xmark text-danger fa-2x"></i>
+                </a>
+            </div>
+          
+        </div>
+    
+    </div>
+ 
+<div class="container mt-3">
+    <div class="row">
+        <div class="col-12">
+            <form [formGroup]="form">
+
+            <mat-dialog-content class="mb-5">
+
+
+
+
+
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Select an option</mat-label>
+                    <mat-select [(value)]="roomKey" formControlName="room">
+                      <mat-option>None</mat-option>
+                  <mat-option *ngFor="let item of tableDataRoom" [value]="item._id">{{item.roomNumber}}</mat-option>
+ 
+                     
+                    </mat-select>
+                  </mat-form-field>
+                  
+              
+              
+
+
+
+
+
+   
+                <div class="input-group mb-3 ">
+                 
+                  <input
+                    [(ngModel)]="discountkey"
+                    formControlName="discount"
+                    type="number"
+                    class="form-control bordr border-1 border-black"
+                    placeholder="discount"
+                    aria-label="Username"
+                    aria-describedby="basic-addon1"
+                  />
+                </div>
+
+
+
+
+
+                <mat-form-field class="w-100" appearance="outline">
+                    <mat-label>Select an option</mat-label>
+                    <mat-select [(value)]="isActiveKey" formControlName="isActive">
+                      <mat-option>None</mat-option>
+                      <mat-option [value]="true">true</mat-option>
+                      <mat-option [value]="false">false</mat-option>
+
+
+                     
+                    </mat-select>
+                  </mat-form-field>
+                  
+
+
+
+                  <!-- [mat-dialog-close]="roomKey" -->
+              </mat-dialog-content>
+           
+              <hr>
+              <mat-dialog-actions class="d-flex justify-content-end" >
+                  
+                      <button  mat-button class="main fs-5 btn-second-bg-color px-3 text-white" 
+                      [mat-dialog-close]="form.value"    cdkFocusInitial>
+                          Save
+                        </button>
+            
+              </mat-dialog-actions>
+            </form>
+            </div>
+ 
+    </div>
+ 
+</div>
+    
+   
+  </section>

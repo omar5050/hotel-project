@@ -1,11 +1,13 @@
-@import "../../../../../assets/styles/layout";
+// @import "../../../../../assets/styles/layout";
 
 .sidebar {
-  background-color: $bg-main;
+  background-color: #3252df;
   height: 100vh;
   padding: 1px;
+  position: fixed;
   ul {
     margin: 5rem 0;
+    list-style: none;
   }
   li {
     width: 100%;
@@ -15,5 +17,11 @@
   a {
     color: #fff;
     padding: 0.5rem;
+    text-decoration: none;
   }
 }
+
+// .bg-layer-active {
+//   background-color: rgba(26, 27, 30, 0.17);
+//   color: rgba(255, 255, 255, 0.17);
+// }
