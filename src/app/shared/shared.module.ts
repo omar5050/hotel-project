@@ -7,13 +7,14 @@ import { NgxDropzoneModule } from 'ngx-dropzone';
 import { MatIconModule } from '@angular/material/icon';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatMenuModule } from '@angular/material/menu';
-
-
+import { MatTableModule } from '@angular/material/table';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
   ],
   imports: [
-  
+    MatTableModule,
+    MatPaginatorModule,
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
@@ -27,7 +28,8 @@ import { MatMenuModule } from '@angular/material/menu';
 
   ],
   exports: [
-  
+    MatPaginatorModule,
+    MatTableModule,
     MatInputModule,
     MatFormFieldModule,
     FormsModule,
