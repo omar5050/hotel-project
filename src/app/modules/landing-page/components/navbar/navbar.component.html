@@ -135,6 +135,15 @@
                     logout
                     </span>
                 </button>
+                
+                <button mat-menu-item routerLink="/admin" 
+                *ngIf="isAdmin =='admin'">
+                  <mat-icon color="primary">logout</mat-icon>
+                  
+                  <span class="material-symbols-outlined">
+                    dashboard                    
+                  </span>
+                </button>
               </mat-menu>
               
          </div>

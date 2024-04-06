@@ -32,13 +32,12 @@
                     <mat-label>Select an option</mat-label>
                     <mat-select [(value)]="roomKey" formControlName="room">
                       <mat-option>None</mat-option>
-                  <mat-option *ngFor="let item of tableDataRoom" [value]="item._id">{{item.roomNumber}}{{item._id}}</mat-option>
+                  <mat-option *ngFor="let item of tableDataRoom" [value]="item._id">{{item.roomNumber}}</mat-option>
  
                      
                     </mat-select>
                   </mat-form-field>
                   
-                  <p>You selected: {{roomKey}}</p>
               
               
 
@@ -47,13 +46,13 @@
 
 
    
-                <div class="input-group mb-3">
+                <div class="input-group mb-3 ">
                  
                   <input
                     [(ngModel)]="discountkey"
                     formControlName="discount"
                     type="number"
-                    class="form-control pe-5 "
+                    class="form-control bordr border-1 border-black"
                     placeholder="discount"
                     aria-label="Username"
                     aria-describedby="basic-addon1"
@@ -76,7 +75,6 @@
                     </mat-select>
                   </mat-form-field>
                   
-                  <p>You selected: {{isActiveKey}}</p>
 
 
 

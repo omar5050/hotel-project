@@ -17,7 +17,7 @@ export class AddEditAdsComponent implements OnInit {
   totalCountRoom:any;
 
 
-  tableDataAds:Room[] | any[]=[];
+  tableDataAds: any=[];
   totalCountAds:any;
 
    
@@ -39,8 +39,7 @@ body:any={
     @Inject(MAT_DIALOG_DATA) public data: any,
 
   ) {
-    console.log(this.roomKey,this.discountkey,this.isActiveKey);
-    
+   
   }
 
   onNoClick(): void {
@@ -48,8 +47,8 @@ body:any={
   }
 
 ngOnInit(): void {
+ 
 this.onGetAllRooms();
-this.onGetAllAds();
 
 }
 form=new FormGroup({
@@ -67,11 +66,12 @@ onGetAllRooms(){
     this.totalCountRoom=res.data.totalCountRoom
 
     this.tableDataRoom=res.data.rooms;
+    this.onGetAllAds();
+   
   
-  
-      console.log(this.tableDataRoom);
+      // console.log(this.tableDataRoom);
      
-      console.log(this.totalCountRoom);
+      // console.log(this.totalCountRoom);
       
 
     },
@@ -95,12 +95,13 @@ onGetAllAds(){
     this.totalCountAds=res.data.totalCount
 
     this.tableDataAds=res.data.ads;
+    // this.getTable();
   
-  
-      console.log(this.tableDataAds);
+      // console.log(this.tableDataAds);
      
-      console.log(this.totalCountAds);
+      // console.log(this.totalCountAds);
       
+
 
       
     },
@@ -112,11 +113,40 @@ onGetAllAds(){
   
   
   
-  }
+  
+}
 
 
 
+// getTable(){
+//   // console.log(this.tableDataRoom);
+//   // console.log(this.tableDataAds);
+//   let res:any[]=[];
+//   for(let i=0 ;i<this.tableDataAds.length;i++){
+
+// console.log('/n/n',this.tableDataAds[i].room.roomNumber
+// );
+
+//     for(let j=0;j<this.tableDataRoom.length;j++){
+//     if(this.tableDataAds[i].room.roomNumber!=this.tableDataRoom[j].roomNumber)
+//     res.push(this.tableDataAds[i])
+//     }
+
+
+//   }
+//   console.log(res);
+  
+
+
+// for(let j=0;j<this.tableDataRoom.length;j++){
 
 
 
+//   if(this.tableDataAds[j].room.roomNumber!=this.tableDataRoom[j].roomNumber)
+//   res.push(this.tableDataAds[j])
+//   }
+
+
+
+// }
 }

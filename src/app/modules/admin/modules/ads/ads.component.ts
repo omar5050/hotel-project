@@ -119,6 +119,7 @@ export class AdsComponent implements OnInit{
    openaddDialog(): void {
    
     const dialogRef = this.dialog.open(AddEditAdsComponent, {
+    
       data: {},
     });
 
