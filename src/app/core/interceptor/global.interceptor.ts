@@ -22,13 +22,9 @@ export class GlobalInterceptor implements HttpInterceptor {
     let Headers = request.clone({
       url: baseUrl + request.url,
       setHeaders: {
-        // 'Authorization': `Bearer ${token}`
-        'Authorization': `${token}`
-
+        'Authorization': ` ${token}`
       }
     })
-
-
 
     return next.handle(Headers);
   }
