@@ -25,3 +25,18 @@
 //   background-color: rgba(26, 27, 30, 0.17);
 //   color: rgba(255, 255, 255, 0.17);
 // }
+
+.arrows {
+  background-color:#3252df;
+  position: absolute;
+  right: -33px;
+  top: 25px;
+  width: fit-content;
+  cursor: pointer;
+  border-radius: 0px 70px 70px 0px;
+  i {
+    width: 25px;
+    color: #fff;
+    font-weight: 900;
+  }
+}

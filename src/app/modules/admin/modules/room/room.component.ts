@@ -62,7 +62,7 @@ export class RoomComponent implements OnInit {
     }
     this._RoomService.getAllRooms(paramData).subscribe({
       next: (res) => {
-        // console.log(res);
+        console.log(res);
         this.tableResponse = res;
         this.tableData = res.data.rooms;
       }
