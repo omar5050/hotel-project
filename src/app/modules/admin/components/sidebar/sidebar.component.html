@@ -1,6 +1,10 @@
-<section class="sidebar">
+<section class="sidebar  vh-100 ">
+    <div class="text-center mt-5">
+        <h4 class="text-white"> Stay cation.</h4>
+        <hr class="text-white w-75 ms-4">
+    </div>
     <ul>
-        <li *ngFor=" let item of Menu " routerLinkActive="bg-layer-active">
+        <li *ngFor=" let item of Menu "  routerLinkActive="bg-main-transparent  active-link">
             <a [routerLink]="item.link">
                 <!-- <span class="line-style">|</span> -->
                 <span class="mx-2 "><i [class]="item.icon"></i></span>
@@ -8,14 +12,15 @@
             </a>
         </li>
 
-        <li>
-            <a  routerLink="/landing-page" class="  d-flex"
+        <li class="mt-5">
+            <a  routerLink="/landing-page" class=" mt-5  d-flex"
              routerLinkActive="router-link-active" >
+             <span class="mx-2">
+                <mat-icon class="text-white">logout</mat-icon>
+            
+                              </span>
           <span class=""> Landing-page</span> 
-             <span>
-    <mat-icon class="text-white ">logout</mat-icon>
-
-                  </span>
+            
         </a></li>
     </ul>
 </section>
