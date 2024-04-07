@@ -9,19 +9,19 @@
         <li *ngFor=" let item of Menu " routerLinkActive="bg-layer-active">
             <a [routerLink]="item.link">
                 <!-- <span class="line-style">|</span> -->
-                <span  [class]="isOpened?'text-center':''" class="mx-2 "><i [class]="item.icon"></i></span>
+                <span [class]="isOpened?'text-center':''" class="mx-2 "><i [class]="item.icon"></i></span>
                 <span class="text-capitalize " *ngIf="isOpened">{{item.text}}</span>
             </a>
         </li>
 
-        <li>
-            <a  routerLink="/landing-page" class="  d-flex"
-             routerLinkActive="router-link-active" >
-          <span class=""> Landing-page</span> 
-             <span>
-    <mat-icon class="text-white ">logout</mat-icon>
+        <!-- <li>
+            <a routerLink="/landing-page" class="  d-flex" routerLinkActive="router-link-active">
+                <span class=""> Landing-page</span>
+                <span>
+                    <mat-icon class="text-white ">logout</mat-icon>
 
-                  </span>
-        </a></li>
+                </span>
+            </a>
+        </li> -->
     </ul>
 </section>
