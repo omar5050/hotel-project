@@ -1,7 +1,6 @@
-
 // Custom Theming for Angular Material
 // For more information: https://material.angular.io/guide/theming
-@use '@angular/material' as mat;
+@use "@angular/material" as mat;
 // Plus imports for other components in your app.
 
 // Include the common styles for Angular Material. We include this here so that you only
@@ -20,13 +19,15 @@ $hotel-project-warn: mat.define-palette(mat.$red-palette);
 
 // Create the theme object. A theme consists of configurations for individual
 // theming systems such as "color" or "typography".
-$hotel-project-theme: mat.define-light-theme((
-  color: (
-    primary: $hotel-project-primary,
-    accent: $hotel-project-accent,
-    warn: $hotel-project-warn,
+$hotel-project-theme: mat.define-light-theme(
+  (
+    color: (
+      primary: $hotel-project-primary,
+      accent: $hotel-project-accent,
+      warn: $hotel-project-warn,
+    ),
   )
-));
+);
 
 // Include theme styles for core and each component used in your app.
 // Alternatively, you can import and @include the theme mixins for each component
@@ -35,5 +36,31 @@ $hotel-project-theme: mat.define-light-theme((
 
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+[_nghost-ng-c2040221903] {
+  width: 200px !important;
+  height: 150px !important;
+  margin: 0 auto 1rem auto;
+  color: #fff;
+  background-color: transparent !important;
+  cursor: pointer;
+  color: #fff !important;
+  border: 3px dashed rgb(33, 37, 41) !important;
+  border-radius: none !important;
+  font-size: 16px !important;
+  overflow-x: unset !important;
+}
+[_nghost-ng-c3821590306] img[_ngcontent-ng-c3821590306] {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover;
+  // border-radius: 50% !important;
+}
