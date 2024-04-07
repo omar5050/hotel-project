@@ -7,11 +7,16 @@ import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
   styleUrls: ['./add-edit-facility.component.scss']
 })
 export class AddEditFacilityComponent {
- 
+key='';
   constructor(
     public dialogRef: MatDialogRef<AddEditFacilityComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any,
-  ) {}
+  ) {
+    console.log(data);
+    if(data.action=='edit'){
+      this.key=data.item.name;
+    }
+  }
 
   onNoClick(): void {
     this.dialogRef.close();

@@ -7,12 +7,11 @@
             <p>You can check all details</p>
         </div>
         <div class="col-lg-6 col-md-6 col-sm-12 text-end">
-            <button (click)="openAddFacilitiesDialog(addData)" class="px-5 py-2 btn-second-bg-color">Add New Facility</button>
+            <button (click)="openAddFacilitiesDialog('','add')" class="px-5 py-2 btn-second-bg-color">Add New Facility</button>
         </div>
        </div>
     </div>
-    
-        <div class="container" *ngIf="tableData.length>0">
+        <div  class="container" *ngIf="tableData.length> 0 " >
             <div class="row ps-4 pe-2">
                 <table class="table   table-striped mt-5 ps-4 ">
                     
@@ -42,15 +41,18 @@
                             [matMenuTriggerFor]="menu"
                             aria-label="Example icon-button   with a menu"
                           >
-                            <mat-icon class="bg-white  button-mat-menu" >more_horiz</mat-icon>
+                            <mat-icon class="bg-white  button-mat-menu" >
+                              more_horiz</mat-icon>
                           </button>
                           <mat-menu class="bg-white button-menu button-mat-menu" #menu="matMenu">
                        
-                            <button (click)="openEditDialog(item)" class="button-mat-icon button-menu button-mat-menu" mat-menu-item>
+                            <button (click)="openAddFacilitiesDialog(item,'edit')"  class="button-mat-icon button-menu button-mat-menu" mat-menu-item>
                               <mat-icon class="bg-white button-menu button-mat-menu"  >edit-square</mat-icon>
                               <span>edit</span>
                             </button>
-                            <button (click)="openDeleteDialog(item)" 
+ 
+  
+                                  <button  (click)="openDeleteDialog(item)"
                              class="button-mat-icon bg-white button-menu button-mat-menu" mat-menu-item>
                               <mat-icon  class="bg-white button-mat-menu button-menu"
                              >delete</mat-icon>
@@ -61,15 +63,7 @@
                       </tr>
                     </tbody>
                   </table>
-                  <!-- <mat-paginator class="my-5" 
-                  [length]="tableResponse?.totalNumberOfRecords" 
-                   [pageSize]="tableResponse?.pageSize" 
-                   [pageIndex]="tableResponse?.pageNumber"
-                   [pageSizeOptions]="pageSizeOptions"
-                   (page)="handlePageEvent($event)"
-                   aria-label="Select page">
-                  </mat-paginator> -->
-                 <!--  undefined ==> totalNumberOfRecords  -->
+                
             </div>
            
           </div>

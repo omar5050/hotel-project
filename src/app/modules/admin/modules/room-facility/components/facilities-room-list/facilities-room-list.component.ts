@@ -47,56 +47,39 @@ export class FacilitiesRoomListComponent {
 
   
 
-   openAddFacilitiesDialog(name:any) {
+   openAddFacilitiesDialog(CategoryData: any,name:any) {
      const dialogRef = this.dialog.open(AddEditFacilityComponent, {
-      data: {data:name},
+      data: {item:CategoryData,action:name},
     
     });
 
     dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
+      console.log('The dialog was closed',name);
       console.log(result);
-      //  let x = {name:result}
-      if (result) {
+    if(name=='add'){
+      if (result !=undefined) {
         this.addFacilities(result);
       }
-    });
-  }
-
-  openEditDialog(CategoryData: any) {
-    console.log(CategoryData);
-
-    const dialogRef = this.dialog.open(AddEditFacilityComponent, {
-      data: CategoryData,
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      console.log(result);
-      //  let x = {name:result}
-      if (result) {
-        this.editFacilities(result);
+    
       }
+
+
+      if(name=='edit'){
+        console.log(CategoryData._id);
+        
+        if (result) {
+          this.editFacilities(result,CategoryData._id);
+        }
+      
+        }
+
     });
   }
-  
-  openDeleteDialog(FacilityData: any) {
-    console.log(FacilityData);
 
-    const dialogRef = this.dialog.open(DeleteComponent, {
-      data: {data:FacilityData},
-    });
-
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log('The dialog was closed');
-      console.log(result);
-      //  let x = {name:result}
-      if (result) {
-        this.deleteCategory(result);
-      }
-    });
-  }
   addFacilities(FacilityName: string) {
+  console.log(FacilityName);
+  
+    
     this._FacilitiesService.onAddFacility(FacilityName).subscribe({
       next: (res) => {
         console.log(res);
@@ -116,8 +99,46 @@ export class FacilitiesRoomListComponent {
     });
   }
 
-  editFacilities(categoryItem: any) {
-    this._FacilitiesService.onEditFacilities(categoryItem).subscribe({
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+  openDeleteDialog(FacilityData: any) {
+    console.log(FacilityData);
+
+    const dialogRef = this.dialog.open(DeleteComponent, {
+      data: {data:FacilityData},
+    });
+
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log('The dialog was closed');
+      console.log(result);
+      //  let x = {name:result}
+      if (result) {
+        this.deleteCategory(result);
+      }
+    });
+  }
+ 
+
+  editFacilities(categoryItem: any,id:number) {
+    console.log(categoryItem,id);
+    
+    this._FacilitiesService.onEditFacilities(categoryItem,id).subscribe({
       next: (res) => {
         console.log(res);
         this.toastr.success('Category', ' Updated Category Success');
