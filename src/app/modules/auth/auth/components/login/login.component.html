@@ -29,16 +29,23 @@
 
                   <label for="password">Password</label>
                   <div class="position-relative mt-1">
-                    <input type="password" formControlName="password" id="password" class="form-control mb-1 ">
-                    <!-- <span class="eye"><i class="fa-regular fa-eye"></i></span> -->
-                    <div *ngIf="loginForm.controls['password']?.errors && loginForm.controls['password']?.touched"
-                      class="w-100 ">
-                      <p class="text-danger" *ngIf="loginForm.controls['password']?.errors?.['required']">
-                        Password is required</p>
-                      <p class="text-danger" *ngIf="loginForm.controls['password']?.errors?.['pattern']">
-                        Password must be contain special character</p>
+                    <input [type]="!showPass ? 'password' : 'text'" formControlName="password" id="password"
+                      class="form-control mb-1 ">
+                    <div (click)="showPass = !showPass">
+                      <span class="eye"><i
+                          [class]="!showPass ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'"></i></span>
+
                     </div>
+
                   </div>
+                </div>
+
+                <div *ngIf="loginForm.controls['password']?.errors && loginForm.controls['password']?.touched"
+                  class="w-100 ">
+                  <p class="text-danger" *ngIf="loginForm.controls['password']?.errors?.['required']">
+                    Password is required</p>
+                  <p class="text-danger" *ngIf="loginForm.controls['password']?.errors?.['pattern']">
+                    Password must be contain special character</p>
                 </div>
 
                 <div class="w-75 text-end pe-2 pt-1 pb-4 ">
@@ -51,25 +58,24 @@
 
 
 
-                    </form>
-                </div>
-            </div></div></div>
-            <div class="col-lg-6 my-1 ">
-              <div class="position-relative">
-                <img
-                  src="../../../../../../assets/images/login-img.png"
-                  width="100%"
-                  alt=""
-                />
-                <div class="layer">
-                  <h1>Sign in to Roamhome</h1>
-                  <p>Homes as unique as you.</p>
-                </div></div>
-              </div>
-        
+              </form>
+            </div>
+          </div>
         </div>
+      </div>
+      <div class="col-lg-6 my-1 ">
+        <div class="position-relative">
+          <img src="../../../../../../assets/images/login-img.png" width="100%" alt="" />
+          <div class="layer">
+            <h1>Sign in to Roamhome</h1>
+            <p>Homes as unique as you.</p>
+          </div>
+        </div>
+      </div>
+
     </div>
-   
-    
+  </div>
+
+
 
 </section>
