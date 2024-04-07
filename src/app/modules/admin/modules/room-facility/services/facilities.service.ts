@@ -19,8 +19,10 @@ export class FacilitiesService {
   onDeleteFacilities(id: number): Observable<any> {
     return this._HttpClient.delete(`admin/room-facilities//${id}`);
   }
-  onEditFacilities(data: string): Observable<any> {
-    return this._HttpClient.put('admin/room-facilities', { name: data });
+  onEditFacilities(data: string,id:number): Observable<any> {
+    console.log(data,id);
+    
+    return this._HttpClient.put(`admin/room-facilities/${id}`, {name:data});
 
 
   }
