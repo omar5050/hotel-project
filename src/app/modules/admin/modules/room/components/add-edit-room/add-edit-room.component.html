@@ -36,7 +36,7 @@
                 </div>
             </div>
             <div class="col-9 margin justify-content-center">
-                <div>
+                <!-- <div>
 
                     <ngx-dropzone class="user-avatar" (change)="onSelect($event)" [multiple]="true">
                         <ngx-dropzone-label *ngIf="!previewImg">
@@ -52,8 +52,46 @@
 
 
                    
-                </div>
+                </div> -->
 
+
+
+
+
+
+
+
+
+
+
+<!-- --------------------------------------------- -->
+
+
+
+
+<ngx-dropzone (change)="onSelect($event)">
+	<ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+	
+
+
+        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"  [removable]="true" (removed)="onRemove(f)">
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          </ngx-dropzone-image-preview>
+
+
+
+</ngx-dropzone>
+
+
+
+
+
+
+
+
+
+
+<!-- ----------------------------------------------- -->
 
             </div>
         </div>

@@ -13,11 +13,16 @@ export class AddEditRoomComponent {
 
   facilityId:number=0;
   facilities:any[]=[];
+
   imgSrc: any;
   files: File[] = [];
   files2: File[] = [];
+
+
+  imgsList:any[]=[];
   roomImgValue: any;
   previewImg: any[]=[];
+
   baseUrl: string = 'https://upskilling-egypt.com:3000/api/v0/';
   isLoading: boolean = false;
   tableResponse: any;
@@ -42,6 +47,15 @@ export class AddEditRoomComponent {
       this.getRoomById(this.viewRoomId);
     }
   }
+
+
+
+
+
+
+
+
+
 
   fillForm(res: any) {
     this.registerRoomForm.patchValue({
@@ -76,35 +90,51 @@ export class AddEditRoomComponent {
     imgs: new FormControl(null),
   })
   
+
+
+
+
+
+
+
+
+
+
   onSubmit(data: FormGroup) {
     console.log(data);
+    console.log(this.imgsList);
     
     this.isLoading = true;
     let roomFormData = new FormData()
-    // for (let img = 0; img < this.previewImg.length; img++) {
-    //   console.log(img);
-      
-    // roomFormData.append('imgs', this.previewImg)}
-    roomFormData.append('roomNumber', data.value.roomNumber)
-    roomFormData.append('price', data.value.price)
-    roomFormData.append('capacity', data.value.capacity)
-    roomFormData.append('discount', data.value.discount)
+   
+  
+    roomFormData.append('roomNumber', data.value.roomNumber);
+    roomFormData.append('price', data.value.price);
+    roomFormData.append('capacity', data.value.capacity);
+    roomFormData.append('discount', data.value.discount);
     for (let j = 0; j < data.value.facilities.length; j++) {
       roomFormData.append('facilities', data.value.facilities[j]);
     }
+    console.log(this.imgSrc);
+// roomFormData.append('imgs',this.imgSrc);
+for (const item of this.imgsList) {
+  console.log(item);
+  
+  roomFormData.append('imgs',item);
 
-    if (this.previewImg) {
-      console.log(this.previewImg);
-      
-      roomFormData.append('imgs', this.previewImg[0])
-    } else {
-      roomFormData.append('imgs', this.roomImgValue)
+}
 
-    }
 
+  
+
+
+   
+    
     console.log(data.value);
 
-    console.log(roomFormData);
+  
+   console.log(roomFormData.getAll('imgs'));
+   
 
     if (this.viewRoomId) {
       console.log(roomFormData);
@@ -118,6 +148,46 @@ export class AddEditRoomComponent {
 
     
   }
+
+
+
+
+
+
+  onSelect(event:any) {
+    console.log(event);
+    this.imgSrc=event.addedFiles[0];
+    console.log(this.imgSrc);
+    this.imgsList.push(this.imgSrc)
+    this.files.push(...event.addedFiles);
+  }
+  
+  
+  
+  
+  
+  onRemove(event:any) {
+    console.log(event);
+    this.files.splice(this.files.indexOf(event), 1);
+  }
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   editeRoom(roomFormData: any) {
     this._RoomService.onEditRoom(this.viewRoomId, roomFormData).subscribe({
@@ -154,26 +224,41 @@ export class AddEditRoomComponent {
     })
   }
 
-  onSelect(event: any) {
-    console.log(event);
-    const selectedFile = event;
-    // this.imgSrc = event.addedFiles;
-    console.log(this.previewImg);
-    this.files.push(...event.addedFiles);
-    // this.files2.push(...event.addedFiles);
-    // this.previewImg = event.addedFiles[0];
-    // this.previewImg = event.addedFiles[1];
-    for (let index = 0; index < event.addedFiles.length; index++) {
-      this.previewImg += event.addedFiles[index]
-    }
-    console.log(this.previewImg);
-    
-  }
+// --------------------------
 
-  onRemove(event:any) {
-    console.log(event);
-    this.files.splice(this.files.indexOf(event), 1);
-  }
+
+
+
+
+
+
+
+
+
+// -----------------------------------------
+  // onSelect(event: any) {
+  //   console.log(event);
+  //   const selectedFile = event;
+  //   // this.imgSrc = event.addedFiles;
+  //   console.log(this.previewImg);
+  //   this.files.push(...event.addedFiles);
+  //   // this.files2.push(...event.addedFiles);
+  //   // this.previewImg = event.addedFiles[0];
+  //   // this.previewImg = event.addedFiles[1];
+  //   for (let index = 0; index < event.addedFiles.length; index++) {
+  //     this.previewImg += event.addedFiles[index]
+  //   }
+  //   console.log(this.previewImg);
+    
+  // }
+
+  // onRemove(event:any) {
+  //   console.log(event);
+  //   this.files.splice(this.files.indexOf(event), 1);
+  // }
+
+
+  // --------------------------------
 
   getRoomById(id: string) {
     this._RoomService.getRoomById(id).subscribe({
