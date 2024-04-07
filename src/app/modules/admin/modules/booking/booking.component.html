@@ -1,1 +1,96 @@
-<p>booking works!</p>
+
+
+
+
+<section>
+<section class="titel  px-4 py-2">
+
+<h3>Booking Table Details
+</h3>
+<p>You can check all detail
+</p>
+
+</section>
+
+<div class="table-container mx-5 text-center">
+    
+    <table border="1" class="table text-center  table-striped my-3 table-head">
+        <thead class="text-capitalize">
+            <th>index</th>
+            <th>room Number</th>
+            <th>User name</th>
+            <th>Price</th>
+            <th>status</th>
+            <th>Start Date</th>
+            <th>up dated At</th>
+            <th>Actions</th>
+
+        
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of tableData let i=index">
+                <td>{{i}}</td>
+               
+                <td>{{item.room.roomNumber}}</td>
+                <td>{{item.user.userName}}</td>
+                <td>{{item.totalPrice}}</td>
+                <td>{{item.status}}</td>
+                <td>{{item.createdAt |date}}</td>
+                <td>{{item.updatedAt | date}}</td>
+             
+                <td>
+                    <button class="btn"color="primary" mat-icon-button [matMenuTriggerFor]="menu" 
+                    aria-label="Example icon-button with a menu">
+                        <mat-icon color="primary">more_vert</mat-icon>
+                    </button>
+                    <mat-menu #menu="matMenu">
+                        <button mat-menu-item (click)="openDeletDialog(item,'view')">
+                            <mat-icon color="primary">visibility</mat-icon>
+                            <span>View</span>
+                        </button>
+                       
+                        <button mat-menu-item (click)="openDeletDialog(item,'delet')">
+                            <mat-icon color="primary">delete</mat-icon>
+                            <span>Delete</span>
+                        </button>
+                    </mat-menu>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+
+
+
+    </div>
+
+
+<mat-paginator [length]="totalCount"
+[pageSize]="pageSize"
+[pageIndex]="pageIndex"
+[pageSizeOptions]="pageSizeOptions"
+(page)="handlePageEvent($event)"
+aria-label="Select page">
+</mat-paginator>
+
+
+
+<section class="text-center" *ngIf="tableData.length==0">
+    <img src="../../../../../assets/images/no-data.avif"  alt="">
+</section>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+
+
+
+
