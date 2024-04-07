@@ -27,7 +27,7 @@ export class RoomService {
   }
 
   onEditRoom(id:string,data: FormData){
-    return this._HttpClient.put('admin/rooms', data)
+    return this._HttpClient.put(`admin/rooms/${id}`, data)
   }
 
   onDeleteRoom(id: number): Observable<any> {

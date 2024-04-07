@@ -1,27 +1,27 @@
 <section>
     <form class="auth-form" [formGroup]="registerRoomForm" (ngSubmit)="onSubmit(registerRoomForm)">
-        <div class="container">
-            <div class="row py-3 mt-5">
-                <div class="col-8 m-auto">
+        <div class="container mt-5 margin">
+            <div class="row py-3 margin justify-content-center">
+                <div class="col-12">
                     <input type="text" class="form-control " formControlName="roomNumber" id="room"
                         placeholder="Room Number">
                 </div>
 
             </div>
             <div class="row py-3 justify-content-center">
-                <div class="col-4">
+                <div class="col-5">
                     <input type="number" class="form-control " formControlName="price" id="Price" placeholder="Price">
                 </div>
-                <div class="col-4">
+                <div class="col-5">
                     <input type="text" class="form-control " formControlName="capacity" id="Capacity" placeholder="Capacity">
                 </div>
             </div>
             <div class="row py-3 justify-content-center">
-                <div class="col-4">
+                <div class="col-5">
                     <input type="text" class="form-control " formControlName="discount" id="Discount" placeholder="Discount">
                 </div>
-                <div class="col-4">
-                    <mat-form-field class="w-100">
+                <div class="col-5">
+                    <mat-form-field class="w-75">
                         <mat-label>Choose Facility</mat-label>
                         <mat-select formControlName="facilities" multiple (selectionChange)="getAllFacilities()">
                             <mat-option [value]="0">All</mat-option>
@@ -35,15 +35,15 @@
                     </mat-form-field>
                 </div>
             </div>
-            <div>
-                <div class="col-8 mx-auto">
+            <div class="col-9 margin justify-content-center">
+                <!-- <div>
 
                     <ngx-dropzone class="user-avatar" (change)="onSelect($event)" [multiple]="true">
-                        <ngx-dropzone-label *ngIf="!imgSrc">
+                        <ngx-dropzone-label *ngIf="!previewImg">
                             <i class="fa-solid fa-arrow-up-from-bracket d-block"></i> Upload
                         </ngx-dropzone-label>
-                        <ngx-dropzone-label class="m-0" *ngIf="imgSrc">
-                            <img [src]="imgSrc" class="w-50" alt="">
+                        <ngx-dropzone-label class="m-0" *ngIf="previewImg">
+                            <img [src]="previewImg" class="w-50" alt="">
                         </ngx-dropzone-label>
                         <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview"
                             *ngFor="let f of files" [removable]="true" [file]="f" (removed)="onRemove(f)">
@@ -52,8 +52,46 @@
 
 
                    
-                </div>
+                </div> -->
 
+
+
+
+
+
+
+
+
+
+
+<!-- --------------------------------------------- -->
+
+
+
+
+<ngx-dropzone (change)="onSelect($event)">
+	<ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
+	
+
+
+        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"  [removable]="true" (removed)="onRemove(f)">
+            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+          </ngx-dropzone-image-preview>
+
+
+
+</ngx-dropzone>
+
+
+
+
+
+
+
+
+
+
+<!-- ----------------------------------------------- -->
 
             </div>
         </div>
