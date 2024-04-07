@@ -2,16 +2,16 @@
 
 
 .table-head{
-    background-color: #e2e5eb;
-    height: 50px;
-    border-radius: 10px !important;
-    
-     
-  
+    background-color: rgba(248, 249, 251, 1);
+    height: 40px;
+
+   
 }
-.table{
-// border-radius: 20px !important;
+.bg-head{
+      background-color: #e2e5eb;
+      border-radius: 10px !important;
 }
+
 
 tbody, td, tfoot, thead, tr {
     padding-bottom: 15px;
@@ -26,7 +26,9 @@ th{
     padding-left:10px ;
 
 }
-    
+table-striped[_ngcontent-ng-c851445362] > tbody[_ngcontent-ng-c851445362] > tr[_ngcontent-ng-c851445362]:nth-of-type(even) > *[_ngcontent-ng-c851445362] {
+    background-color: rgb(56 78 122 / 55%) !important;
+}
     
 
 .table-striped>tbody>tr:nth-of-type(odd)>* {
@@ -37,7 +39,7 @@ th{
     --bs-table-bg-type: #fff !important;
 }
 .table-striped>tbody>tr:nth-of-type(even)>* {
-    background-color: #e2e5eb50;
+    background-color: #e2e5eb18 !important;
 }
 // .imageTable{
 //     width: 50px;
@@ -55,9 +57,7 @@ th{
         color: black;
     
     }
-    .button-mat-menu:hover{
-        background-color: red;
-    }
+  
     .button-mat-menu:active{
         background-color: rgb(48, 16, 16);
     }
@@ -65,14 +65,18 @@ th{
         color:$bg-main;
     }
    
+    .span-color{
+        color: rgba(31, 38, 62, 1);
+    }
+
+ .bg-button{
+    background-color: transparent;
+ }
 
 
-span[_ngcontent-ng-c417407546] {
-    color:rgba(31, 38, 62, 1);
-    ;
-}
+
 .mat-mdc-menu-item .mat-icon-no-color, .mat-mdc-menu-item .mat-mdc-menu-submenu-icon {
-    color: rgba(32, 63, 199, 1);
+   color:  rgba(32, 63, 199, 1);
 }
 
 
