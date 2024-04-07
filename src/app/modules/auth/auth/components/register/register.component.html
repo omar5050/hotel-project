@@ -1,9 +1,9 @@
 <section id="register">
     <div class="container-fluid auth-form">
         <div class="row mt-1">
-            <div class="col-lg-6   ps-5">
+            <div class="col-lg-6  ">
                 <h3><span>Stay</span>cation.</h3>
-                <div class="container mt-1 ms-5 pt-3 d-flex justify-content-center align-items-center">
+                <div class="container mt-1  d-flex justify-content-center align-items-center">
                     <div class="row">
                         <div class="col-12">
                             <h2 class="mb-1">Sign up</h2>
@@ -15,18 +15,15 @@
                         <div class="auth-form">
                             <form [formGroup]="registerForm" (ngSubmit)="onRegister(registerForm)">
 
-                                <div class=" d-flex justify-content-center ">
-                                    <ngx-dropzone [multiple]="false" no_multiple (change)="onSelect($event)">
-
+                                <div class=" d-flex justify-content-center my-2">
+                                    <ngx-dropzone [multiple]="false" no_multiple (change)="onSelect($event)"
+                                        class="bg-danger ">
                                         <ngx-dropzone-label>
-
-                                            <p>
+                                            <p class="text-muted ">
                                                 Choose Image Profile
                                             </p>
 
                                         </ngx-dropzone-label>
-
-
                                         <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview"
                                             *ngFor="let f of files" [file]="f" [removable]="true"
                                             (removed)="onRemove(f)">
@@ -37,126 +34,143 @@
                                     </ngx-dropzone>
                                 </div>
 
-                        <div class="mb-1">
-                            <label class="my-1" for="user-name">User Name</label>
-                            <input type="text" id="user-name"
-                            placeholder="Please type here ......" minlength="3" class="form-control "
-                             required formControlName="userName">
-                             <div *ngIf="registerForm.controls['userName']?.errors && registerForm.controls['userName']?.touched" 
-                             class="w-100 ">
-                               <p class="text-danger mb-0 mt-1" *ngIf="registerForm.controls['userName']?.errors?.['required']">
-                                 User Name is required</p>
-                               <p class="text-danger mb-0 mt-1" *ngIf="registerForm.controls['userName']?.errors?.['pattern']">
-                                 User Name must be greater than 3 letters</p>
-                             </div>
-                        </div>
-                     
-                        <div class="row group-input-design mb-1">
-                            <div class=" col-6 ">
-                                <label for="phone "  class="mb-1">Phone Number</label>
-                                <input type="tel" class="form-control me-0  w-100"
-                                placeholder="Please type here ......"
-                                 id="phone" formControlName="phoneNumber">
-                                 <div *ngIf="registerForm.controls['phoneNumber']?.errors && registerForm.controls['phoneNumber']?.touched" 
-                                 class="w-100 ">
-                                   <p class="text-danger mb-0" *ngIf="registerForm.controls['phoneNumber']?.errors?.['required']">
-                                     phoneNumber is required</p>
-                                   <p class="text-danger mb-0" *ngIf="registerForm.controls['phoneNumber']?.errors?.['pattern']">
-                                     phoneNumber must be number </p>
-                                 </div>
-                            </div>
-
-                            <div class="col-6 ">
-                                <label  class="mb-1" for="country">Country</label>
-                                <input type="txt" class="form-control me-0 w-100 " 
-                                 placeholder="Please type here ......" id="country" 
-                                 formControlName="country">
-                                <div *ngIf="registerForm.controls['country']?.errors && registerForm.controls['country']?.touched" 
-                                class="w-100 ">
-                                  <p class="text-danger mb-0" *ngIf="registerForm.controls['country']?.errors?.['required']">
-                                    Country is required</p>
-                            
-                            </div>
-                        </div>
-
-                        <div class="mb-1">
-                            <label  class="my-1" for="email">Email Address</label>
-                            <input type="email"
-                            placeholder="Please type here ......"
-                             class="form-control " id="email" 
-                            formControlName="email">
-                            <div *ngIf="registerForm.controls['email'].touched&&registerForm.controls['email'].errors"
-                            class=" w-100 ">
-                       <p class="text-danger mb-0" 
-                       *ngIf="registerForm.controls['email'].errors['email']">
-                       Email should be valid </p>
-                       <p class="text-danger mb-0"
-                        *ngIf="registerForm.controls['email'].errors['required']">
-                        Email is required</p>
-                      
-                   </div>
-                        </div>
-
-                        <div class="mb-1">
-                            <label  class="my-1" for="password">Password</label>
-                            
-                            <div class="position-relative ">
-                                <input type="password" 
-                                formControlName="password"
-                                placeholder="Please type here ......"
-                                 id="password" class="form-control " formControlName="password">
-                                <!-- <span class="eye"><i class="fa-regular fa-eye"></i></span> -->
-                                <div *ngIf="registerForm.controls['password']?.errors && registerForm.controls['password']?.touched" 
-                                class="w-100 ">
-                                  <p class="text-danger mb-0" *ngIf="registerForm.controls['password']?.errors?.['required']">
-                                    Password is required</p>
-                                  <p class="text-danger mb-0" *ngIf="registerForm.controls['password']?.errors?.['pattern']">
-                                    Password must be contain special character</p></div>
+                                <div class="mb-1">
+                                    <label class="my-1" for="user-name">User Name</label>
+                                    <input type="text" id="user-name" placeholder="Please type here ......"
+                                        minlength="3" class="form-control " required formControlName="userName">
+                                    <div *ngIf="registerForm.controls['userName']?.errors && registerForm.controls['userName']?.touched"
+                                        class="w-100 ">
+                                        <p class="text-danger mb-0 mt-1"
+                                            *ngIf="registerForm.controls['userName']?.errors?.['required']">
+                                            User Name is required</p>
+                                        <p class="text-danger mb-0 mt-1"
+                                            *ngIf="registerForm.controls['userName']?.errors?.['pattern']">
+                                            User Name must be greater than 3 letters</p>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="mb-1">
-                            <label  class="my-1" for="confirm-password">Confirm Password</label>
-                            <div class="position-relative ">
-                                <input type="password" id="confirm-password" 
-                                placeholder="Please type here ......"
-                                class="form-control "
-                                    formControlName="confirmPassword">
-                                <!-- <span class="eye"><i class="fa-regular fa-eye"></i></span> -->
-                                <div *ngIf="registerForm.controls['confirmPassword']?.errors && registerForm.controls['confirmPassword']?.touched" 
-                                class="w-100 ">
-                                  <p class="text-danger mb-0" *ngIf="registerForm.controls['confirmPassword']?.errors?.['required']">
-                                    Password is required</p>
-                                  <p class="text-danger mb-0" *ngIf="registerForm.controls['confirmPassword']?.errors?.['pattern']">
-                                    Password must be contain special character</p>
+                                <div class="row group-input-design mb-1">
+                                    <div class=" col-6">
+                                        <label for="phone " class="mb-1">Phone Number</label>
+                                        <input type="tel" class="form-control me-0 "
+                                            placeholder="Please type here ......" id="phone"
+                                            formControlName="phoneNumber">
+                                        <div *ngIf="registerForm.controls['phoneNumber']?.errors && registerForm.controls['phoneNumber']?.touched"
+                                            class="w-100 ">
+                                            <p class="text-danger mb-0"
+                                                *ngIf="registerForm.controls['phoneNumber']?.errors?.['required']">
+                                                phoneNumber is required</p>
+                                            <p class="text-danger mb-0"
+                                                *ngIf="registerForm.controls['phoneNumber']?.errors?.['pattern']">
+                                                phoneNumber must be number </p>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-6">
+
+                                        <label class="mb-1" for="country">Country</label>
+                                        <input type="txt" class="form-control me-0 "
+                                            placeholder="Please type here ......" id="country"
+                                            formControlName="country">
+                                        <div *ngIf="registerForm.controls['country']?.errors && registerForm.controls['country']?.touched"
+                                            class="w-100 ">
+                                            <p class="text-danger mb-0"
+                                                *ngIf="registerForm.controls['country']?.errors?.['required']">
+                                                Country is required</p>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="mb-1">
+                                        <label class="my-1" for="email">Email Address</label>
+                                        <input type="email" placeholder="Please type here ......" class="form-control "
+                                            id="email" formControlName="email">
+                                        <div *ngIf="registerForm.controls['email'].touched&&registerForm.controls['email'].errors"
+                                            class=" w-100 ">
+                                            <p class="text-danger mb-0"
+                                                *ngIf="registerForm.controls['email'].errors['email']">
+                                                Email should be valid </p>
+                                            <p class="text-danger mb-0"
+                                                *ngIf="registerForm.controls['email'].errors['required']">
+                                                Email is required</p>
+
+                                        </div>
+                                    </div>
+
+                                    <div class="mb-1">
+                                        <label class="my-1" for="password">Password</label>
+
+                                        <div class="position-relative ">
+                                            <input [type]="!showPass ? 'password' : 'text'" formControlName="password"
+                                                placeholder="Please type here ......" id="password"
+                                                class="form-control " formControlName="password">
+
+                                            <div (click)="showPass = !showPass">
+                                                <span class="eye"><i
+                                                        [class]="!showPass ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'"></i></span>
+
+                                            </div>
+
+                                        </div>
+                                        <div *ngIf="registerForm.controls['password']?.errors && registerForm.controls['password']?.touched"
+                                            class="w-100 ">
+                                            <p class="text-danger mb-0"
+                                                *ngIf="registerForm.controls['password']?.errors?.['required']">
+                                                Password is required</p>
+                                            <p class="text-danger mb-0"
+                                                *ngIf="registerForm.controls['password']?.errors?.['pattern']">
+                                                Password must be contain special character</p>
+                                        </div>
+                                    </div>
                                 </div>
-                            </div>
-                        </div>
 
-                        <div class="mt-5 mb-5">
-                            <button class="custom-btn" type="submit">Sign Up</button>
+                                <div class="mb-1">
+                                    <label class="my-1" for="confirm-password">Confirm Password</label>
+                                    <div class="position-relative ">
+                                        <input [type]="!showConfirmPass ? 'password' : 'text'" id="confirm-password"
+                                            placeholder="Please type here ......" class="form-control "
+                                            formControlName="confirmPassword">
+                                        <div (click)="showConfirmPass = !showConfirmPass">
+                                            <span class="eye"><i
+                                                    [class]="!showConfirmPass ? 'fa-regular fa-eye-slash' : 'fa-regular fa-eye'"></i></span>
+
+                                        </div>
+
+                                    </div>
+                                    <div *ngIf="registerForm.controls['confirmPassword']?.errors && registerForm.controls['confirmPassword']?.touched"
+                                        class="w-100 ">
+                                        <p class="text-danger mb-0"
+                                            *ngIf="registerForm.controls['confirmPassword']?.errors?.['required']">
+                                            Password is required</p>
+                                        <p class="text-danger mb-0"
+                                            *ngIf="registerForm.controls['confirmPassword']?.errors?.['pattern']">
+                                            Password must be contain special character</p>
+                                    </div>
+                                </div>
+
+                                <div class="mt-5 mb-5">
+                                    <button class="custom-btn" type="submit">Sign Up</button>
+                                </div>
+                            </form>
                         </div>
-                    </form>
-                </div> </div></div>
+                    </div>
+                </div>
             </div>
-            <div class="col-lg-6 my-1 ">
-                <div class="position-relative">
-                    <img 
-                    src="../../../../../../assets/images/signUp-img.png"
-                      width="100%" 
-                     
-                      alt=""
-                    />
+            <div class="col-lg-6 my-1  ">
+                <div class="position-relative  w-100 h-100 ">
+                    <img src="../../../../../../assets/images/signUp-img.png" alt=""
+                        class="w-100 h-100 object-fit-cover " />
                     <div class="layer">
-                      <h1 >Sign up to Roamhome</h1>
-                      <p>Homes as unique as you.</p>
+                        <h1>Sign up to Roamhome</h1>
+                        <p>Homes as unique as you.</p>
                     </div>
 
                 </div>
-            
-              </div>
-           
+
+            </div>
+
         </div>
     </div>
 

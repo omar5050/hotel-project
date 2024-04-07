@@ -7,6 +7,9 @@ import { IMenu } from '../sidebar/models/imenu'
 })
 export class SidebarComponent {
 
+  isOpened: boolean = true;
+
+  
   Menu: IMenu[] = [
     {
 

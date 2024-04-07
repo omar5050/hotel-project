@@ -10,6 +10,8 @@ import { Router } from '@angular/router';
   styleUrls: ['./register.component.scss']
 })
 export class RegisterComponent {
+  showPass: boolean = false
+  showConfirmPass: boolean = false
   profileImgValue: any
   files: File[] = [];
   registerForm: FormGroup = new FormGroup({

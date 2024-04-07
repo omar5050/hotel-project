@@ -12,7 +12,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RoomComponent implements OnInit {
 
-  //https://upskilling-egypt.com:3000/api/v0/
 
   tableResponse: any;
   tableData: any[] = [];
@@ -62,7 +61,7 @@ export class RoomComponent implements OnInit {
     }
     this._RoomService.getAllRooms(paramData).subscribe({
       next: (res) => {
-        // console.log(res);
+        console.log(res);
         this.tableResponse = res;
         this.tableData = res.data.rooms;
       }

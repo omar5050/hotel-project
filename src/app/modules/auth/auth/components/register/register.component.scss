@@ -1,26 +1,32 @@
 @import "../../../../.././../assets/styles/layout";
-[_nghost-ng-c2040221903] {
-    padding: 10px;
-    border-radius: 50%;
-    height: 120px;
-    width: 120px;
-    margin-right: 150px;
-}
-.group-input-design{
-    width: 79.5%;
-}
-img{
-    height: 120vh;
-    margin-bottom: 10px;
-}
-[_nghost-ng-c3821590306] img[_ngcontent-ng-c3821590306] {
-    max-height: 120px !important;
-    border-radius: 50% !important;
-    opacity: .8 !important;
-    display: flex !important;
-    justify-content: center !important;
-    align-items: center !important;
-    width:120px !important;
-    overflow: hidden;
-    
+// [_nghost-ng-c2040221903] {
+//     padding: 10px;
+//     border-radius: 50%;
+//     height: 120px;
+//     width: 120px;
+//     margin-right: 150px;
+// }
+// .group-input-design{
+//     width: 79.5%;
+// }
+// img{
+//     height: 120vh;
+//     margin-bottom: 10px;
+// }
+// [_nghost-ng-c3821590306] img[_ngcontent-ng-c3821590306] {
+//     max-height: 120px !important;
+//     border-radius: 50% !important;
+//     opacity: .8 !important;
+//     display: flex !important;
+//     justify-content: center !important;
+//     align-items: center !important;
+//     width:120px !important;
+//     overflow: hidden;
+
+// }
+
+.auth-form {
+  input {
+    margin: 0 0 0.5rem 0;
+  }
 }
