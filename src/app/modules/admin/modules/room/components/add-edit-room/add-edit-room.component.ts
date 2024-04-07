@@ -15,7 +15,10 @@ export class AddEditRoomComponent {
   facilities:any[]=[];
   imgSrc: any;
   files: File[] = [];
-  roomImgValue: any
+  files2: File[] = [];
+  roomImgValue: any;
+  previewImg: any[]=[];
+  baseUrl: string = 'https://upskilling-egypt.com:3000/api/v0/';
   isLoading: boolean = false;
   tableResponse: any;
   tableData: any[] = [];
@@ -24,6 +27,7 @@ export class AddEditRoomComponent {
   RoomById: any;
   viewRoomId:string='';
   onAddRoomMessag:string='';
+  getArray:any[]=[];
 
   constructor(private _RoomService:RoomService ,private _ToastrService: ToastrService, private _Router: Router, private _ActivatedRoute: ActivatedRoute){
     this.viewRoomId = _ActivatedRoute.snapshot.params['id'];
@@ -37,6 +41,20 @@ export class AddEditRoomComponent {
     if (this.viewRoomId) {
       this.getRoomById(this.viewRoomId);
     }
+  }
+
+  fillForm(res: any) {
+    this.registerRoomForm.patchValue({
+      roomNumber: res.roomNumber,
+      price: res.price,
+      capacity: res.capacity,
+      discount: res.discount,
+      facilities: res.facilities,
+    })
+    
+    this.previewImg = res.data.room.images;
+    console.log(this.previewImg);
+    
   }
 
   getAllFacilities(){
@@ -55,6 +73,7 @@ export class AddEditRoomComponent {
     capacity: new FormControl(null, [Validators.required]),
     discount: new FormControl(null, [Validators.required]),
     facilities: new FormControl(null),
+    imgs: new FormControl(null),
   })
   
   onSubmit(data: FormGroup) {
@@ -62,8 +81,10 @@ export class AddEditRoomComponent {
     
     this.isLoading = true;
     let roomFormData = new FormData()
-    for (let img = 0; img < this.imgSrc.length; img++) {
-    roomFormData.append('imgs', this.imgSrc[img],this.imgSrc[img].name);}
+    // for (let img = 0; img < this.previewImg.length; img++) {
+    //   console.log(img);
+      
+    // roomFormData.append('imgs', this.previewImg)}
     roomFormData.append('roomNumber', data.value.roomNumber)
     roomFormData.append('price', data.value.price)
     roomFormData.append('capacity', data.value.capacity)
@@ -71,13 +92,27 @@ export class AddEditRoomComponent {
     for (let j = 0; j < data.value.facilities.length; j++) {
       roomFormData.append('facilities', data.value.facilities[j]);
     }
+
+    if (this.previewImg) {
+      console.log(this.previewImg);
+      
+      roomFormData.append('imgs', this.previewImg[0])
+    } else {
+      roomFormData.append('imgs', this.roomImgValue)
+
+    }
+
     console.log(data.value);
 
     console.log(roomFormData);
 
     if (this.viewRoomId) {
+      console.log(roomFormData);
+      
       this.editeRoom(roomFormData);
     } else {
+      console.log(roomFormData);
+      
       this.addRoom(roomFormData)
     }
 
@@ -87,7 +122,9 @@ export class AddEditRoomComponent {
   editeRoom(roomFormData: any) {
     this._RoomService.onEditRoom(this.viewRoomId, roomFormData).subscribe({
       next: (response) => {
-       
+        console.log(response);
+         
+
       }, error: (err) => {
         this._ToastrService.error('error !')
       }, complete: () => {
@@ -121,10 +158,15 @@ export class AddEditRoomComponent {
     console.log(event);
     const selectedFile = event;
     // this.imgSrc = event.addedFiles;
-    console.log(this.imgSrc);
+    console.log(this.previewImg);
     this.files.push(...event.addedFiles);
-    this.imgSrc = this.files
-    console.log(this.files);
+    // this.files2.push(...event.addedFiles);
+    // this.previewImg = event.addedFiles[0];
+    // this.previewImg = event.addedFiles[1];
+    for (let index = 0; index < event.addedFiles.length; index++) {
+      this.previewImg += event.addedFiles[index]
+    }
+    console.log(this.previewImg);
     
   }
 
@@ -136,19 +178,29 @@ export class AddEditRoomComponent {
   getRoomById(id: string) {
     this._RoomService.getRoomById(id).subscribe({
       next: (response) => {
-        // console.log(response)
-        this.RoomById = response;
+        console.log(response)
+
+        this.fillForm(response);
+
+        this.RoomById = response.data.room;
+        this.facilities = response.data.room.facilities;
         console.log(this.RoomById)
+        console.log(this.facilities)
       }, error: (error) => {
         this._ToastrService.error('error in edit process')
       }, complete: () => {
+           
+        for (let j = 0; j < this.facilities.length; j++) {
+          this.getArray.push( this.facilities[j]);
+        }
+
         this.registerRoomForm.patchValue({
          
           roomNumber: this.RoomById.roomNumber,
           price: this.RoomById.price,
           capacity: this.RoomById.capacity,
           discount: this.RoomById.discount,
-          facilities: this.RoomById.facilities,
+          // facilities: this.getArray.join()|any
         });
       }
     })
