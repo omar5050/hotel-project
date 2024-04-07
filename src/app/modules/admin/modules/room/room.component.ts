@@ -12,7 +12,6 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class RoomComponent implements OnInit {
 
-  //https://upskilling-egypt.com:3000/api/v0/
 
   tableResponse: any;
   tableData: any[] = [];
