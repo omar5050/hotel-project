@@ -1,5 +1,48 @@
 @import "../../../../../../../assets/styles/layout";
 
-.margin{
-    margin-left: 100px;
-}
+// .margin{
+//     margin-left: 100px;
+// }
+.form-control{
+    background-color: $bg-input-color;
+    border: none;
+    padding: 15px 10px !important;
+    width:70%;
+  }
+
+  [_nghost-ng-c2040221903] {
+    width: 100% !important;
+    height: 150px !important;
+    background-color:rgba(241, 255, 240, 1);
+    cursor: pointer;
+    color: #fff !important;
+    border: 1px dashed rgba(0, 146, 71, 1) !important;
+    border-radius: 2px !important;
+  }
+  [_nghost-ng-c3821590306] img[_ngcontent-ng-c3821590306] {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover;
+    // border-radius: 50% !important;
+  }
+  .text-color{
+   color: rgba(79, 79, 79, 1);
+  }
+  .p-color{
+   color: rgba(31, 38, 62, 1);
+  }
+  .btn-room{
+    padding: 10px 2.5rem !important;
+     background-color:$bg-main !important;
+     color: white !important;
+     box-shadow: none !important;
+  }
+  .btn-room-outline{
+    padding: 10px 4rem !important;
+   // width:170px !important; 
+    border:solid 1px  $bg-main !important;
+    background-color:transparent !important;
+    color:$bg-main !important;
+    box-shadow: none !important;
+
+  }
