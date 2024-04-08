@@ -10,7 +10,6 @@ import { GlobalInterceptor } from './core/interceptor/global.interceptor';
 import { NgxSpinnerModule } from "ngx-spinner";
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
