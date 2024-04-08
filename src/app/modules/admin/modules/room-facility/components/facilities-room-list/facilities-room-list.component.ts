@@ -49,6 +49,7 @@ export class FacilitiesRoomListComponent {
 
    openAddFacilitiesDialog(CategoryData: any,name:any) {
      const dialogRef = this.dialog.open(AddEditFacilityComponent, {
+      width: "50%",
       data: {item:CategoryData,action:name},
     
     });
@@ -121,6 +122,7 @@ export class FacilitiesRoomListComponent {
     console.log(FacilityData);
 
     const dialogRef = this.dialog.open(DeleteComponent, {
+
       data: {data:FacilityData},
     });
 
