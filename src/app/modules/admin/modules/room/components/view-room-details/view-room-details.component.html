@@ -1,37 +1,23 @@
-<section class="container-fluid py-3">
 
-    <a class="text-end d-block myPointer my-3" (click)="onNoClick()"><i class="fa-regular fa-2x fa-circle-xmark text-danger"></i></a>
-
-    <div class="text-center ">
-        <div class="d-flex justify-content-center align-items-center">
-            <h3 class="form-label m-3">Room Number  :  </h3>
-            <h4>{{data.roomNumber}}</h4>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-center align-items-center">
-            <h3 class="form-label m-3">price  :  </h3>
-            <h4>{{data.price}}</h4>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-center align-items-center">
-            <h3 class="form-label m-3"> Discount :  </h3>
-            <h4>{{data.discount}}</h4>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-center align-items-center">
-            <h3 class="form-label m-3"> Capacity :  </h3>
-            <h4>{{data.capacity}}</h4>
-        </div>
-        <hr>
-        <div class="d-flex justify-content-center align-items-center">
-            <h3 class="form-label m-3"> Facilities :  </h3>
-            <h4>{{ show(data.facilities)}}</h4>
-        </div>
-        
-        
-    </div>
-    <div class="text-end">
-        <button class="btn main text-white w-25" [mat-dialog-close]="data.id">Close</button>
-    </div>
-</section>
-
+<section class="container p-3" >
+    <a (click)="onNoClick()" class="d-block text-end my-pointer p-2">
+        <i class="fa-regular fa-circle-xmark text-danger fa-2x"></i>
+    </a>
+    <div class="row p-3 ">
+        <div class="col">
+                <h3 class="pe-5">Room more details </h3>
+                <hr>
+            <div class=" w-100  mt-5 mb-5 mx-3">
+                 <h6 class="py-2"><span class=" text-second fw-bold">Room Name:</span>{{data.roomNumber}}</h6>
+                 <p class="py-2"><span class="text-second fw-bold">Room Capacity :</span> {{data.capacity}}</p>
+                 <p class="py-2"><span class=" text-second fw-bold">Room Facilities :</span> {{ show(data.facilities)}}</p>
+                 </div>
+                 <hr>
+                 
+                 <p><span class="text-second fw-bold"> Price:</span>  {{data.price}}</p>
+                 <p><span class="text-second fw-bold">Discount:</span>  {{data.discount}}</p>
+            </div>
+          
+      </div>
+  
+ </section> 
