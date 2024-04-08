@@ -11,7 +11,7 @@
     </div>
 
     <ul>
-        <li *ngFor=" let item of Menu "  routerLinkActive="bg-main-transparent  active-link">
+        <li *ngFor=" let item of Menu "  routerLinkActive="bg-main-transparent  active-link text-muted">
             <a [routerLink]="item.link">
                 <!-- <span class="line-style">|</span> -->
                 <span [class]="isOpened?'text-center':''" class="mx-2 "><i [class]="item.icon"></i></span>

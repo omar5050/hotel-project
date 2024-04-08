@@ -1,11 +1,11 @@
 
-<section class="container p-5" *ngIf="data.action=='delet'">
+<section class="container p-5" *ngIf="data.action=='delete'">
   
     <a (click)="onNoClick()" class="d-block text-end my-pointer">
         <i class="fa-regular fa-circle-xmark text-danger fa-2x"></i>
     </a>
   <div class=" text-center">
-    <p>{{data.action}}</p>
+    <!-- <p>{{data.action}}</p> -->
     <img src="../../../../../../../assets/images/no-data.avif" class="w-25" alt="">
     <h3> Delete This Item ?
           (<span class="fw-bold">{{data.item.room.roomNumber}}</span>)
@@ -20,7 +20,6 @@
   </div>
 </section>
 
-<!-- -------------------- -->
 
 
 
