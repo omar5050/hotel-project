@@ -86,7 +86,7 @@ this.bookingServ.getAllBooking(parame).subscribe({
 
 
 
-openDeletDialog(item:any ,action:string): void {
+openDeleteDialog(item:any ,action:string): void {
    
     const dialogRef = this.dialog.open(DeletBookingComponent, {
       data: {item:item,action:action},
@@ -95,12 +95,12 @@ openDeletDialog(item:any ,action:string): void {
     dialogRef.afterClosed().subscribe(result => {
       console.log('The dialog was closed',result);
       if(result !=undefined)
-      this.onDeletBooking(result)
+      this.onDeleteBooking(result)
 
     });
   }
  
- onDeletBooking(id:any){
+ onDeleteBooking(id:any){
 
 
 this.bookingServ.deletBooking(id).subscribe({

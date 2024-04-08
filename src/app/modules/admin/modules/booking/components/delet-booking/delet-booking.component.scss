@@ -1,14 +1,4 @@
-.is-img{
-    width: 150px;
-    height: 150px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 50%;
-    img{
-        width: 150px !important;
-        height: 150px;
-        
-    border-radius: 50%;
-    }
+@import "../../../../../../../assets/styles/abstracts/variables";
+a{
+    cursor: pointer;
 }

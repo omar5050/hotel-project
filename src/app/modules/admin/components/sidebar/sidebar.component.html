@@ -1,4 +1,9 @@
-<section class="sidebar">
+<section class="sidebar  vh-100 ">
+    <div class="text-center mt-5">
+        <h4 class="text-white"> Stay cation.</h4>
+        <hr class="text-white w-75 ms-4">
+    </div>
+
 
     <div class="py-3 px-1 text-center arrows" (click)="isOpened=!isOpened">
         <i *ngIf="!isOpened" class="fa-solid fa-arrow-right"></i>
@@ -6,7 +11,7 @@
     </div>
 
     <ul>
-        <li *ngFor=" let item of Menu " routerLinkActive="bg-layer-active">
+        <li *ngFor=" let item of Menu "  routerLinkActive="bg-main-transparent  active-link text-muted">
             <a [routerLink]="item.link">
                 <!-- <span class="line-style">|</span> -->
                 <span [class]="isOpened?'text-center':''" class="mx-2 "><i [class]="item.icon"></i></span>
@@ -14,6 +19,16 @@
             </a>
         </li>
 
+        <li class="mt-5">
+            <a  routerLink="/landing-page" class=" mt-5  d-flex"
+             routerLinkActive="router-link-active" >
+             <span class="mx-2">
+                <mat-icon class="text-white">logout</mat-icon>
+            
+                              </span>
+          <span class=""> Landing-page</span> 
+            
+        </a></li>
         <!-- <li>
             <a routerLink="/landing-page" class="  d-flex" routerLinkActive="router-link-active">
                 <span class=""> Landing-page</span>

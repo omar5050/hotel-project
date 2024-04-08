@@ -11,11 +11,11 @@
         </div>
        </div>
     </div>
-        <div  class="container" *ngIf="tableData.length> 0 " >
-            <div class="row ps-4 pe-2">
-                <table class="table   table-striped mt-5 ps-4 ">
+        <div  class="container " *ngIf="tableData.length> 0 " >
+            <div class="row ps-4 pe-2 mt-5  ">
+                <table class="table table-head rounded-3 table-striped  ps-4  ">
                     
-                        <thead class=" table-head fs-5  ">
+                        <thead class="  bg-head fs-5  rounded-3" >
                             <th>Name</th>
                             <th>Created By</th>
                             <th>Creation Date</th>
@@ -25,7 +25,7 @@
                     
         
                    
-                    <tbody>
+                    <tbody >
                       <tr  *ngFor="let item of tableData">
                         <td>{{item.name}}</td>
                         
@@ -36,19 +36,19 @@
                         <td>{{item.updatedAt |date: 'dd/mm/yyyy ,  h:mm  , a'}}</td>
                        
                         <td>
-                          <button class="button-mat-icon button-menu button-mat-menu bg-white"
+                          <button class="   button-mat-icon button-menu button-mat-menu bg-white"
                             mat-icon-button
                             [matMenuTriggerFor]="menu"
                             aria-label="Example icon-button   with a menu"
                           >
-                            <mat-icon class="bg-white  button-mat-menu" >
+                            <mat-icon class="   text-black" >
                               more_horiz</mat-icon>
                           </button>
                           <mat-menu class="bg-white button-menu button-mat-menu" #menu="matMenu">
                        
                             <button (click)="openAddFacilitiesDialog(item,'edit')"  class="button-mat-icon button-menu button-mat-menu" mat-menu-item>
                               <mat-icon class="bg-white button-menu button-mat-menu"  >edit-square</mat-icon>
-                              <span>edit</span>
+                              <span class="span-color">Edit</span>
                             </button>
  
   
@@ -56,7 +56,7 @@
                              class="button-mat-icon bg-white button-menu button-mat-menu" mat-menu-item>
                               <mat-icon  class="bg-white button-mat-menu button-menu"
                              >delete</mat-icon>
-                              <span>Delete</span>
+                              <span  class="span-color">Delete</span>
                             </button>
                           </mat-menu>
                         </td>
