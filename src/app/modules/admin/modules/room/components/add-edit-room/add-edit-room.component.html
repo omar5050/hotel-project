@@ -1,9 +1,12 @@
 <section id="add-edit-room">
+    
        <div class="container  m-auto">
+        <!-- <h4 class="mt-5 px-3">Add New Room</h4> -->
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-8">
+               
                 <form class="auth-form" [formGroup]="registerRoomForm" (ngSubmit)="onSubmit(registerRoomForm)">
-                    <div class="container mt-5">
+                    <div class="container mt-3">
                         <div class="row py-3">
                             <div class="col-12">
                                 <input type="text" class="form-control w-100" formControlName="roomNumber" id="room"

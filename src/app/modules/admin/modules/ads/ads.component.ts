@@ -81,7 +81,9 @@ export class AdsComponent implements OnInit{
     openDeletDialog(item:any ,action:string): void {
    
       const dialogRef = this.dialog.open(DeletAdsComponent, {
-        data: {item:item,action:action},
+        width: '50%',
+        data: { item: item, action: action },
+       
       });
   
       dialogRef.afterClosed().subscribe(result => {
@@ -119,7 +121,7 @@ export class AdsComponent implements OnInit{
    openaddDialog(): void {
    
     const dialogRef = this.dialog.open(AddEditAdsComponent, {
-    
+      width:"50%",
       data: {},
     });
 

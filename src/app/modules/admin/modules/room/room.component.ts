@@ -71,6 +71,7 @@ export class RoomComponent implements OnInit {
 
   openRoomsDetailes(item: any) {
     const dialogRef = this.dialog.open(ViewRoomDetailsComponent, {
+      width: "50%",
       data:item
     });
 
