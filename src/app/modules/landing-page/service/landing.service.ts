@@ -1,7 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { __param } from 'tslib';
 
 @Injectable({
   providedIn: 'root'
@@ -13,12 +12,15 @@ export class LandingService {
 
 
 getAllRooms(data:any):Observable<any>{
+console.log(data);
 
 
 return this.htpp.get(`portal/rooms/available?`,{params:data});
 
 
 }
+
+
 
 
 }
