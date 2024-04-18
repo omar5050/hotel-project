@@ -1,10 +1,10 @@
 <section id="add-edit-room">
-    
-       <div class="container  m-auto">
+
+    <div class="container  m-auto">
         <!-- <h4 class="mt-5 px-3">Add New Room</h4> -->
         <div class="row d-flex justify-content-center align-items-center">
             <div class="col-8">
-               
+
                 <form class="auth-form" [formGroup]="registerRoomForm" (ngSubmit)="onSubmit(registerRoomForm)">
                     <div class="container mt-3">
                         <div class="row py-3">
@@ -12,29 +12,38 @@
                                 <input type="text" class="form-control w-100" formControlName="roomNumber" id="room"
                                     placeholder="Room Number">
                             </div>
-            
+
                         </div>
                         <div class="row py-3">
                             <div class="col-6">
-                                <input type="number" class="form-control  w-100" formControlName="price" id="Price" placeholder="Price">
+                                <input type="number" class="form-control  w-100" formControlName="price" id="Price"
+                                    placeholder="Price">
                             </div>
                             <div class="col-6">
-                                <input type="text" class="form-control   w-100" formControlName="capacity" id="Capacity" placeholder="Capacity">
+                                <input type="text" class="form-control   w-100" formControlName="capacity" id="Capacity"
+                                    placeholder="Capacity">
                             </div>
                         </div>
                         <div class="row py-3">
                             <div class="col-6">
-                                <input type="text" class="form-control w-100 " formControlName="discount" id="Discount" placeholder="Discount">
+                                <input type="text" class="form-control w-100 " formControlName="discount" id="Discount"
+                                    placeholder="Discount">
                             </div>
                             <div class="col-6">
+                                <!-- <ng-multiselect-dropdown multiple [(ngModel)]="tableData_setting" [settings]="tableData_setting" formControlName="facilities" class="col-md-8 form-control w-100" id="InputSemster"
+                                     [data]="tableData">
+                                </ng-multiselect-dropdown> -->
+                                <!-- <input type="button" (click)="getAllFacilities_selected()" value="clcik"> -->
                                 <mat-form-field class="w-100">
                                     <mat-label>Choose Facility</mat-label>
-                                    <mat-select formControlName="facilities" multiple (selectionChange)="getAllFacilities()">
+
+                                    <mat-select formControlName="facilities" multiple 
+                                        (selectionChange)="getAllFacilities()">
                                         <mat-option [value]="0">All</mat-option>
-                                        <ng-container *ngFor="let item of tableData" >
-            
+                                        <ng-container *ngFor="let item of tableData">
+
                                             <mat-option [value]="item._id">
-                                                <span >{{item.name}}</span>
+                                                <span>{{item.name}}</span>
                                             </mat-option>
                                         </ng-container>
                                     </mat-select>
@@ -45,6 +54,7 @@
 
                         <div class="row">
                             <div class="col-12  mb-3 ">
+
                                 
                 <ngx-dropzone (change)="onSelect($event)" class="w-100">
 
@@ -70,20 +80,20 @@
                 </ngx-dropzone>
                             </div>
                         </div>
-                       
+
                     </div>
-            
+
                     <hr class="mt-5">
                     <div class="d-flex justify-content-end my-5  ">
-                      <button class="btn-room-outline me-5" routerLink="/admin/room" type="button">Cancel</button>
-                      <button class="btn-room ms-5">Save</button>
+                        <button class="btn-room-outline me-5" routerLink="/admin/room" type="button">Cancel</button>
+                        <button class="btn-room ms-5">Save</button>
                     </div>
-            
+
                 </form>
             </div>
         </div>
-       </div>
-   
+    </div>
+
 </section>
 
 

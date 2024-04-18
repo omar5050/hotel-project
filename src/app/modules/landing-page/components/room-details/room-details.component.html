@@ -1,0 +1,164 @@
+<section>
+    <div class="container">
+        <div class="row">
+            <div class="col-5">
+                <h5 class="text-muted mt-3"> <span style="color: rgb(172, 167, 167);">Home</span> / <span
+                        style="color: #152C5B">Room Details</span> </h5>
+            </div>
+            <div class="col-5">
+                <h3 style="color: #152C5B;font-weight: bold;">Village Angga</h3>
+                <p class="mx-4 text-muted" style="color: rgb(172, 167, 167)">Bogor, Indonesia</p>
+            </div>
+
+        </div>
+        <div class="row">
+            <div class="col-6">
+                <img src="../../../../../assets/images/big.svg" alt="" class="imgSizeLarge">
+            </div>
+            <div class="col-6">
+                <img src="../../../../../assets/images/Rectangle 6.svg" alt="" class="imgSizeSmall">
+                <br>
+                <img src="../../../../../assets/images/Rectangle 6.svg" alt="" class="imgSizeSmall mt-1">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-6 mt-5 text-muted">
+                <p style="color: rgb(172, 167, 167);">Minimal techno is a minimalist subgenre of techno music. It is
+                    characterized by a stripped-down
+                    aesthetic
+                    that exploits the use of repetition and understated development. Minimal techno is thought to have
+                    been
+                    originally developed in the early 1990s by Detroit-based producers Robert Hood and Daniel Bell.
+                </p>
+                <p style="color: rgb(172, 167, 167);">
+                    Such trends saw the demise of the soul-infused techno that typified the original Detroit sound.
+                    Robert Hood has noted that he and Daniel Bell both realized something was missing from techno in the
+                    post-rave era.
+                </p>
+                <p style="color: rgb(172, 167, 167);">
+                    Design is a plan or specification for the construction of an object or system or for the
+                    implementation of an activity or process, or the result of that plan or specification in the form of
+                    a prototype, product or process. The national agency for design: enabling Singapore to use design
+                    for economic growth and to make lives better.
+                </p>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa-solid fa-bed"></i>
+                        <br>
+                        <label>5 bedroom</label>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa-solid fa-person-booth"></i>
+                        <br>
+                        <label>1 livingroom</label>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa-solid fa-sink"></i>
+                        <br>
+                        <label>3 bathroom</label>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa-solid fa-plate-wheat"></i>
+                        <br>
+                        <label>1 diningroom</label>
+                    </div>
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-3">
+                        <i class="fa-solid fa-wifi"></i>
+                        <br>
+                        <label>10 mbp/s</label>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa-solid fa-suitcase"></i>
+                        <br>
+                        <label>7 unit ready</label>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa-solid fa-temperature-low"></i>
+                        <br>
+                        <label>2 refigrator</label>
+                    </div>
+                    <div class="col-3">
+                        <i class="fa-solid fa-tv"></i>
+                        <br>
+                        <label>4 television</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-5 mt-5 ms-2 text-muted border rounded-4">
+                <h5 class="ms-5 mt-5" style="color: #152C5B;font-weight: bold;">Start Booking</h5>
+                <h3><span class="ms-5" style="color: #1ABC9C">$280</span><span style="color: rgb(172, 167, 167);"> per
+                        night</span></h3>
+                <p class="ms-5" style="color: red;">Discount 20% Off </p>
+
+                <h6 class="mt-5 ms-5" style="color: #152C5B;">Pick a Date</h6>
+
+                <div>
+                    <mat-form-field class="example-form-field  mx-5 w-75">
+                        <mat-label>Second campaign</mat-label>
+                        <mat-date-range-input [formGroup]="campaignTwo" [rangePicker]="campaignTwoPicker"
+                            [comparisonStart]="campaignOne.value.start" [comparisonEnd]="campaignOne.value.end">
+                            <input matStartDate placeholder="Start date" formControlName="start">
+                            <input matEndDate placeholder="End date" formControlName="end">
+                        </mat-date-range-input>
+                        <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
+                        <!-- <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint> -->
+                        <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
+                    </mat-form-field>
+
+                    <p class="ms-5" style="color: rgb(172, 167, 167);">You will pay <span
+                            style="color: #152C5B;font-weight: bold;">$480 USD</span> per <span
+                            style="color: #152C5B;;font-weight: bold;">2 Person</span></p>
+
+                    <button class="border-0 ms-5 rounded-3">Continue Book</button>
+
+                </div>
+
+            </div>
+
+        </div>
+        <div class="mt-5 row border rounded-3">
+            <div class="row">
+                <div class="col-6 mt-3">
+                    <div class="ps-5">
+                        <h5 style="color: #152C5B" class="mt-5">Rate</h5>
+                        <span style="color: burlywood;">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star-half-stroke"></i>
+
+                        </span>
+
+                        <div class="mt-3">
+                            <h4 class="mb-4" style="color: #152C5B">Message</h4>
+                            <textarea class="rounded-4 border-primary" name="" id="" cols="70" rows="5"></textarea>
+                            <br>
+                            <button class="border-0 rounded-3">Rate</button>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+
+                <div class="col-6 mt-3">
+                    <h3 class="mb-5 ms-5" style="color: #152C5B">Add Your Comment</h3>
+
+                    <div class="item text-end">
+                        <textarea class="rounded-4 mt-5 border-primary" name="" id="" cols="70" rows="7"></textarea>
+                        <br>
+                        <button class="border-0 rounded-3 m d-block ms-auto">Send</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+        </div>
+    </div>
+</section>

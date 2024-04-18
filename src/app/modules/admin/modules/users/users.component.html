@@ -1,1 +1,83 @@
-<p>users works!</p>
+<section id="users">
+
+    <div class="container">
+        <div class="row ps-4 pt-5 ">
+         <div class="col-lg-6 col-md-6 col-sm-12">
+             <h4 class="fw-bold">Users Details</h4>
+             <p>You can check all details</p>
+         </div>
+         <div class="col-lg-6 col-md-6 col-sm-12 text-end">
+             <button [routerLink]="'add'"  class="px-5 py-2 btn-second-bg-color">Create User</button>
+         </div>
+        </div>
+     </div>
+
+    <div class="container">
+        <div class="row ps-4 pt-5 align-items-center ">
+            <div class="col-9">
+
+                <div class="input-group mb-3">
+                    <!-- <span class="input-group-text" id="basic-addon1">
+                    <i class="fa-solid fa-magnifying-glass"></i></span> -->
+                    <input [(ngModel)]="searchKey" (keyup.enter)="getUsers()" type="text" class="form-control"
+                        placeholder="Search By number" aria-label="Username" aria-describedby="basic-addon1">
+
+                </div>
+            </div>
+
+
+        </div>
+
+        <div class="container " *ngIf="tableData.length> 0 ">
+            <div class="row ps-4 pe-2 mt-5  ">
+                <table class="table table-head rounded-3 table-striped  ps-4  ">
+
+                    <thead class="  bg-head fs-5  rounded-3 justify-content-center">
+                        <th>ID</th>
+                        <th>User Name</th>
+                        <th>Email</th>
+                        <th>Country</th>
+                        <th>Phone Number</th>
+                        <th>Image</th>
+                        <th>Actions</th>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let item of tableData" class="justify-content-center align-items-center">
+                            <td>{{item._id}}</td>
+                            <td>{{item.userName}}</td>
+                            <td>{{item.email}}</td>
+                            <td>{{item.country}}</td>
+                            <td>{{item.phoneNumber}}</td>
+                            <td>
+                                <img  class="imageTable" [src]="item.profileImage" alt="">
+                            </td>
+                            <td><button mat-icon-button
+                                class="   button-mat-icon button-menu button-mat-menu bg-white"
+                                [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+                                    <mat-icon class="   text-black">more_horiz</mat-icon>
+                                </button>
+                                <mat-menu #menu="matMenu" class="bg-white button-menu button-mat-menu">
+                                    <button class="button-mat-icon button-menu button-mat-menu" 
+                                     mat-menu-item  (click)="openUserDetailes(item)" >
+                                        <mat-icon class="bg-white button-menu button-mat-menu" >visibility</mat-icon>
+                                        <span class="span-color">View</span>
+                                    </button>
+                                    
+                                </mat-menu>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
+
+            </div>
+        </div>
+
+        <div *ngIf="tableData.length==0">
+            <div class="text-center w-50 vh-50 m-auto ">
+                <img src="../../../../../../../assets/images/no-data.avif" width="100%" height="40%" alt="">
+                <h4 class="my-3">No Data</h4>
+            </div>
+        </div>
+    </div>
+</section>

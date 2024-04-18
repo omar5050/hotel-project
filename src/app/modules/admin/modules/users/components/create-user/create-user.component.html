@@ -1,0 +1,87 @@
+<section id="createUser">
+
+    <div class="container  m-auto">
+        <!-- <h4 class="mt-5 px-3">Add New Room</h4> -->
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-8">
+
+                <form class="auth-form" [formGroup]="createUserForm" (ngSubmit)="onSubmit(createUserForm)">
+
+                    <div class="row">
+                        <div class="col-12">
+
+                            <ngx-dropzone (change)="onSelect($event)" class="rounded-circle w-25 justify-content-center" [multiple]="false">
+                                <ngx-dropzone-label class="text-black">
+                                    <p class="text-color">
+                                        <i class="fa-solid fa-arrow-up-from-bracket fs-4"></i>
+                                    </p>
+                                    <p class="p-color">
+                                        Drag & Drop or <span class="text-success">Choose a User Image</span> to
+                                        Upload
+
+                                    </p>
+                                </ngx-dropzone-label>
+                                <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview"
+                                    *ngFor="let f of files" [file]="f" [removable]="true" (removed)="onRemove(f)">
+                                    <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                                </ngx-dropzone-image-preview>
+                            </ngx-dropzone>
+                        </div>
+                    </div>
+                    
+                    <div class="container mt-3">
+                        <div class="row py-3">
+                            <div class="col-6">
+                                <input type="text" class="form-control w-100" formControlName="userName" id="user"
+                                    placeholder="User Name">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control w-100" formControlName="email" id="email"
+                                    placeholder="Email">
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-6">
+                                <input type="text" class="form-control  w-100" formControlName="phoneNumber" id="phoneNumber"
+                                    placeholder="Phone Number">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control   w-100" formControlName="country" id="country"
+                                    placeholder="Country">
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-6">
+                                <input type="text" class="form-control w-100 " formControlName="password" id="password"
+                                    placeholder="Password">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control w-100" formControlName="confirmPassword" id="confirmPassword"
+                                    placeholder="Confirm Password">
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-6">
+                                <input type="text" class="form-control w-100 " formControlName="role" id="role"
+                                    placeholder="role">
+                            </div>
+                            
+                        </div>
+
+                      
+
+                    </div>
+
+                    <hr class="mt-5">
+                    <div class="d-flex justify-content-end my-5  ">
+                        <button class="btn-user-outline me-5" routerLink="/admin/users" type="button">Cancel</button>
+                        <button class="btn-user ms-5">Save</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+
+</section>
+
