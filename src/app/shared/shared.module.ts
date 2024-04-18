@@ -11,15 +11,20 @@ import { DeleteComponent } from './delete/delete.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select';
+import { LandingComponent } from './component/landing/landing.component';
+import { BrowserModule } from '@angular/platform-browser'
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
   declarations: [
   
-    DeleteComponent
+    DeleteComponent,
+        LandingComponent
   ],
+ 
   imports: [
-    
+    CommonModule,
     MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
@@ -36,6 +41,8 @@ import {MatSelectModule} from '@angular/material/select';
 
   ],
   exports: [
+    
+LandingComponent,
     MatSelectModule,
     MatPaginatorModule,
     MatTableModule,
