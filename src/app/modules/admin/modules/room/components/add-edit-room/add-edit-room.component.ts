@@ -13,7 +13,7 @@ export class AddEditRoomComponent {
 
   facilityId:number=0;
   facilities:any[]=[];
-
+ imgAdd:any=[]
   imgSrc: any;
   files: File[] = [];
   files2: File[] = [];
@@ -235,30 +235,7 @@ for (const item of this.imgsList) {
 
 
 
-// -----------------------------------------
-  // onSelect(event: any) {
-  //   console.log(event);
-  //   const selectedFile = event;
-  //   // this.imgSrc = event.addedFiles;
-  //   console.log(this.previewImg);
-  //   this.files.push(...event.addedFiles);
-  //   // this.files2.push(...event.addedFiles);
-  //   // this.previewImg = event.addedFiles[0];
-  //   // this.previewImg = event.addedFiles[1];
-  //   for (let index = 0; index < event.addedFiles.length; index++) {
-  //     this.previewImg += event.addedFiles[index]
-  //   }
-  //   console.log(this.previewImg);
-    
-  // }
 
-  // onRemove(event:any) {
-  //   console.log(event);
-  //   this.files.splice(this.files.indexOf(event), 1);
-  // }
-
-
-  // --------------------------------
 
   getRoomById(id: string) {
     this._RoomService.getRoomById(id).subscribe({

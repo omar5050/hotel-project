@@ -11,6 +11,7 @@ export class ExploreComponent implements OnInit{
 constructor (private _LandServ:LandingService){
 
 }
+
 totalCard:IRoom[]=[];
 totalCount:IRoom|any;
 isPge:any='All Rooms'

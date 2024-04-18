@@ -21,9 +21,11 @@ constructor(private _LandingService:LandingService){
   
 }
 ngOnInit(): void {
+  console.log(this.landingItem);
 
 }
 ngOnChanges(){
+//  console.log(this.landingItem);
  
 }
 
