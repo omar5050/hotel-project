@@ -15,14 +15,20 @@ import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import {MatNativeDateModule} from '@angular/material/core';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { TranslateModule } from '@ngx-translate/core';
+import { LandingComponent } from './component/landing/landing.component';
+import { BrowserModule } from '@angular/platform-browser'
+import { CommonModule } from '@angular/common';
+
 
 @NgModule({
   declarations: [
   
-    DeleteComponent
+    DeleteComponent,
+        LandingComponent
   ],
+ 
   imports: [
-    
+    CommonModule,
     MatSelectModule,
     MatTableModule,
     MatPaginatorModule,
@@ -42,6 +48,8 @@ import { TranslateModule } from '@ngx-translate/core';
 
   ],
   exports: [
+    
+LandingComponent,
     MatSelectModule,
     MatPaginatorModule,
     MatTableModule,

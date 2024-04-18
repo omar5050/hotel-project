@@ -11,14 +11,14 @@ import { DomSanitizer } from '@angular/platform-browser';
 })
 export class AddEditRoomComponent {
 
-  facilityId: number = 0;
-  facilities: any[] = [];
-  selected: any[] = [];
 
+  facilityId:number=0;
+  facilities:any[]=[];
+ imgAdd:any=[]
   imgSrc: any;
   files: File[] = [];
   files2: File[] = [];
-
+  addImags:any=[];
 
   imgsList: any = [];
   roomImgValue: any;
@@ -216,30 +216,8 @@ export class AddEditRoomComponent {
 
 
 
-  // -----------------------------------------
-  // onSelect(event: any) {
-  //   console.log(event);
-  //   const selectedFile = event;
-  //   // this.imgSrc = event.addedFiles;
-  //   console.log(this.previewImg);
-  //   this.files.push(...event.addedFiles);
-  //   // this.files2.push(...event.addedFiles);
-  //   // this.previewImg = event.addedFiles[0];
-  //   // this.previewImg = event.addedFiles[1];
-  //   for (let index = 0; index < event.addedFiles.length; index++) {
-  //     this.previewImg += event.addedFiles[index]
-  //   }
-  //   console.log(this.previewImg);
-
-  // }
-
-  // onRemove(event:any) {
-  //   console.log(event);
-  //   this.files.splice(this.files.indexOf(event), 1);
-  // }
 
 
-  // --------------------------------
 
   x: any[] = ['a', 'b'];
 
@@ -268,8 +246,16 @@ export class AddEditRoomComponent {
 
 
         console.log(this.RoomById)
+
+        this.facilities = response.data.room.facilities;
+        // console.log(this.RoomById.images)
+        this.addImags=this.RoomById.images;
+
         console.log(this.facilities)
-      }, error: (error) => {
+        // this.addImags=response.data.room.facilities.images;
+        console.log(this.addImags);
+        
+    
         this._ToastrService.error('error in edit process')
       }, complete: () => {
 

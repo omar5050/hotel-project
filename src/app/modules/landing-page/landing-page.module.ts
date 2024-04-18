@@ -25,7 +25,8 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
   imports: [
     CommonModule,
     LandingPageRoutingModule,
-    SharedModule
+    SharedModule,
+    
   ]
 })
 export class LandingPageModule { }
