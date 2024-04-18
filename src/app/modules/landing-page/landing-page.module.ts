@@ -9,6 +9,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ExploreComponent } from './components/explore/explore.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { RoomDetailsComponent } from './components/room-details/room-details.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
     HomeComponent,
     FavoritesComponent,
     ExploreComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    RoomDetailsComponent
   ],
   imports: [
     CommonModule,

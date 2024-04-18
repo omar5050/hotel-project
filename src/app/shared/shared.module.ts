@@ -11,7 +11,10 @@ import { DeleteComponent } from './delete/delete.component';
 import { MatTableModule } from '@angular/material/table';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatSelectModule} from '@angular/material/select';
-
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { TranslateModule } from '@ngx-translate/core';
 
 @NgModule({
   declarations: [
@@ -31,8 +34,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatDialogModule,
     MatMenuModule,
-    MatSelectModule
-
+    MatSelectModule,
+    NgMultiSelectDropDownModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    TranslateModule
 
   ],
   exports: [
@@ -47,8 +53,11 @@ import {MatSelectModule} from '@angular/material/select';
     MatIconModule,
     MatDialogModule,
     MatMenuModule,
-    MatSelectModule
-
+    MatSelectModule,
+    NgMultiSelectDropDownModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    TranslateModule
   ]
  
 })
