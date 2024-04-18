@@ -17,7 +17,7 @@ export class AddEditRoomComponent {
   imgSrc: any;
   files: File[] = [];
   files2: File[] = [];
-
+  addImags:any=[];
 
   imgsList:any[]=[];
   roomImgValue: any;
@@ -269,9 +269,14 @@ for (const item of this.imgsList) {
 
         this.RoomById = response.data.room;
         this.facilities = response.data.room.facilities;
-        console.log(this.RoomById)
+        // console.log(this.RoomById.images)
+        this.addImags=this.RoomById.images;
+
         console.log(this.facilities)
-      }, error: (error) => {
+        // this.addImags=response.data.room.facilities.images;
+        console.log(this.addImags);
+        
+    
         this._ToastrService.error('error in edit process')
       }, complete: () => {
            
