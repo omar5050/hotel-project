@@ -55,7 +55,32 @@
                         <div class="row">
                             <div class="col-12  mb-3 ">
 
-                                
+<!--                                 
+                <ngx-dropzone (change)="onSelect($event)" class="w-100">
+
+                    <ngx-dropzone-label  *ngIf="imgSrc" class="text-black">
+                        <img *ngFor="let img of imgSrc" [src]="img" alt="" class="w-25">
+                    </ngx-dropzone-label>
+
+
+
+                    <ngx-dropzone-label class="text-black">
+                        <p class="text-color">
+                            <i class="fa-solid fa-arrow-up-from-bracket fs-4"></i>
+                    </p>
+                    <p class="p-color">
+                        Drag & Drop or <span class="text-success">Choose a Room Images</span> to Upload 
+                    
+                    </p>
+                    </ngx-dropzone-label>
+                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" 
+                        *ngFor="let f of files" [file]="f"  [removable]="true" (removed)="onRemove(f)">
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                          </ngx-dropzone-image-preview>
+                </ngx-dropzone> -->
+
+
+
                 <ngx-dropzone (change)="onSelect($event)" class="w-100">
 
                     <ngx-dropzone-label  *ngIf="imgSrc" class="text-black">
@@ -78,6 +103,9 @@
                             <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
                           </ngx-dropzone-image-preview>
                 </ngx-dropzone>
+
+
+
                             </div>
                         </div>
 
