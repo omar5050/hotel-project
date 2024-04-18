@@ -23,7 +23,8 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     LandingPageRoutingModule,
-    SharedModule
+    SharedModule,
+    
   ]
 })
 export class LandingPageModule { }

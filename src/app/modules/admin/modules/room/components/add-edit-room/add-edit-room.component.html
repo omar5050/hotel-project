@@ -1,106 +1,143 @@
-<section>
-    <form class="auth-form" [formGroup]="registerRoomForm" (ngSubmit)="onSubmit(registerRoomForm)">
-        <div class="container mt-5 margin">
-            <div class="row py-3 margin justify-content-center">
-                <div class="col-12">
-                    <input type="text" class="form-control " formControlName="roomNumber" id="room"
-                        placeholder="Room Number">
-                </div>
-
-            </div>
-            <div class="row py-3 justify-content-center">
-                <div class="col-5">
-                    <input type="number" class="form-control " formControlName="price" id="Price" placeholder="Price">
-                </div>
-                <div class="col-5">
-                    <input type="text" class="form-control " formControlName="capacity" id="Capacity" placeholder="Capacity">
-                </div>
-            </div>
-            <div class="row py-3 justify-content-center">
-                <div class="col-5">
-                    <input type="text" class="form-control " formControlName="discount" id="Discount" placeholder="Discount">
-                </div>
-                <div class="col-5">
-                    <mat-form-field class="w-75">
-                        <mat-label>Choose Facility</mat-label>
-                        <mat-select formControlName="facilities" multiple (selectionChange)="getAllFacilities()">
-                            <mat-option [value]="0">All</mat-option>
-                            <ng-container *ngFor="let item of tableData" >
-
-                                <mat-option [value]="item._id">
-                                    <span >{{item.name}}</span>
-                                </mat-option>
-                            </ng-container>
-                        </mat-select>
-                    </mat-form-field>
-                </div>
-            </div>
-            <div class="col-9 margin justify-content-center">
-                <!-- <div>
-
-                    <ngx-dropzone class="user-avatar" (change)="onSelect($event)" [multiple]="true">
-                        <ngx-dropzone-label *ngIf="!previewImg">
-                            <i class="fa-solid fa-arrow-up-from-bracket d-block"></i> Upload
-                        </ngx-dropzone-label>
-                        <ngx-dropzone-label class="m-0" *ngIf="previewImg">
-                            <img [src]="previewImg" class="w-50" alt="">
-                        </ngx-dropzone-label>
-                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview"
-                            *ngFor="let f of files" [removable]="true" [file]="f" (removed)="onRemove(f)">
-                        </ngx-dropzone-image-preview>
-                    </ngx-dropzone>
+<section id="add-edit-room">
+    
+       <div class="container  m-auto">
+        <!-- <h4 class="mt-5 px-3">Add New Room</h4> -->
+        <div class="row d-flex justify-content-center align-items-center">
+            <div class="col-8">
+               
+                <form class="auth-form" [formGroup]="registerRoomForm" (ngSubmit)="onSubmit(registerRoomForm)">
+                    <div class="container mt-3">
+                        <div class="row py-3">
+                            <div class="col-12">
+                                <input type="text" class="form-control w-100" formControlName="roomNumber" id="room"
+                                    placeholder="Room Number">
+                            </div>
+            
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-6">
+                                <input type="number" class="form-control  w-100" formControlName="price" id="Price" placeholder="Price">
+                            </div>
+                            <div class="col-6">
+                                <input type="text" class="form-control   w-100" formControlName="capacity" id="Capacity" placeholder="Capacity">
+                            </div>
+                        </div>
+                        <div class="row py-3">
+                            <div class="col-6">
+                                <input type="text" class="form-control w-100 " formControlName="discount" id="Discount" placeholder="Discount">
+                            </div>
+                            <div class="col-6">
+                                <mat-form-field class="w-100">
+                                    <mat-label>Choose Facility</mat-label>
+                                    <mat-select formControlName="facilities" multiple (selectionChange)="getAllFacilities()">
+                                        <mat-option [value]="0">All</mat-option>
+                                        <ng-container *ngFor="let item of tableData" >
+            
+                                            <mat-option [value]="item._id">
+                                                <span >{{item.name}}</span>
+                                            </mat-option>
+                                        </ng-container>
+                                    </mat-select>
+                                </mat-form-field>
+                            </div>
+                        </div>
 
 
-                   
-                </div> -->
+                        <div class="row">
+                            <div class="col-12  mb-3 ">
+                                
+                <ngx-dropzone (change)="onSelect($event)" class="w-100">
+
+                    <ngx-dropzone-label  *ngIf="imgSrc" class="text-black">
+                        <img *ngFor="let img of imgSrc" [src]="img" alt="" class="w-25">
+                    </ngx-dropzone-label>
 
 
 
-
-
-
-
-
-
-
-
-<!-- --------------------------------------------- -->
-
-
-
-
-<ngx-dropzone (change)="onSelect($event)">
-	<ngx-dropzone-label>Drop it, baby!</ngx-dropzone-label>
-	
-
-
-        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" *ngFor="let f of files" [file]="f"  [removable]="true" (removed)="onRemove(f)">
-            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
-          </ngx-dropzone-image-preview>
-
-
-
-</ngx-dropzone>
-
-
-
-
-
-
-
-
-
-
-<!-- ----------------------------------------------- -->
-
+                    <ngx-dropzone-label class="text-black">
+                        <p class="text-color">
+                            <i class="fa-solid fa-arrow-up-from-bracket fs-4"></i>
+                    </p>
+                    <p class="p-color">
+                        Drag & Drop or <span class="text-success">Choose a Room Images</span> to Upload 
+                    
+                    </p>
+                    </ngx-dropzone-label>
+                        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview" 
+                        *ngFor="let f of files" [file]="f"  [removable]="true" (removed)="onRemove(f)">
+                            <ngx-dropzone-label>{{ f.name }} ({{ f.type }})</ngx-dropzone-label>
+                          </ngx-dropzone-image-preview>
+                </ngx-dropzone>
+                            </div>
+                        </div>
+                       
+                    </div>
+            
+                    <hr class="mt-5">
+                    <div class="d-flex justify-content-end my-5  ">
+                      <button class="btn-room-outline me-5" routerLink="/admin/room" type="button">Cancel</button>
+                      <button class="btn-room ms-5">Save</button>
+                    </div>
+            
+                </form>
             </div>
         </div>
-
-        <hr class="mt-5">
-        <div class="d-flex justify-content-end">
-          <button class="mx-2 w-25" routerLink="/admin/room" type="button">Cancel</button>
-          <button class=" w-25">Save</button>
-        </div>
-
-    </form>
+       </div>
+   
 </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div>
+                
+    <ngx-dropzone class="user-avatar" (change)="onSelect($event)" [multiple]="true">
+        <ngx-dropzone-label *ngIf="!previewImg">
+            <i class="fa-solid fa-arrow-up-from-bracket d-block"></i> Upload
+        </ngx-dropzone-label>
+        <ngx-dropzone-label class="m-0" *ngIf="previewImg">
+            <img [src]="previewImg" class="w-50" alt="">
+        </ngx-dropzone-label>
+        <ngx-dropzone-image-preview ngProjectAs="ngx-dropzone-preview"
+            *ngFor="let f of files" [removable]="true" [file]="f" (removed)="onRemove(f)">
+        </ngx-dropzone-image-preview>
+    </ngx-dropzone>
+
+
+   
+</div> -->

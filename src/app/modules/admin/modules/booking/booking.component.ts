@@ -88,7 +88,8 @@ this.bookingServ.getAllBooking(parame).subscribe({
 
 openDeleteDialog(item:any ,action:string): void {
    
-    const dialogRef = this.dialog.open(DeletBookingComponent, {
+  const dialogRef = this.dialog.open(DeletBookingComponent, {
+    width: "50%",
       data: {item:item,action:action},
     });
 

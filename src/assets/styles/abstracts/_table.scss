@@ -25,9 +25,9 @@ th{
     padding-left:10px ;
 
 }
-table-striped[_ngcontent-ng-c851445362] > tbody[_ngcontent-ng-c851445362] > tr[_ngcontent-ng-c851445362]:nth-of-type(even) > *[_ngcontent-ng-c851445362] {
-    background-color: rgb(56 78 122 / 55%) !important;
-}
+// table-striped[_ngcontent-ng-c851445362] > tbody[_ngcontent-ng-c851445362] > tr[_ngcontent-ng-c851445362]:nth-of-type(even) > *[_ngcontent-ng-c851445362] {
+//     background-color: rgb(56 78 122 / 55%) !important;
+// }
     
 
 .table-striped>tbody>tr:nth-of-type(odd)>* {
@@ -36,10 +36,12 @@ table-striped[_ngcontent-ng-c851445362] > tbody[_ngcontent-ng-c851445362] > tr[_
 .table-striped>tbody>tr:nth-of-type(odd)>* {
 
     --bs-table-bg-type: #fff !important;
+    
 }
 .table-striped>tbody>tr:nth-of-type(even)>* {
     background-color: #e2e5eb18 !important;
 }
+
 // .imageTable{
 //     width: 50px;
 //     height:50px;
