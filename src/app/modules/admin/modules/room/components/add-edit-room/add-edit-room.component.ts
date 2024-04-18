@@ -35,6 +35,7 @@ export class AddEditRoomComponent {
   onAddRoomMessag: string = '';
   getArray: any[] = [];
   tableData_setting: any = [];
+  selected: any[]=[];
 
   constructor(private sanitizer: DomSanitizer, private _RoomService: RoomService, private _ToastrService: ToastrService, private _Router: Router, private _ActivatedRoute: ActivatedRoute) {
     this.viewRoomId = _ActivatedRoute.snapshot.params['id'];
