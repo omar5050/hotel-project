@@ -3,8 +3,11 @@
 
     <section class="row gy-4">
         <section *ngFor="let item of landingItem" class="col-md-4">
-            <section class="item ">
-
+            <section class="item bg-warning ">
+           <div class="layer-icon text-white">
+            <i class="fa-regular fa-heart fs-2 mx-3"></i>
+            <i class="fa-regular fa-eye fs-2 mx-3"></i>
+           </div>
                 <img *ngIf="item.images.length !=0" [src]="item.images[0]" alt="" class="">
                 <img *ngIf="item.images.length ==0" src="../../../../assets/images/login-img.png " alt="" class="">
 
