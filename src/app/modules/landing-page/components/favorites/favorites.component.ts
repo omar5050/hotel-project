@@ -58,7 +58,15 @@ getAllfavorite(){
 
 
 
-
+ handlePageEvent(e: any) {
+  
+  this.pageEvent = e;
+  this.length = e.length;
+  this.pageSize = e.pageSize;
+  this.pageNumber = e.pageIndex;
+ this.getAllfavorite();
+  
+}
 
 
 
