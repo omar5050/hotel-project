@@ -83,13 +83,13 @@
 
                 <ngx-dropzone (change)="onSelect($event)" class="w-100">
 
-                    <ngx-dropzone-label  *ngIf="imgSrc" class="text-black">
-                        <img *ngFor="let img of imgSrc" [src]="img" alt="" class="w-25">
+                    <ngx-dropzone-label  *ngIf="addImags" class="text-black">
+                        <img *ngFor="let img of addImags" [src]="img" alt="" class="w-25">
                     </ngx-dropzone-label>
 
 
 
-                    <ngx-dropzone-label class="text-black">
+                    <ngx-dropzone-label *ngIf="!addImags" class="text-black">
                         <p class="text-color">
                             <i class="fa-solid fa-arrow-up-from-bracket fs-4"></i>
                     </p>
