@@ -251,12 +251,17 @@ for (const item of this.imgsList) {
         this.facilities = response.data.room.facilities;
         // console.log(this.RoomById.images)
         this.addImags=this.RoomById.images;
-
+    
         console.log(this.facilities)
         // this.addImags=response.data.room.facilities.images;
         console.log(this.addImags);
         
-    
+      // this.stringToFile(this.addImags[0],'mm');
+
+      // console.log(this.stringToFile(this.addImags[0],'mm'));
+
+      // this.files.push(this.stringToFile(this.addImags[0],'mm'));
+      
         this._ToastrService.error('error in edit process')
       }, complete: () => {
            
@@ -275,6 +280,27 @@ for (const item of this.imgsList) {
       }
     })
   }
+
+
+
+  
+// // Example usage
+//  myString = "Hello, world!";
+//  myFile = stringToFile(myString, "hello.txt");
+// // console.log(myFile); // This will log a File object with the content "Hello, world!" and the filename "hello.txt"
+
+
+
+stringToFile(data: string, filename: string): File {
+  // Convert the string to a Blob
+  const blob = new Blob([data], { type: 'text/plain' });
+
+  // Create a File object from the Blob
+  const file = new File([blob], filename);
+
+  return file;
+}
+
 }
 
 
