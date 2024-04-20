@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LandingService } from '../../service/landing.service';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-favorites',
@@ -7,7 +8,14 @@ import { LandingService } from '../../service/landing.service';
   styleUrls: ['./favorites.component.scss']
 })
 export class FavoritesComponent implements OnInit {
-  constructor (private _LandServ:LandingService){
+  idFav:any;
+  removfav=localStorage.getItem('removfav')
+  
+  constructor (private _LandServ:LandingService,
+
+    private _Router:Router
+
+  ){
 
   }
 
@@ -25,19 +33,24 @@ export class FavoritesComponent implements OnInit {
 
 
 ngOnInit(): void {
-  this.getAllfavorite()
+  this.getAllfavorite();
+
+
+  
+  
+
 }
 
 
 getAllfavorite(){
  this._LandServ.getAllfavorite().subscribe({
    next:(res)=>{
- console.log(res);
+ 
  this.totalCard=res.data.favoriteRooms[0].rooms;
  console.log(this.totalCard);
  this.totalCount=res.data.totalCount
  ;
- console.log(this.totalCount);
+
  
    },
    error:(err)=>{
@@ -69,5 +82,22 @@ getAllfavorite(){
 }
 
 
+// deletFav(){
+//   console.log('2222');
+  
+// this._LandServ.removeFav(this.removfav).subscribe({
+//   next:(res)=>{
+// console.log(res);
+// this.getAllfavorite();
+// localStorage.removeItem('removfav')
+//   },
+//   error:(err)=>{
+// console.log(err);
+
+//   }
+
+
+// })
+// }
 
 }

@@ -27,6 +27,9 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
     LandingPageRoutingModule,
     SharedModule,
     
+  ],
+  exports:[
+    
   ]
 })
 export class LandingPageModule { }
