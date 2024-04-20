@@ -32,4 +32,20 @@ return this.http.get('portal/favorite-rooms');
 }
 
 
+addFav(roomId:any):Observable<any>{
+ 
+  return this.http.post(`portal/favorite-rooms`, {roomId});
+
+
+
+}
+
+removeFav(roomId:any):Observable<any>{
+  console.log(roomId);
+  return this.http.delete(`portal/favorite-rooms/${roomId}`);
+
+
+
+}
+
 }
