@@ -10,6 +10,7 @@ import { IRoom } from 'src/app/modules/landing-page/interfac/iroom';
 })
 export class LandingComponent implements OnInit{
   pathmmm:any='/auth'
+  isAdmin=localStorage.getItem('role');
 
 
 @Input() landingItem:IRoom[]|any;

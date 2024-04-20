@@ -3,14 +3,14 @@
 
 <section *ngIf="landingItem.length>0" class="container" id="landing">
     <h4 
-   class="mb-4" [style.color]="true?'#152C5B':''">{{landPge}}</h4>
+   class="mb-4 " [style.color]="true?'#152C5B':''">{{landPge}}</h4>
 
     <section class="row gy-4">
         <section *ngFor="let item of landingItem" class="col-md-4">
             <section class="item  " >
            <div class="layer-icon text-white" >
               <div class="" *ngIf="landPge=='All Rooms'">
-                <i   class="fa-regular fa-heart fs-2 mx-3"  
+                <i *ngIf="isAdmin=='user'" class="fa-regular fa-heart fs-2 mx-3"  
                 routerLink="landing-page/fav" (click)="addFav(item._id)"></i>
                 <i class="fa-regular fa-eye fs-2 mx-3"></i>
               </div>

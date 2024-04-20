@@ -24,6 +24,7 @@ isAdmin=localStorage.getItem('role');
 
 ngOnInit(): void {
 console.log(this.isRole);
+console.log(this.isAdmin);
 
 this._auth.behLogin.subscribe({
 next:(behValue:any)=>{
