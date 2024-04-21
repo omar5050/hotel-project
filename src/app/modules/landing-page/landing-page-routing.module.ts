@@ -6,6 +6,7 @@ import { ExploreComponent } from './components/explore/explore.component';
 import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
 const routes: Routes = [
   {
@@ -20,7 +21,7 @@ const routes: Routes = [
       { path: 'fav/:id', component: FavoritesComponent },
       { path: 'review', component: ReviewsComponent },
       { path: 'roomdetails', component: RoomDetailsComponent },
-
+      { path: 'payment', component: PaymentComponent },
 
 
 

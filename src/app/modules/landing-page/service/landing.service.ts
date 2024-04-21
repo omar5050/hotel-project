@@ -1,3 +1,4 @@
+import { AnimationKeyframesSequenceMetadata } from '@angular/animations';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -47,5 +48,10 @@ removeFav(roomId:any):Observable<any>{
 
 
 }
+onPayBooking(id:any):Observable<any>{
+  return this.http.post(`portal/booking/${id}/pay`,{'token':''});
+
+}
+
 
 }

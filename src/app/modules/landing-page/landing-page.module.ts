@@ -10,7 +10,15 @@ import { ExploreComponent } from './components/explore/explore.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
+import { PaymentComponent } from './components/payment/payment.component';
 
+import {
+  StripeCardComponent,
+  StripeCardNumberComponent,
+  StripeCardExpiryComponent,
+  StripeCardCvcComponent
+} from 'ngx-stripe' 
+import { NgxStripeModule } from 'ngx-stripe';
 
 @NgModule({
   declarations: [
@@ -20,12 +28,16 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
     FavoritesComponent,
     ExploreComponent,
     ReviewsComponent,
-    RoomDetailsComponent
+    RoomDetailsComponent,
+    PaymentComponent
   ],
   imports: [
     CommonModule,
     LandingPageRoutingModule,
     SharedModule,
+
+
+    NgxStripeModule.forRoot('pk_test_51OTjURBQWp069pqTmqhKZHNNd3kMf9TTynJtLJQIJDOSYcGM7xz3DabzCzE7bTxvuYMY0IX96OHBjsysHEKIrwCK006Mu7mKw8'),
     
   ],
   exports:[
