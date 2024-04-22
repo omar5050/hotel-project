@@ -12,6 +12,7 @@ import { SharedModule } from 'src/app/shared/shared.module';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { FooterComponent } from './components/footer/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     HomeComponent,
     FavoritesComponent,
     ExploreComponent,
-    ReviewsComponent
+    ReviewsComponent,
+    FooterComponent
   ],
   imports: [
     CommonModule,

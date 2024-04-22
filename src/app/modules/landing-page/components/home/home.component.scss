@@ -45,13 +45,26 @@
            bottom:40px;
            right: 16rem;
       }
-      .layer{
+      .layer {
         margin-top:8rem ;
         width:439.07px;
         height: 410.63px;
-        border-radius: 0px  15px 15px 15px;
+        border-radius: 15px;
         border:2px solid  rgba(229, 229, 229, 1);
+        &.second-layer{
+           width: 365.98px;
+           height: 501.88px;
+        }
       }
+      .img-home-style{
+        bottom:40px;
+        right: 16rem;
+       
+   }
+   .img-testimonials-style{
+    top: 30px;
+    right: 14.5rem;
+   }
       .card{
         border-radius: 15px;
         border: none;
