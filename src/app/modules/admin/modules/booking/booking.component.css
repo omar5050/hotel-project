@@ -1,0 +1,92 @@
+.anchor-color {
+  color: rgb(77, 77, 77);
+}
+
+.text-second {
+  color: #152c5b;
+}
+
+.text-main {
+  color: #3252df;
+}
+
+.bg-layer-active {
+  background-color: rgba(26, 27, 30, 0.17);
+  color: rgba(255, 255, 255, 0.17);
+}
+
+.bg-second {
+  background-color: #203fc7;
+}
+
+.table-head {
+  background-color: rgb(248, 249, 251);
+  height: 40px;
+}
+
+.bg-head {
+  background-color: #e2e5eb;
+  border-radius: 10px !important;
+}
+
+tbody, td, tfoot, thead, tr {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 10px;
+  border-bottom: none;
+}
+
+th {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: #ffffff !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-bg-type: #fff !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > * {
+  background-color: rgba(226, 229, 235, 0.0941176471) !important;
+}
+
+.button-mat-icon {
+  box-shadow: none !important;
+  color: black;
+}
+
+.button-mat-menu {
+  background-color: white !important;
+  color: black;
+}
+
+.button-mat-menu:active {
+  background-color: rgb(48, 16, 16);
+}
+
+.mat-icon {
+  color: #3252df;
+}
+
+.span-color {
+  color: rgb(31, 38, 62);
+}
+
+.bg-button {
+  background-color: transparent;
+}
+
+.mat-mdc-menu-item .mat-icon-no-color, .mat-mdc-menu-item .mat-mdc-menu-submenu-icon {
+  color: rgb(32, 63, 199);
+}
+
+img {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 60vh;
+}/*# sourceMappingURL=booking.component.css.map */

@@ -10,6 +10,8 @@ import { ExploreComponent } from './components/explore/explore.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { SharedModule } from 'src/app/shared/shared.module';
   imports: [
     CommonModule,
     LandingPageRoutingModule,
-    SharedModule
+    SharedModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
   ]
 })
 export class LandingPageModule { }
