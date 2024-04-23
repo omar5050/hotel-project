@@ -3,12 +3,15 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { RoomService } from '../../service/room.service';
 import { ToastrService } from 'ngx-toastr';
 import { ActivatedRoute, Router } from '@angular/router';
-
+import { DomSanitizer } from '@angular/platform-browser';
 @Component({
   selector: 'app-add-edit-room',
   templateUrl: './add-edit-room.component.html',
   styleUrls: ['./add-edit-room.component.scss']
 })
+
+
+
 export class AddEditRoomComponent {
 
   facilityId:number=0;
@@ -17,7 +20,7 @@ export class AddEditRoomComponent {
   imgSrc: any;
   files: File[] = [];
   files2: File[] = [];
-
+  addImags:any=[];
 
   imgsList:any[]=[];
   roomImgValue: any;
@@ -235,30 +238,7 @@ for (const item of this.imgsList) {
 
 
 
-// -----------------------------------------
-  // onSelect(event: any) {
-  //   console.log(event);
-  //   const selectedFile = event;
-  //   // this.imgSrc = event.addedFiles;
-  //   console.log(this.previewImg);
-  //   this.files.push(...event.addedFiles);
-  //   // this.files2.push(...event.addedFiles);
-  //   // this.previewImg = event.addedFiles[0];
-  //   // this.previewImg = event.addedFiles[1];
-  //   for (let index = 0; index < event.addedFiles.length; index++) {
-  //     this.previewImg += event.addedFiles[index]
-  //   }
-  //   console.log(this.previewImg);
-    
-  // }
 
-  // onRemove(event:any) {
-  //   console.log(event);
-  //   this.files.splice(this.files.indexOf(event), 1);
-  // }
-
-
-  // --------------------------------
 
   getRoomById(id: string) {
     this._RoomService.getRoomById(id).subscribe({
@@ -269,9 +249,19 @@ for (const item of this.imgsList) {
 
         this.RoomById = response.data.room;
         this.facilities = response.data.room.facilities;
-        console.log(this.RoomById)
+        // console.log(this.RoomById.images)
+        this.addImags=this.RoomById.images;
+    
         console.log(this.facilities)
-      }, error: (error) => {
+        // this.addImags=response.data.room.facilities.images;
+        console.log(this.addImags);
+        
+      // this.stringToFile(this.addImags[0],'mm');
+
+      // console.log(this.stringToFile(this.addImags[0],'mm'));
+
+      // this.files.push(this.stringToFile(this.addImags[0],'mm'));
+      
         this._ToastrService.error('error in edit process')
       }, complete: () => {
            
@@ -290,5 +280,27 @@ for (const item of this.imgsList) {
       }
     })
   }
+
+
+
+  
+// // Example usage
+//  myString = "Hello, world!";
+//  myFile = stringToFile(myString, "hello.txt");
+// // console.log(myFile); // This will log a File object with the content "Hello, world!" and the filename "hello.txt"
+
+
+
+stringToFile(data: string, filename: string): File {
+  // Convert the string to a Blob
+  const blob = new Blob([data], { type: 'text/plain' });
+
+  // Create a File object from the Blob
+  const file = new File([blob], filename);
+
+  return file;
 }
+
+}
+
 
