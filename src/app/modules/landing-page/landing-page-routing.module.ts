@@ -15,8 +15,7 @@ const routes: Routes = [
 {path:'explore',component:ExploreComponent},
 {path:'fav',component:FavoritesComponent},
 {path:'review',component:ReviewsComponent},
-
-
+{path:'room-details',component:ReviewsComponent},
 
 
 

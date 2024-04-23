@@ -1,5 +1,7 @@
-import { Component } from '@angular/core';
+import { tableAdss } from './../../../admin/modules/ads/interface/iads';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { HomeService } from '../../services/home.service';
 
 const today = new Date();
 const month = today.getMonth();
@@ -12,8 +14,20 @@ const year = today.getFullYear();
  
 })
 export class HomeComponent {
+
+  tableData: any[] = [];
+  tableAdsData: any[] = [];
+
   count: number = 0;
-  
+  constructor(private _HomeServices:HomeService) {
+    
+  }
+
+  ngOnInit() {
+    this.getAllRoomsAds();
+  }
+
+
   // counter(type: string) {
     
   //   type === 'plus' ? this.count++ : this.count--;
@@ -31,4 +45,23 @@ export class HomeComponent {
     end: new FormControl(new Date(year,16 , month)),
   });
 
+
+  
+  getAllRoomsAds() {
+    this._HomeServices.getAllRooms().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.tableData = res;
+        this.tableAdsData = res.data.ads.slice(0, 4);
+        console.log(this.tableAdsData);
+        
+      
+    }
+  })
 }
+
+
+}
+
+
+

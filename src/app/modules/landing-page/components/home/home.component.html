@@ -81,20 +81,29 @@
     <div class="container-fluid  ">
         <h3>Most popular ads</h3>
         <div class="row mt-2 ">
-            <div class="col-lg-4 col-md-6  col-sm-12">
-
-
+            <div class="col-lg-4 col-md-6  col-sm-12 ">
+              <div>
                 <div class="card position-relative bg-dark text-white">
-                    <img src="../../../../../assets/images/forget-Password-img.svg"  class="card-img" alt="...">
-                    <div class="card-img-overlay img-overlay  ">
-                        <p class="text-white ">$22 per night</p>
-                    </div>
-                    <div class="card-img-overlay  position-absolute overlay">
-                      <h5 class="card-title text-white">Card title</h5>
-                      <p class="card-text text-white">  This content is a little bit longer.</p>
-                  
-                    </div>
+                  <img src="../../../../../assets/images/forget-Password-img.svg"  class="card-img" alt="...">
+                  <div class="card-img-overlay img-overlay  ">
+                      <p class="text-white ">$22 per night</p>
                   </div>
+                  <div class="card-img-overlay  position-absolute overlay">
+                    <h5 class="card-title text-white">Card title</h5>
+                    <p class="card-text text-white">  This content is a little bit longer.</p>
+                
+                  </div>
+                  <div class="overlay-hover  position-absolute ">
+                    <div class=" social-iner position-absolute text-center">
+                        <a routerLink="fav"> <i class="fa-solid fa-heart fs-3"></i></a>
+                        <a routerLink="room-details"> <i class="fa-solid fa-eye fs-3"></i></a>
+                      
+
+                    </div>
+                </div>
+                </div>
+              </div>
+               
 
             </div>
             <div class="col-lg-8 col-md-6  col-sm-12">
@@ -212,53 +221,26 @@
                 <div class="container-fluid  my-3  ">
                     <h3>Ads</h3>
                     <div class="row mt-4 ">
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card h-100">
-                                <img src="../../../../../assets/images/pic.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Card title</h5>
-                                  <p class="card-text">Gunung Batu, Indonesia</p>
-                                </div></div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card h-100">
-                                <img src="../../../../../assets/images/pic.png" class="card-img-top" alt="...">
-                                <div class="card-body">
-                                  <h5 class="card-title">Card title</h5>
-                                  <p class="card-text">Gunung Batu, Indonesia</p>
-                                </div></div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card h-100">
-
-                                <img src="../../../../../assets/images/pic.png" class="card-img-top" alt="...">
-                                <div class="card-img-overlay img-overlay  ">
-                                    <p class="text-white ">$22 </p>
-                                </div>
-                                <div class="card-body">
-                                  <h5 class="card-title">Card title</h5>
-                                  <p class="card-text">Gunung Batu, Indonesia</p>
-                                </div></div>
-                        </div>
-                        <div class="col-lg-3 col-md-6 col-sm-6">
-                            <div class="card h-100">
-                                <img src="../../../../../assets/images/pic.png" class="card-img-top" alt="...">
-                                <div class="card-img-overlay img-overlay  ">
-                                    <p class="text-white ">$22 </p>
-                                </div>
-                                <div class="card-body">
-                                  <h5 class="card-title">Card title</h5>
-                                  <p class="card-text">Gunung Batu, Indonesia</p>
-                                </div></div>
-                        </div>
+                      <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let item of tableAdsData">
+                        <div class="card h-100" >
+                            <img [src]="item.room.images[0]" class="card-img-top" width="331.3px" height="221.2px" alt="...">
+                            <div class="card-img-overlay img-overlay  ">
+                                <p class="text-white ">{{item.room.price}}  $ per night</p>
+                            </div>
+                            <div class="card-body">
+                              <h5 class="card-title">{{item.room.roomNumber}}</h5>
+                              <p class="card-text"><span>Capacity:</span>{{item.room.capacity}}</p>
+                              <p class="card-text"><span>Discount:</span>{{item.room.discount}}%</p>
+                            </div></div>
+                    </div>
                         </div></div></section>
             
 <section id="testimonils">
                             <div class="container-fluid mb-5 pb-5">
                                 <div class="row">
                                            
-                                    <div class="col-md-6">
-                                        <div class="mt-5 ms-5 ps-5  position-relative">
+                                    <div class="col-md-5">
+                                        <div class="mt-5 ms-2 ps-5  position-relative">
                                             <div class="layer second-layer"> 
                                             </div>
                                             <div  class="position-absolute  img-testimonials-style">
@@ -266,8 +248,42 @@
                                             </div></div>
                                            
                                         </div>
-                                    <div class="col-md-6 ">
-                                       
+                                    <div class="col-md-7 mt-5 pt-5">
+                                       <div class="">
+                                        <h3 class="mt-5 pt-5 pb-3">Happy Family</h3>
+                                        <div class="mb-3" >
+                                          <i class="fa-solid fa-star text-warning fs-5"></i>
+                                          <i class="fa-solid fa-star text-warning fs-5"></i>
+                                          <i class="fa-solid fa-star text-warning fs-5"></i>
+                                          <i class="fa-solid fa-star text-warning fs-5"></i>
+                                          <i class="fa-solid fa-star text-warning fs-5"></i>
+                                        </div>
+                                        <h4 class="mt-2">
+                                          What a great trip with my family and <br>
+                                           I should try again next time soon ...
+                                        </h4>
+                                        <p>Angga, Product Designer</p>
+                                        <div>
+                                          <i class="fa-regular fa-circle-left pe-5 fs-2"></i>
+                                          <i class="fa-regular fa-circle-right fs-2"></i>
+                                        
+                                        </div>
+                                       </div>
+                                       <!-- <div>
+                                        
+                                        <button mat-icon-button  *ngFor="let ratingId of ratingArr;index as i"
+                                         [id]="'star_'+i" (click)="onClick(i+1)">
+                                        <mat-icon>
+                                          {{showIcon(i)}}
+                                        </mat-icon>
+                                      </button>
+                                      <mat-error *ngIf="starCount == null || starCount == 0">
+                                        Star count is <strong>required</strong> and cannot be zero
+                                      </mat-error>
+                                      <p class="body-2">
+                                          Your rated <span class="body-2">{{rating}}</span> / <span class="body-2">{{starCount}}</span>
+                                      </p>
+                                      </div> -->
                                         </div>
                             
                                 </div>
