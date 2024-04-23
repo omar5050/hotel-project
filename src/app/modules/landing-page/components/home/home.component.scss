@@ -41,10 +41,7 @@
         padding:8px 7rem ;
         box-shadow: 5px 5px 10px rgba(50, 82, 223, 0.3);
       }
-      .img-home-style{
-           bottom:40px;
-           right: 16rem;
-      }
+
       .layer {
         margin-top:8rem ;
         width:439.07px;
@@ -54,6 +51,9 @@
         &.second-layer{
            width: 365.98px;
            height: 501.88px;
+
+//            margin-left: 50px;
+
         }
       }
       .img-home-style{
@@ -63,7 +63,11 @@
    }
    .img-testimonials-style{
     top: 30px;
-    right: 14.5rem;
+
+   // right: 14.5rem;
+
+    left: 10rem;
+
    }
       .card{
         border-radius: 15px;
@@ -91,7 +95,9 @@
            background-color: rgba(255, 73, 139, 1);
             top:0px;
             bottom: 26rem;
-            left:16rem;
+
+            left:10rem;
+
             border-radius:0px 15px;
             height: 50px;
       }
@@ -99,3 +105,46 @@
          height:37vh;
 
     }
+
+h3,h4,i{
+  color: $text-second;
+}
+p{
+  color: $p-color-landing-page;
+}
+i{
+cursor: pointer;
+}
+.overlay-hover{
+  background-color:  rgba(32, 63, 199, 0.21);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  border-radius: 15px;
+  text-align: center;
+  transition: all .2s .1s ease-in;
+  opacity: 0;
+}
+
+.card:hover .overlay-hover{
+  opacity: 1;
+
+}
+.social-iner{
+  top: 50%;
+  width: 100%;
+  transform: translateY(-50%);
+}
+
+.social-iner i{
+  
+  color: #fff;
+
+  font-size: 1.2rem;
+  margin: 0 12px;
+
+      
+}
+

@@ -13,7 +13,9 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
-import { FooterComponent } from './components/footer/footer/footer.component';
+
+import { FooterComponent } from './components/footer/footer.component';
+
 
 @NgModule({
   declarations: [
@@ -24,16 +26,20 @@ import { FooterComponent } from './components/footer/footer/footer.component';
     ExploreComponent,
     ReviewsComponent,
 
-    RoomDetailsComponent
+
 
     FooterComponent
+
+    RoomDetailsComponent
 
   ],
   imports: [
     CommonModule,
     LandingPageRoutingModule,
     SharedModule,
-    
+    MatDatepickerModule,
+    MatNativeDateModule,
+
   ],
   exports:[
     
