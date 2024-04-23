@@ -97,8 +97,8 @@
                   <div class="overlay-hover  position-absolute ">
                     <div class=" social-iner position-absolute text-center">
                         <a routerLink="fav"> <i class="fa-solid fa-heart fs-3"></i></a>
-                        <a routerLink="room-details"> <i class="fa-solid fa-eye fs-3"></i></a>
-                      
+                        <!-- <a routerLink="roomdetails"> <i class="fa-solid fa-eye fs-3"></i></a>
+                       -->
 
                     </div>
                 </div>
@@ -188,7 +188,7 @@
                 <div class="card h-100">
                     <img [src]="item.images[0]" width="331.3px" height="221.2px" class="card-img-top" alt="...">
                     <div class="card-img-overlay img-overlay  ">
-                      <p class="text-white ">{{item.room.price}}  $ per night</p>
+                      <p class="text-white ">{{item.price}}  $ per night</p>
                   </div>
                     <div class="card-body">
                       <h5 class="card-title">Capacity: {{item.capacity}}</h5>
@@ -298,9 +298,6 @@
                         </section>
                         
                         <hr>
-                         <footer>
-                            <app-footer></app-footer>
-                        </footer>            
-
+                      
 
          
