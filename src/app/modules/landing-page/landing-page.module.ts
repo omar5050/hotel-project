@@ -9,6 +9,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ExploreComponent } from './components/explore/explore.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { SharedModule } from 'src/app/shared/shared.module';
+import { RoomDetailsComponent } from './components/room-details/room-details.component';
 
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
@@ -22,7 +23,11 @@ import { FooterComponent } from './components/footer/footer.component';
     FavoritesComponent,
     ExploreComponent,
     ReviewsComponent,
+
     FooterComponent
+
+    RoomDetailsComponent
+
   ],
   imports: [
     CommonModule,
@@ -30,6 +35,10 @@ import { FooterComponent } from './components/footer/footer.component';
     SharedModule,
     MatDatepickerModule,
     MatNativeDateModule,
+
+  ],
+  exports:[
+    
   ]
 })
 export class LandingPageModule { }
