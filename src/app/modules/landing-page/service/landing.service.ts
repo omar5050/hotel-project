@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -40,9 +40,20 @@ addFav(roomId:any):Observable<any>{
 
 }
 
-removeFav(roomId:any):Observable<any>{
-  console.log(roomId);
-  return this.http.delete(`portal/favorite-rooms/${roomId}`);
+removeFav(Id:any,roomId:string|any):Observable<any>{
+  console.log(Id,roomId);
+
+
+
+  const options = {
+    headers: new HttpHeaders({
+      'Content-Type': 'application/json'
+    }),
+    body: {
+      roomId: roomId
+    }
+  };
+  return this.http.delete(`portal/favorite-rooms/${Id}`, options );
 
 
 

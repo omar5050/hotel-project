@@ -6,8 +6,8 @@
 
 
 <section class="py-5">
-    <app-landing class="py-5" [totalCountL]="totalCount" [landingItem]="totalCard"
-     [landPge]="isPge"
+    <app-landing (deletFavIdL)="emitDeletFav = $event" class="py-5" [totalCountL]="totalCount" [landingItem]="totalCard"
+     [landPge]="isPge" [roomIdL]="roomIdFav" 
        >
     </app-landing>
 
