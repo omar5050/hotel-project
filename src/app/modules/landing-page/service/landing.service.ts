@@ -36,7 +36,7 @@ export class LandingService {
 
     return this.http.post(`portal/favorite-rooms`, { roomId });
 
-
+  }
 
 
 removeFav(Id:any,roomId:string|any):Observable<any>{
@@ -54,14 +54,14 @@ removeFav(Id:any,roomId:string|any):Observable<any>{
   };
   return this.http.delete(`portal/favorite-rooms/${Id}`, options );
 
+}
+  // removeFav(roomId: any): Observable<any> {
+  //   console.log(roomId);
+  //   return this.http.delete(`portal/favorite-rooms/${roomId}`);
 
-  removeFav(roomId: any): Observable<any> {
-    console.log(roomId);
-    return this.http.delete(`portal/favorite-rooms/${roomId}`);
 
 
-
-  }
+  // }
 
   getRoomDetails(roomId:any): Observable<any>{
     return this.http.get(`portal/rooms//${roomId}`)
