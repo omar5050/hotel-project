@@ -24,7 +24,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ExploreComponent,
     ReviewsComponent,
 
-    FooterComponent
+    FooterComponent,
 
     RoomDetailsComponent
 
