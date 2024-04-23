@@ -6,20 +6,20 @@
                         style="color: #152C5B">Room Details</span> </h5>
             </div>
             <div class="col-5">
-                <h3 style="color: #152C5B;font-weight: bold;">Village Angga</h3>
+                <h3 style="color: #152C5B;font-weight: bold;">{{roomNumber}}</h3>
                 <p class="mx-4 text-muted" style="color: rgb(172, 167, 167)">Bogor, Indonesia</p>
             </div>
 
         </div>
         <div class="row">
-            <div class="col-6">
-                <img src="../../../../../assets/images/big.svg" alt="" class="imgSizeLarge">
+            <div class="col-6" *ngFor="let img of imgs">
+                <img [src]="img" alt="" class="imgSizeLarge">
             </div>
-            <div class="col-6">
+            <!-- <div class="col-6">
                 <img src="../../../../../assets/images/Rectangle 6.svg" alt="" class="imgSizeSmall">
                 <br>
                 <img src="../../../../../assets/images/Rectangle 6.svg" alt="" class="imgSizeSmall mt-1">
-            </div>
+            </div> -->
         </div>
         <div class="row">
             <div class="col-6 mt-5 text-muted">
@@ -89,31 +89,39 @@
             </div>
             <div class="col-5 mt-5 ms-2 text-muted border rounded-4">
                 <h5 class="ms-5 mt-5" style="color: #152C5B;font-weight: bold;">Start Booking</h5>
-                <h3><span class="ms-5" style="color: #1ABC9C">$280</span><span style="color: rgb(172, 167, 167);"> per
+                <h3><span class="ms-5" style="color: #1ABC9C">${{price}}</span><span style="color: rgb(172, 167, 167);">
+                        per
                         night</span></h3>
-                <p class="ms-5" style="color: red;">Discount 20% Off </p>
+                <p class="ms-5" style="color: red;">Discount {{discount}}% Off </p>
 
                 <h6 class="mt-5 ms-5" style="color: #152C5B;">Pick a Date</h6>
 
                 <div>
-                    <mat-form-field class="example-form-field  mx-5 w-75">
-                        <mat-label>Second campaign</mat-label>
-                        <mat-date-range-input [formGroup]="campaignTwo" [rangePicker]="campaignTwoPicker"
-                            [comparisonStart]="campaignOne.value.start" [comparisonEnd]="campaignOne.value.end">
-                            <input matStartDate placeholder="Start date" formControlName="start">
-                            <input matEndDate placeholder="End date" formControlName="end">
-                        </mat-date-range-input>
-                        <mat-datepicker-toggle matIconSuffix [for]="campaignTwoPicker"></mat-datepicker-toggle>
-                        <!-- <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint> -->
-                        <mat-date-range-picker #campaignTwoPicker></mat-date-range-picker>
-                    </mat-form-field>
+                    <form [formGroup]="bookForm" (ngSubmit)="submitBooking(bookForm)">
+                        <mat-form-field>
+                            <mat-label>Enter a date range</mat-label>
+                            <mat-date-range-input [formGroup]="bookForm" [rangePicker]="picker">
+                                <input matStartDate formControlName="start" placeholder="Start date">
+                                <input matEndDate formControlName="end" placeholder="End date">
+                            </mat-date-range-input>
+                            <!-- <mat-hint>MM/DD/YYYY – MM/DD/YYYY</mat-hint> -->
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-date-range-picker #picker></mat-date-range-picker>
 
-                    <p class="ms-5" style="color: rgb(172, 167, 167);">You will pay <span
-                            style="color: #152C5B;font-weight: bold;">$480 USD</span> per <span
-                            style="color: #152C5B;;font-weight: bold;">2 Person</span></p>
+                            <mat-error *ngIf="bookForm.controls.start.hasError('matStartDateInvalid')">Invalid start
+                                date</mat-error>
+                            <mat-error *ngIf="bookForm.controls.end.hasError('matEndDateInvalid')">Invalid end
+                                date</mat-error>
+                        </mat-form-field>
 
-                    <button class="border-0 ms-5 rounded-3">Continue Book</button>
 
+
+                        <p class="ms-5" style="color: rgb(172, 167, 167);">You will pay <span
+                                style="color: #152C5B;font-weight: bold;">${{money}} USD</span> per <span
+                                style="color: #152C5B;;font-weight: bold;">{{capacity}} Person</span></p>
+
+                        <button class="border-0 ms-5 rounded-3" >Continue Book</button>
+                    </form>
                 </div>
 
             </div>
@@ -140,7 +148,7 @@
                         </div>
                     </div>
 
-                    
+
                 </div>
 
 

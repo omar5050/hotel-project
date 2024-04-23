@@ -83,7 +83,7 @@ export class LandingComponent implements OnInit {
 
 
   getRoomdetails(roomId:any){
-
+    this._Router.navigate(['/landing-page/roomdetails', roomId]);
   }
 
 
