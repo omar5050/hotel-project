@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { LandingService } from '../../service/landing.service';
 import { ActivatedRoute, Router } from '@angular/router';
 
@@ -7,8 +7,10 @@ import { ActivatedRoute, Router } from '@angular/router';
   templateUrl: './favorites.component.html',
   styleUrls: ['./favorites.component.scss']
 })
-export class FavoritesComponent implements OnInit {
+export class FavoritesComponent implements OnInit ,OnChanges{
   idFav:any;
+  roomIdFav:any
+  emitDeletFav:string='';
   removfav=localStorage.getItem('removfav')
   
   constructor (private _LandServ:LandingService,
@@ -31,7 +33,10 @@ export class FavoritesComponent implements OnInit {
   pageSizeOptions=[5,10,20];
   pageEvent:any;
 
-
+ngOnChanges(changes: SimpleChanges): void {
+  console.log(changes);
+  
+}
 ngOnInit(): void {
   this.getAllfavorite();
 
@@ -45,9 +50,14 @@ ngOnInit(): void {
 getAllfavorite(){
  this._LandServ.getAllfavorite().subscribe({
    next:(res)=>{
+ console.log(res);
  
  this.totalCard=res.data.favoriteRooms[0].rooms;
- console.log(this.totalCard);
+
+this.roomIdFav=res.data.favoriteRooms[0]._id;
+console.log(this.roomIdFav);
+
+//  console.log(this.totalCard);
  this.totalCount=res.data.totalCount
  ;
 
