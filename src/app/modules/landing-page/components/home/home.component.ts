@@ -17,6 +17,8 @@ export class HomeComponent {
 
   tableData: any[] = [];
   tableAdsData: any[] = [];
+  tableHouseData: any[] = [];
+  tableLivingData: any[] = [];
 
   count: number = 0;
   constructor(private _HomeServices:HomeService) {
@@ -25,6 +27,8 @@ export class HomeComponent {
 
   ngOnInit() {
     this.getAllRoomsAds();
+    this.getAllHousesRoom();
+    this.getAllLivingRoom();
   }
 
 
@@ -48,7 +52,7 @@ export class HomeComponent {
 
   
   getAllRoomsAds() {
-    this._HomeServices.getAllRooms().subscribe({
+    this._HomeServices.getAllAdsRooms().subscribe({
       next: (res) => {
         console.log(res);
         this.tableData = res;
@@ -58,8 +62,31 @@ export class HomeComponent {
       
     }
   })
-}
-
+  }
+  getAllHousesRoom() {
+    this._HomeServices.getAllRooms().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.tableData = res;
+        this.tableHouseData = res.data.rooms.slice(0, 4);
+        console.log(this.tableHouseData);
+        
+        
+      }
+    })
+  }
+  getAllLivingRoom() {
+    this._HomeServices.getAllRooms().subscribe({
+      next: (res) => {
+        console.log(res);
+        this.tableData = res;
+        this.tableLivingData = res.data.rooms.slice(5, 9);
+        console.log(this.tableLivingData);
+        
+        
+      }
+    })
+  }
 
 }
 

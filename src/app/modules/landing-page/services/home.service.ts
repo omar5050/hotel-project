@@ -8,8 +8,13 @@ import { Observable } from 'rxjs';
 export class HomeService {
 
   constructor(private _HttpClient:HttpClient) { }
-  getAllRooms(): Observable<any> {
+  getAllAdsRooms(): Observable<any> {
     return this._HttpClient.get('portal/ads')
   }
+
+  getAllRooms(): Observable<any> {
+    return this._HttpClient.get('portal/rooms/available')
+  
+}
 
 }

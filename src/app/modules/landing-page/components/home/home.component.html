@@ -181,40 +181,37 @@
     <div class="container-fluid   my-5 ">
         <h3>Houses with beauty backyard</h3>
         <div class="row mt-4 ">
-            <div class="col-lg-3 col-md-6 col-sm-6">
+            <div class="col-lg-3 col-md-6 col-sm-6 " *ngFor="let item of tableHouseData">
                 <div class="card h-100">
-                    <img src="../../../../../assets/images/pic.png" class="card-img-top" alt="...">
+                    <img [src]="item.images[0]" width="331.3px" height="221.2px" class="card-img-top" alt="...">
+                    <div class="card-img-overlay img-overlay  ">
+                      <p class="text-white ">{{item.room.price}}  $ per night</p>
+                  </div>
                     <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Gunung Batu, Indonesia</p>
+                      <h5 class="card-title">Capacity: {{item.capacity}}</h5>
+                      <p class="card-text">Discount:{{item.discount}}</p>
                     </div></div>
             </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card h-100">
-                    <img src="../../../../../assets/images/pic.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Gunung Batu, Indonesia</p>
-                    </div></div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card h-100">
-                    <img src="../../../../../assets/images/pic.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Gunung Batu, Indonesia</p>
-                    </div></div>
-            </div>
-            <div class="col-lg-3 col-md-6 col-sm-6">
-                <div class="card h-100">
-                    <img src="../../../../../assets/images/pic.png" class="card-img-top" alt="...">
-                    <div class="card-body">
-                      <h5 class="card-title">Card title</h5>
-                      <p class="card-text">Gunung Batu, Indonesia</p>
-                    </div></div>
-            </div>
+      
             </div></div></section>
+<section id="Hotels-with-large-living-room" class="my-5 mx-5 py-2 " >
 
+              <div class="container-fluid   my-5 ">
+                  <h3>Hotels with large living room</h3>
+                  <div class="row mt-4 ">
+                    <div class="col-lg-3 col-md-6 col-sm-6 " *ngFor="let item of tableLivingData">
+                      <div class="card h-100">
+                          <img [src]="item.images[0]" width="331.3px" height="221.2px" class="card-img-top" alt="...">
+                          <div class="card-img-overlay img-overlay  ">
+                            <p class="text-white ">{{item.price}}  $ per night</p>
+                        </div>
+                          <div class="card-body">
+                            <h5 class="card-title">Capacity: {{item.capacity}}</h5>
+                            <p class="card-text">Discount:{{item.discount}}</p>
+                          </div></div>
+                  </div>
+                      </div></div></section>
+          
 
 <section id="Ads" class="my-3 mx-5  py-2" >
 
@@ -291,8 +288,6 @@
                         </section>
                         
                         <hr>
-                         <footer>
-                            <app-footer></app-footer>
-                        </footer>            
+                        
 
          
