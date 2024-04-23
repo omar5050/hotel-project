@@ -11,6 +11,9 @@ import { ReviewsComponent } from './components/reviews/reviews.component';
 import { SharedModule } from 'src/app/shared/shared.module';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import { FooterComponent } from './components/footer/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,11 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
     FavoritesComponent,
     ExploreComponent,
     ReviewsComponent,
+
     RoomDetailsComponent
+
+    FooterComponent
+
   ],
   imports: [
     CommonModule,
@@ -30,6 +37,9 @@ import { RoomDetailsComponent } from './components/room-details/room-details.com
   ],
   exports:[
     
+    MatDatepickerModule,
+    MatNativeDateModule,
+
   ]
 })
 export class LandingPageModule { }

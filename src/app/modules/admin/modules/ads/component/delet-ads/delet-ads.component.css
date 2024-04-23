@@ -1,0 +1,17 @@
+.is-img {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.is-img img {
+  width: 150px !important;
+  height: 150px;
+  border-radius: 50%;
+}
+
+a {
+  cursor: pointer;
+}/*# sourceMappingURL=delet-ads.component.css.map */

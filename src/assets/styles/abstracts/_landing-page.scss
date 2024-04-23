@@ -1,0 +1,17 @@
+@import "../abstracts/variables";
+
+h1,h5,h6,h3,span{
+    color: $h1-color;
+}
+h5{
+    font-weight: 500;
+}
+p{
+   color: $p-color-landing-page;
+}
+.mat-mdc-form-field-has-icon-suffix .mat-mdc-text-field-wrapper{
+    background-color: red!important;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+    background-color: red!important;
+}
