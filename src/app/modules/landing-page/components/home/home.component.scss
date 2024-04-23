@@ -41,7 +41,7 @@
         padding:8px 7rem ;
         box-shadow: 5px 5px 10px rgba(50, 82, 223, 0.3);
       }
-   
+
       .layer {
         margin-top:8rem ;
         width:439.07px;
@@ -51,7 +51,9 @@
         &.second-layer{
            width: 365.98px;
            height: 501.88px;
-           margin-left: 50px;
+
+//            margin-left: 50px;
+
         }
       }
       .img-home-style{
@@ -61,7 +63,11 @@
    }
    .img-testimonials-style{
     top: 30px;
+
+   // right: 14.5rem;
+
     left: 10rem;
+
    }
       .card{
         border-radius: 15px;
@@ -89,7 +95,9 @@
            background-color: rgba(255, 73, 139, 1);
             top:0px;
             bottom: 26rem;
+
             left:10rem;
+
             border-radius:0px 15px;
             height: 50px;
       }
@@ -97,6 +105,7 @@
          height:37vh;
 
     }
+
 h3,h4,i{
   color: $text-second;
 }
@@ -138,3 +147,4 @@ cursor: pointer;
 
       
 }
+

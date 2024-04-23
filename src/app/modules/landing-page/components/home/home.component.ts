@@ -1,7 +1,11 @@
+
+import { Component } from '@angular/core';
+import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { tableAdss } from './../../../admin/modules/ads/interface/iads';
 import { Component, EventEmitter, Input, Output } from '@angular/core';
 import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HomeService } from '../../services/home.service';
+
 
 const today = new Date();
 const month = today.getMonth();
@@ -14,6 +18,24 @@ const year = today.getFullYear();
  
 })
 export class HomeComponent {
+  count: number = 0;
+  
+  // counter(type: string) {
+    
+  //   type === 'plus' ? this.count++ : this.count--;
+  // }
+  increment() {
+    this.count++;
+  }
+  decrement() {
+    if(this.count>0)
+    this.count--;
+  }
+
+  campaignOne = new FormGroup({
+    start: new FormControl(new Date(year,13 , month)),
+    end: new FormControl(new Date(year,16 , month)),
+  });
 
   tableData: any[] = [];
   tableAdsData: any[] = [];

@@ -81,6 +81,7 @@
     <div class="container-fluid  ">
         <h3>Most popular ads</h3>
         <div class="row mt-2 ">
+
             <div class="col-lg-4 col-md-6  col-sm-12 ">
               <div>
                 <div class="card position-relative bg-dark text-white">
@@ -104,6 +105,7 @@
                 </div>
               </div>
                
+
 
             </div>
             <div class="col-lg-8 col-md-6  col-sm-12">
@@ -181,6 +183,7 @@
     <div class="container-fluid   my-5 ">
         <h3>Houses with beauty backyard</h3>
         <div class="row mt-4 ">
+
             <div class="col-lg-3 col-md-6 col-sm-6 " *ngFor="let item of tableHouseData">
                 <div class="card h-100">
                     <img [src]="item.images[0]" width="331.3px" height="221.2px" class="card-img-top" alt="...">
@@ -213,11 +216,13 @@
                       </div></div></section>
           
 
+
 <section id="Ads" class="my-3 mx-5  py-2" >
 
                 <div class="container-fluid  my-3  ">
                     <h3>Ads</h3>
                     <div class="row mt-4 ">
+
                       <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let item of tableAdsData">
                         <div class="card h-100" >
                             <img [src]="item.room.images[0]" class="card-img-top" width="331.3px" height="221.2px" alt="...">
@@ -236,8 +241,10 @@
                             <div class="container-fluid mb-5 pb-5">
                                 <div class="row">
                                            
+
                                     <div class="col-md-5">
                                         <div class="mt-5 ms-2 ps-5  position-relative">
+
                                             <div class="layer second-layer"> 
                                             </div>
                                             <div  class="position-absolute  img-testimonials-style">
@@ -245,6 +252,8 @@
                                             </div></div>
                                            
                                         </div>
+
+                                   
                                     <div class="col-md-7 mt-5 pt-5">
                                        <div class="">
                                         <h3 class="mt-5 pt-5 pb-3">Happy Family</h3>
@@ -281,6 +290,7 @@
                                           Your rated <span class="body-2">{{rating}}</span> / <span class="body-2">{{starCount}}</span>
                                       </p>
                                       </div> -->
+
                                         </div>
                             
                                 </div>
@@ -288,6 +298,9 @@
                         </section>
                         
                         <hr>
-                        
+                         <footer>
+                            <app-footer></app-footer>
+                        </footer>            
+
 
          
