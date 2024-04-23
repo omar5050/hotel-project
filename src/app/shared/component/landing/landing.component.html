@@ -12,7 +12,7 @@
               <div class="" *ngIf="landPge=='All Rooms'">
                 <i *ngIf="isAdmin=='user'" class="fa-regular fa-heart fs-2 mx-3"  
                 routerLink="landing-page/fav" (click)="addFav(item._id)"></i>
-                <i class="fa-regular fa-eye fs-2 mx-3"></i>
+                <i class="fa-regular fa-eye fs-2 mx-3" (click)="getRoomdetails(item._id)"></i>
               </div>
 
 

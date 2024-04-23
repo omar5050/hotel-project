@@ -19,7 +19,7 @@ const routes: Routes = [
 
       { path: 'fav/:id', component: FavoritesComponent },
       { path: 'review', component: ReviewsComponent },
-      { path: 'roomdetails', component: RoomDetailsComponent },
+      { path: 'roomdetails/:id', component: RoomDetailsComponent },
 
 
 

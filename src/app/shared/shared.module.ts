@@ -19,7 +19,6 @@ import { LandingComponent } from './component/landing/landing.component';
 import { BrowserModule } from '@angular/platform-browser'
 import { CommonModule } from '@angular/common';
 
-
 @NgModule({
   declarations: [
   

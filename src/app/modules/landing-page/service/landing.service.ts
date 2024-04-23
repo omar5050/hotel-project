@@ -7,38 +7,37 @@ import { Observable } from 'rxjs';
 })
 export class LandingService {
 
-  constructor( private  http:HttpClient) { }
+  constructor(private http: HttpClient) { }
 
 
 
-getAllRooms(data:any):Observable<any>{
-console.log(data);
+  getAllRooms(data: any): Observable<any> {
+    console.log(data);
 
 
-return this.http.get(`portal/rooms/available?`,{params:data});
+    return this.http.get(`portal/rooms/available?`, { params: data });
 
 
-}
+  }
 
 
-// {{baseUrlDev}}/api/v0/portal/favorite-rooms
+  // {{baseUrlDev}}/api/v0/portal/favorite-rooms
 
-getAllfavorite():Observable<any>{
+  getAllfavorite(): Observable<any> {
 
-return this.http.get('portal/favorite-rooms');
-
-
-
-}
-
-
-addFav(roomId:any):Observable<any>{
- 
-  return this.http.post(`portal/favorite-rooms`, {roomId});
+    return this.http.get('portal/favorite-rooms');
 
 
 
-}
+  }
+
+
+  addFav(roomId: any): Observable<any> {
+
+    return this.http.post(`portal/favorite-rooms`, { roomId });
+
+
+
 
 removeFav(Id:any,roomId:string|any):Observable<any>{
   console.log(Id,roomId);
@@ -56,7 +55,15 @@ removeFav(Id:any,roomId:string|any):Observable<any>{
   return this.http.delete(`portal/favorite-rooms/${Id}`, options );
 
 
+  removeFav(roomId: any): Observable<any> {
+    console.log(roomId);
+    return this.http.delete(`portal/favorite-rooms/${roomId}`);
 
-}
 
+
+  }
+
+  getRoomDetails(roomId:any): Observable<any>{
+    return this.http.get(`portal/rooms//${roomId}`)
+  }
 }

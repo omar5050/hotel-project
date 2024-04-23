@@ -8,11 +8,16 @@ import { IRoom } from 'src/app/modules/landing-page/interfac/iroom';
   templateUrl: './landing.component.html',
   styleUrls: ['./landing.component.scss']
 })
-export class LandingComponent implements OnInit{
-  pathmmm:any='/auth'
-  isAdmin=localStorage.getItem('role');
+export class LandingComponent implements OnInit {
+  pathmmm: any = '/auth'
+  isAdmin = localStorage.getItem('role');
 
 
+
+  
+
+
+  
 @Input() landingItem:IRoom[]|any;
 @Input() totalCountL:IRoom|any;
 @Input ()landingFun:any;
@@ -28,40 +33,42 @@ constructor(private _LandingService:LandingService,
  private _Router:Router
 
 
-){
-  
-  
-  
-}
- 
-ngOnInit(): void {
-  console.log(this.landingItem);
 
-}
+  ) {
 
 
 
-addFav(favId:any){
-this._LandingService.addFav(favId).subscribe({
-  next:(res)=>{
-console.log(res);
-this._Router.navigate(['/landing-page/fav',favId]);
-
-  },
-  error:(err)=>{
-    console.log(err);
-    
   }
-  
-})
 
+  ngOnInit(): void {
+    console.log(this.landingItem);
 
-
-
-
- 
- 
   }
+
+
+
+  addFav(favId: any) {
+    this._LandingService.addFav(favId).subscribe({
+      next: (res) => {
+        console.log(res);
+        this._Router.navigate(['/landing-page/fav', favId]);
+
+      },
+      error: (err) => {
+        console.log(err);
+
+      }
+
+    })
+
+
+
+
+
+
+
+  }
+
 
 
   deletFav(id:any,roomId:any){
@@ -82,15 +89,29 @@ this._LandingService.removeFav(id,roomId).subscribe({
     
   },
 
-})
+
+    this._LandingService.removeFav(id._id).subscribe({
+      next: (res) => {
+        console.log(res);
+
+      },
+      error: (err) => {
+        console.log(err);
+
+
+      },
+
+    })
 
 
 
-    
+
   }
 
 
-
+  getRoomdetails(roomId:any){
+    this._Router.navigate(['/landing-page/roomdetails', roomId]);
+  }
 
 
 }
