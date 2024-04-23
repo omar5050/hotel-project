@@ -14,23 +14,23 @@ export class LandingComponent implements OnInit {
 
 
 
-  
 
 
-  
-@Input() landingItem:IRoom[]|any;
-@Input() totalCountL:IRoom|any;
-@Input ()landingFun:any;
-@Input ()landingRoom:any;
-@Input() landPge:any;
-@Input() idFav:any;
-@Input () roomIdL:any;
-@Output() deletFavIdL=new EventEmitter<string>();
-setdeletFav(){
-  this.deletFavIdL.emit('remov fav');
-}
-constructor(private _LandingService:LandingService,
- private _Router:Router
+
+
+  @Input() landingItem: IRoom[] | any;
+  @Input() totalCountL: IRoom | any;
+  @Input() landingFun: any;
+  @Input() landingRoom: any;
+  @Input() landPge: any;
+  @Input() idFav: any;
+  @Input() roomIdL: any;
+  @Output() deletFavIdL = new EventEmitter<string>();
+  setdeletFav() {
+    this.deletFavIdL.emit('remov fav');
+  }
+  constructor(private _LandingService: LandingService,
+    private _Router: Router
 
 
 
@@ -71,47 +71,48 @@ constructor(private _LandingService:LandingService,
 
 
 
-  deletFav(id:any,roomId:any){
+  deletFav(id: any, roomId: any) {
     this.setdeletFav();
-    
-    
+
+
     console.log(id);
-      
-this._LandingService.removeFav(id,roomId).subscribe({
-  next:(res)=>{
-    console.log(res);
-    this._Router.navigate(['/landing-page/fav']);
 
-  },
-  error:(err)=>{
-    console.log(err);
-
-    
-  },
-
-
-    this._LandingService.removeFav(id._id).subscribe({
+    this._LandingService.removeFav(id, roomId).subscribe({
       next: (res) => {
         console.log(res);
+        this._Router.navigate(['/landing-page/fav']);
 
       },
       error: (err) => {
         console.log(err);
 
 
-      },
+      }
+
+
+      // this._LandingService.removeFav(id._id).subscribe({
+      //   next: (res) => {
+      //     console.log(res);
+
+      //   },
+      //   error: (err) => {
+      //     console.log(err);
+
+
+      //   },
+
+      // })
+
+
+
 
     })
 
+  }
 
+  getRoomdetails(roomId: any) {
+    this._Router.navigate(['/landing-page/roomdetails', roomId])
 
 
   }
-
-
-  getRoomdetails(roomId:any){
-    this._Router.navigate(['/landing-page/roomdetails', roomId]);
-  }
-
-
 }
