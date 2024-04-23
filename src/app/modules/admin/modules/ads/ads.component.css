@@ -1,0 +1,330 @@
+@charset "UTF-8";
+.anchor-color {
+  color: rgb(77, 77, 77);
+}
+
+.text-second {
+  color: #152c5b;
+}
+
+.text-main {
+  color: #3252df;
+}
+
+.bg-layer-active {
+  background-color: rgba(26, 27, 30, 0.17);
+  color: rgba(255, 255, 255, 0.17);
+}
+
+.bg-second {
+  background-color: #203fc7;
+}
+
+.anchor-color {
+  color: rgb(77, 77, 77);
+}
+
+.text-second {
+  color: #152c5b;
+}
+
+.text-main {
+  color: #3252df;
+}
+
+.bg-layer-active {
+  background-color: rgba(26, 27, 30, 0.17);
+  color: rgba(255, 255, 255, 0.17);
+}
+
+.bg-second {
+  background-color: #203fc7;
+}
+
+button {
+  background-color: #3252df;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 5px 10px 18px rgba(50, 82, 223, 0.3);
+  text-align: center;
+  font-size: 20px;
+}
+
+.btn-second-bg-color {
+  background-color: #203fc7;
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+span {
+  color: #3252df;
+}
+
+.auth-form span {
+  color: #3252df;
+}
+.auth-form input {
+  background-color: #f5f6f8 !important;
+  border: none;
+  padding: 10px 10px;
+}
+.auth-form ::-moz-placeholder {
+  color: rgb(52, 52, 52);
+  opacity: 0.5;
+}
+.auth-form ::placeholder {
+  color: rgb(52, 52, 52);
+  opacity: 0.5;
+}
+.auth-form label {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 27.2px;
+  color: #152c5b;
+  font-size: 15px;
+}
+.auth-form button {
+  padding: 10px 14rem;
+  background-color: #3252df;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 5px 10px 18px rgba(50, 82, 223, 0.3);
+  text-align: center;
+  font-size: 20px;
+}
+
+.eye {
+  position: absolute;
+  top: 0;
+  right: 10%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+img {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 98vh;
+}
+
+h2 span {
+  color: #3252df;
+}
+
+a {
+  text-decoration: none;
+  color: #152c5b;
+}
+
+.layer {
+  position: absolute;
+  bottom: 6.5rem;
+  left: 6rem;
+  color: white;
+}
+.layer h1 {
+  font-size: 40px;
+}
+
+.anchor-color {
+  color: rgb(77, 77, 77);
+}
+
+.text-second {
+  color: #152c5b;
+}
+
+.text-main {
+  color: #3252df;
+}
+
+.bg-layer-active {
+  background-color: rgba(26, 27, 30, 0.17);
+  color: rgba(255, 255, 255, 0.17);
+}
+
+.bg-second {
+  background-color: #203fc7;
+}
+
+.anchor-color {
+  color: rgb(77, 77, 77);
+}
+
+.text-second {
+  color: #152c5b;
+}
+
+.text-main {
+  color: #3252df;
+}
+
+.bg-layer-active {
+  background-color: rgba(26, 27, 30, 0.17);
+  color: rgba(255, 255, 255, 0.17);
+}
+
+.bg-second {
+  background-color: #203fc7;
+}
+
+button {
+  background-color: #3252df;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 5px 10px 18px rgba(50, 82, 223, 0.3);
+  text-align: center;
+  font-size: 20px;
+}
+
+.btn-second-bg-color {
+  background-color: #203fc7;
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+a {
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+ul li {
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar {
+  height: 100vh;
+  padding: 1px;
+  position: fixed;
+}
+.sidebar ul {
+  margin: 3rem 0;
+  list-style: none;
+}
+.sidebar li {
+  width: 100%;
+  margin: 1rem 0;
+  padding: 0.5rem;
+}
+.sidebar a {
+  color: #fff;
+  padding: 0.5rem;
+  text-decoration: none;
+}
+
+.anchor-color {
+  color: rgb(77, 77, 77);
+}
+
+.text-second {
+  color: #152c5b;
+}
+
+.text-main {
+  color: #3252df;
+}
+
+.bg-layer-active {
+  background-color: rgba(26, 27, 30, 0.17);
+  color: rgba(255, 255, 255, 0.17);
+}
+
+.bg-second {
+  background-color: #203fc7;
+}
+
+.table-head {
+  background-color: rgb(248, 249, 251);
+  height: 40px;
+}
+
+.bg-head {
+  background-color: #e2e5eb;
+  border-radius: 10px !important;
+}
+
+tbody, td, tfoot, thead, tr {
+  padding-bottom: 15px;
+  padding-top: 15px;
+  padding-left: 10px;
+  border-bottom: none;
+}
+
+th {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-left: 10px;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  background-color: #ffffff !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(odd) > * {
+  --bs-table-bg-type: #fff !important;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) > * {
+  background-color: rgba(226, 229, 235, 0.0941176471) !important;
+}
+
+.button-mat-icon {
+  box-shadow: none !important;
+  color: black;
+}
+
+.button-mat-menu {
+  background-color: white !important;
+  color: black;
+}
+
+.button-mat-menu:active {
+  background-color: rgb(48, 16, 16);
+}
+
+.mat-icon {
+  color: #3252df;
+}
+
+.span-color {
+  color: rgb(31, 38, 62);
+}
+
+.bg-button {
+  background-color: transparent;
+}
+
+.mat-mdc-menu-item .mat-icon-no-color, .mat-mdc-menu-item .mat-mdc-menu-submenu-icon {
+  color: rgb(32, 63, 199);
+}
+
+img {
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  height: 60vh;
+}
+
+.is-image {
+  width: 40px;
+  height: 40px;
+  padding-inline: 2px;
+}
+
+.imageTable {
+  width: 50px;
+  height: 50px;
+   padding:  2px;
+}/*# sourceMappingURL=ads.component.css.map */

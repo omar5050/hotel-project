@@ -1,0 +1,53 @@
+.btn-main {
+  background-color: #1556b8;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 20px;
+  box-shadow: 5px 5px 10px rgba(50, 82, 223, 0.3);
+}
+
+#is_navbar {
+  box-shadow: 0px 1px 4px 0px rgba(0, 0, 0, 0.1490196078);
+}
+#is_navbar .leftNav {
+  background-color: tan;
+  border-left: 1px solid #c42121;
+}
+
+.profIm {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: tomato !important;
+}
+
+.border-nav {
+  border-bottom: 2px solid rgb(229, 229, 229);
+}
+
+.span-color {
+  color: rgb(50, 82, 223);
+}
+
+/* Custom Style */
+/* -------------------  START  Navbar section     --------------------------- */
+@media screen and (max-width: 992px) {
+  .is_navbar .nav-link {
+    background-color: rgb(255, 255, 255) !important;
+    color: var(--main-gray);
+    padding-left: 0.5rem;
+    transition: 1s all;
+  }
+  .is_navbar .nav-item:hover .line_link {
+    width: 100%;
+    margin-left: 100%;
+  }
+  .is_navbar .nav-item:hover .nav-link {
+    color: var(--main-aqua);
+  }
+}
+/* -------------------  END  Navbar section     --------------------------- *//*# sourceMappingURL=navbar.component.css.map */
