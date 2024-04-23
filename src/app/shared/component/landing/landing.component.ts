@@ -1,6 +1,6 @@
 import { Router } from '@angular/router';
 import { LandingService } from './../../../modules/landing-page/service/landing.service';
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, EventEmitter, Input, OnChanges, OnInit, Output, SimpleChanges } from '@angular/core';
 import { IRoom } from 'src/app/modules/landing-page/interfac/iroom';
 
 @Component({
@@ -17,9 +17,13 @@ export class LandingComponent implements OnInit{
 @Input() totalCountL:IRoom|any;
 @Input ()landingFun:any;
 @Input ()landingRoom:any;
-@Input() landPge:any
-
-
+@Input() landPge:any;
+@Input() idFav:any;
+@Input () roomIdL:any;
+@Output() deletFavIdL=new EventEmitter<string>();
+setdeletFav(){
+  this.deletFavIdL.emit('remov fav');
+}
 constructor(private _LandingService:LandingService,
  private _Router:Router
 
@@ -60,13 +64,17 @@ this._Router.navigate(['/landing-page/fav',favId]);
   }
 
 
-  deletFav(id:any){
+  deletFav(id:any,roomId:any){
+    this.setdeletFav();
+    
+    
     console.log(id);
       
-this._LandingService.removeFav(id._id).subscribe({
+this._LandingService.removeFav(id,roomId).subscribe({
   next:(res)=>{
     console.log(res);
-    
+    this._Router.navigate(['/landing-page/fav']);
+
   },
   error:(err)=>{
     console.log(err);
