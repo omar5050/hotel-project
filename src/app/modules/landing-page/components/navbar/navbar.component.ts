@@ -17,16 +17,10 @@ export class NavbarComponent implements OnInit {
   constructor(private _auth: AuthService,private _Router: Router, private _HelperService: HelperService,
     private _TranslateService:TranslateService) 
   {
-    _TranslateService.addLangs(['en','ar'])
-    _TranslateService.setDefaultLang('ar')
    _TranslateService.onLangChange.subscribe((event: LangChangeEvent) => {
      this.lang = event.lang
    });
-    // //*************** */
-    // _TranslateService.onLangChange.subscribe((event: LangChangeEvent) => {
-    //   this.lang = event.lang
-    // });
-    // this.lang = _HelperService.lang;
+    
   }
 
   isLogin: any;
