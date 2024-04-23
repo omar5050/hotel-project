@@ -7,6 +7,7 @@ import { FavoritesComponent } from './components/favorites/favorites.component';
 import { ReviewsComponent } from './components/reviews/reviews.component';
 import { RoomDetailsComponent } from './components/room-details/room-details.component';
 import { PaymentComponent } from './components/payment/payment.component';
+import { userGuardGuard } from 'src/app/core/Guards/user-guard.guard';
 
 const routes: Routes = [
   {
@@ -16,9 +17,9 @@ const routes: Routes = [
       { path: 'home', component: HomeComponent },
       { path: '', component: HomeComponent },
       { path: 'explore', component: ExploreComponent },
-      { path: 'fav', component: FavoritesComponent },
+      { path: 'fav',canActivate:[userGuardGuard], component: FavoritesComponent },
 
-      { path: 'fav/:id', component: FavoritesComponent },
+      { path: 'fav/:id',canActivate:[userGuardGuard], component: FavoritesComponent },
       { path: 'review', component: ReviewsComponent },
       { path: 'roomdetails', component: RoomDetailsComponent },
       { path: 'payment', component: PaymentComponent },
