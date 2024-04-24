@@ -1,10 +1,28 @@
+
+
+
 <section *ngIf="landingItem.length>0" class="container" id="landing">
-    <h4 class="mb-4" [style.color]="true?'#152C5B':''">{{landPge}}</h4>
+    <h4 
+   class="mb-4 " [style.color]="true?'#152C5B':''">{{landPge}}</h4>
 
     <section class="row gy-4">
         <section *ngFor="let item of landingItem" class="col-md-4">
-            <section class="item ">
+            <section class="item  " >
+           <div class="layer-icon text-white" >
+              <div class="" *ngIf="landPge=='All Rooms'">
+                <i *ngIf="isAdmin=='user'" class="fa-regular fa-heart fs-2 mx-3"  
+                routerLink="landing-page/fav" (click)="addFav(item._id)"></i>
+                <i class="fa-regular fa-eye fs-2 mx-3" (click)="getRoomdetails(item._id)"></i>
+              </div>
 
+
+             <div class="" *ngIf="landPge=='All Favorites'">
+                
+                <i class="fa-solid fa-trash-can  fs-2" (click)="deletFav(item._id,roomIdL)"></i>
+              </div>
+
+
+           </div>
                 <img *ngIf="item.images.length !=0" [src]="item.images[0]" alt="" class="">
                 <img *ngIf="item.images.length ==0" src="../../../../assets/images/login-img.png " alt="" class="">
 
@@ -18,7 +36,7 @@
                     </p>
                     <p *ngIf="item.facilities.length==0">facilities</p>
                 </div>
-                <div class="item-layer">
+                <div class="item-layer" >
                     <p class="mt-2">${{item.discount }} per night</p>
                 </div>
 

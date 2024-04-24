@@ -1,0 +1,17 @@
+
+@import"../../../../../assets/styles/abstracts/variables";
+h5{
+    color:$text-second;
+}
+span{
+   color:$bg-main;
+}
+ul{
+    list-style-type: none;
+}
+li, p{
+    color: $p-color-landing-page;
+}
+hr{
+    color: $hr-color;
+}

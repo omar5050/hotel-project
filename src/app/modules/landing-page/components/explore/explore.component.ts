@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { LandingService } from '../../service/landing.service';
 import { IRoom } from '../../interfac/iroom';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-explore',
@@ -8,10 +9,15 @@ import { IRoom } from '../../interfac/iroom';
   styleUrls: ['./explore.component.scss']
 })
 export class ExploreComponent implements OnInit{
-constructor (private _LandServ:LandingService){
+constructor (private _LandServ:LandingService,
+  private _Activatedroute:ActivatedRoute,
+  private _Router:Router
+
+
+){
 
 }
-
+idFav:any;
 totalCard:IRoom[]=[];
 totalCount:IRoom|any;
 isPge:any='All Rooms'
@@ -25,13 +31,14 @@ pageSizeOptions=[5,10,20];
 pageEvent:any;
 ngOnInit(): void {
   // this.getAllRooms();
-console.log(this.myFun);
+
 this.myFun=this.getAllRooms;
 this.myFun();
+// this.idFav=this._Activatedroute.snapshot.paramMap.get("id");
+// console.log(this.idFav);
 
 }
-ngOnChanges(){
-}
+
 
 parame={
   

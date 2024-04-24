@@ -1,0 +1,32 @@
+.anchor-color {
+  color: rgb(77, 77, 77);
+}
+
+.text-second {
+  color: #152c5b;
+}
+
+.text-main {
+  color: #3252df;
+}
+
+.bg-layer-active {
+  background-color: rgba(26, 27, 30, 0.17);
+  color: rgba(255, 255, 255, 0.17);
+}
+
+.bg-second {
+  background-color: #203fc7;
+}
+
+.profImg {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.text-main {
+  color: #3252df;
+}/*# sourceMappingURL=navbar.component.css.map */

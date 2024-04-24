@@ -11,13 +11,17 @@ const routes: Routes = [
   {
     path: '', component: LandingPageComponent, children: [
 
+
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: '', component: HomeComponent },
       { path: 'explore', component: ExploreComponent },
       { path: 'fav', component: FavoritesComponent },
+
+      { path: 'fav/:id', component: FavoritesComponent },
       { path: 'review', component: ReviewsComponent },
-      { path: 'roomdetails', component: RoomDetailsComponent },
+      { path: 'roomdetails/:id', component: RoomDetailsComponent },
+
 
 
 

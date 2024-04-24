@@ -11,6 +11,7 @@ export class LandingPageComponent implements OnInit{
   
   lang: any = localStorage.getItem('lang');
 
+
   constructor(private _HelperService:HelperService, private _TranslateService:TranslateService){
     _TranslateService.onLangChange.subscribe((event: LangChangeEvent) => {
       this.lang = event.lang
@@ -29,4 +30,5 @@ export class LandingPageComponent implements OnInit{
   }
 
  
+
 }
