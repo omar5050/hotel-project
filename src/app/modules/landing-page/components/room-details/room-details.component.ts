@@ -37,7 +37,11 @@ export class RoomDetailsComponent implements OnInit{
   days!:number;
   money!:number;
 
-  constructor(private _ActivatedRoute: ActivatedRoute,private _LandingService:LandingService,private _ToastrService:ToastrService){
+  constructor(private _ActivatedRoute: ActivatedRoute,
+    private _LandingService:LandingService,
+    private _ToastrService:ToastrService,
+   private _HelperService:HelperService
+  ){
     this.viewRoomId = _ActivatedRoute.snapshot.params['id'];
     console.log(this.viewRoomId);
   }
