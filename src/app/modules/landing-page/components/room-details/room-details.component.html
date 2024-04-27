@@ -98,7 +98,7 @@
 
                 <div>
                     <form [formGroup]="bookForm" (ngSubmit)="submitBooking(bookForm)">
-                        <mat-form-field>
+                        <mat-form-field  class="ms-5">
                             <mat-label>Enter a date range</mat-label>
                             <mat-date-range-input [formGroup]="bookForm" [rangePicker]="picker">
                                 <input matStartDate formControlName="start" placeholder="Start date">

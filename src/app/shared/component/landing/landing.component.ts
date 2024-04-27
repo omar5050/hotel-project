@@ -26,6 +26,7 @@ export class LandingComponent implements OnInit {
   @Input() idFav: any;
   @Input() roomIdL: any;
   @Output() deletFavIdL = new EventEmitter<string>();
+  
   setdeletFav() {
     this.deletFavIdL.emit('remov fav');
   }

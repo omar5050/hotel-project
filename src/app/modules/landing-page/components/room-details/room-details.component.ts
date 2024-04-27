@@ -80,9 +80,15 @@ export class RoomDetailsComponent implements OnInit{
 
   submitBooking(data: FormGroup){
     console.log(data.value);
+
+    let start=new Date( data.value.start);
+    let end=new Date( data.value.end);
     this.endDT = data.value.end;
     this.startDT = data.value.start;
    
+    // console.log(start.getDate());
+    // console.log(end.getDate());
+    
     console.log(this.endDT.getTime() , this.startDT.getTime());
 
     this.dateDiff = Math.abs(this.endDT.getTime()-this.startDT.getTime());

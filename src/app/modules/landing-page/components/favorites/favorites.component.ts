@@ -35,6 +35,12 @@ export class FavoritesComponent implements OnInit ,OnChanges{
 
 ngOnChanges(changes: SimpleChanges): void {
   console.log(changes);
+  console.log(this.emitDeletFav);
+  
+}
+
+reciveFav(event:any){
+  console.log(event);
   
 }
 ngOnInit(): void {
