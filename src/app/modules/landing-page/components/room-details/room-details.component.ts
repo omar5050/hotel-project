@@ -1,8 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl } from '@angular/forms';
+
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
+import { HelperService } from 'src/app/core/service/helper.service';
+
 import { ActivatedRoute } from '@angular/router';
 import { LandingService } from '../../service/landing.service';
 import { ToastrService } from 'ngx-toastr';
+
 
 const today = new Date();
 const month = today.getMonth();
@@ -15,6 +20,8 @@ const year = today.getFullYear();
 })
 export class RoomDetailsComponent implements OnInit{
 
+
+  lang: any = localStorage.getItem('lang');
   viewRoomId:string='';
   imgs:any[]=[];
   RoomById: any;
@@ -38,6 +45,7 @@ export class RoomDetailsComponent implements OnInit{
   ngOnInit(): void {
     this.getRoomById();
     this.calcDate();
+    this.langFunc(this.lang)
   }
 
 
@@ -100,6 +108,12 @@ export class RoomDetailsComponent implements OnInit{
     
   }
 
+ langFunc(lang:string){
+    console.log(lang);
+    this._HelperService.onChangeLanguage(lang);
+    localStorage.setItem('lang', lang);
+
+  }
 
 
 

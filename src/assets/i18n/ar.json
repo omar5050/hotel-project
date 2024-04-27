@@ -1,3 +1,35 @@
 {
-    "Hello" : "مرحبا"
+    "Hello" : "مرحبا",
+    "Favorites" : "التفضيلات",
+    "Reviews" : "الاراء",
+    "Explore" : "التوضيح",
+    "Home" : "الرئيسيه",
+    "Staycation" : "ستاى كاشن",
+    "Room Details" : "تقاصيل الغرفه",
+    "Village Angga" : "فيلا انجا",
+    "Bogor, Indonesia" : "صباح الخير, اندونسيا",
+    "Start Booking" : "ابدا الحجز",
+    "per night" : "فى الليله",
+    "Discount 20% Off" : "خصم 20%",
+    "Pick a Date" : "اختر تاريخ",
+    "You will pay" :"ستقوم بدفع",
+    "per" : "ل",
+    "Person" : "اشخاص",
+    "Continue Book":"اكمل الحجز",
+    "Rate" :"تقييم",
+    "Message" : "رساله",
+    "Add Your Comment":"اضف تعليق",
+    "Send" : "ارسل",
+    "bedroom" : "غرف",
+    "livingroom" : "غرف معيشه",
+    "bathroom" : "حمام",
+    "diningroom" :"غرف طعام",
+    "unit ready" : "اسعافات",
+    "refigrator" : "ثلاجه",
+    "television" :"تليفيزيون"
+
+
+
+
+
 }
