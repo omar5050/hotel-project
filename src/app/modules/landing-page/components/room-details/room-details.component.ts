@@ -37,13 +37,17 @@ export class RoomDetailsComponent implements OnInit{
   days!:number;
   money!:number;
 
-  constructor(private _ActivatedRoute: ActivatedRoute,
+  constructor(private _ActivatedRoute: ActivatedRoute,private _TranslateService:TranslateService,
     private _LandingService:LandingService,
     private _ToastrService:ToastrService,
    private _HelperService:HelperService
   ){
     this.viewRoomId = _ActivatedRoute.snapshot.params['id'];
     console.log(this.viewRoomId);
+
+    _TranslateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.lang = event.lang
+    });
   }
   
   ngOnInit(): void {
