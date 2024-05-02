@@ -4,6 +4,8 @@ import {FormGroup, FormControl, FormsModule, ReactiveFormsModule} from '@angular
 import { tableAdss } from './../../../admin/modules/ads/interface/iads';
 
 import { HomeService } from '../../services/home.service';
+import { HelperService } from 'src/app/core/service/helper.service';
+import { LangChangeEvent, TranslateService } from '@ngx-translate/core';
 
 
 const today = new Date();
@@ -18,7 +20,7 @@ const year = today.getFullYear();
 })
 export class HomeComponent {
   count: number = 0;
-  
+  lang: any = localStorage.getItem('lang');
   // counter(type: string) {
     
   //   type === 'plus' ? this.count++ : this.count--;
@@ -36,14 +38,21 @@ export class HomeComponent {
   tableLivingData: any[] = [];
 
 
-  constructor(private _HomeServices:HomeService) {
-    
+  constructor(private _HomeServices:HomeService,private _HelperService:HelperService, private _TranslateService:TranslateService) {
+    _TranslateService.onLangChange.subscribe((event: LangChangeEvent) => {
+      this.lang = event.lang
+    });
   }
 
   ngOnInit() {
     this.getAllRoomsAds();
     this.getAllHousesRoom();
     this.getAllLivingRoom();
+
+    this.langFunc(this.lang);
+    //  this.isLang = localStorage.getItem('lang');
+    //  console.log(this.isLang);
+    
   }
 
 
@@ -100,6 +109,13 @@ export class HomeComponent {
     })
   }
 
+
+  langFunc(lang:string){
+    console.log(lang);
+    this._HelperService.onChangeLanguage(lang);
+    localStorage.setItem('lang', lang);
+
+  }
 }
 
 

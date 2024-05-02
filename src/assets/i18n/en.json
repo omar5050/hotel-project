@@ -10,7 +10,7 @@
     "Bogor, Indonesia" :"Bogor, Indonesia",
     "Start Booking" : "Start Booking",
     "per night" : "per night",
-    "Discount 20% Off" : "Discount 20% Off",
+    "Discount" : "Discount",
     "Pick a Date" : "Pick a Date",
     "You will pay" :"You will pay",
     "per" :"per",
@@ -26,5 +26,22 @@
     "diningroom" : "diningroom",
     "unit ready" : "unit ready",
     "refigrator" : "refigrator",
-    "television" :"television"
+    "television" :"television",
+
+    "Forget Busy Work": "Forget Busy Work",
+    "Start Next Vacation" : "Start Next Vacation",
+    "We provide what you need to enjoy your holiday with family" : "We provide what you need to enjoy your holiday with family",
+    "Time to make another memorable moments" : "Time to make another memorable moments",
+    "Capacity" : "Capacity" ,
+    "Most popular ads" : "Most popular ads",
+    "Card title" : "Card title",
+    "This content is a little bit longer":"This content is a little bit longer",
+    "Houses with beauty backyard":"Houses with beauty backyard",
+    "Ads":"Ads",
+    "Happy Family":"Happy Family",
+    "What a great trip with my family and":"What a great trip with my family and",
+    "Hotels with large living room":"Hotels with large living room",
+    "I should try again next time soon":"I should try again next time soon",
+    "Explore ALL Rooms" :"Explore ALL Rooms",
+    "Explore ALL Favorites":"Explore ALL Favorites"
 }

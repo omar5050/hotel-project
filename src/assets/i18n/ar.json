@@ -10,8 +10,7 @@
     "Bogor, Indonesia" : "صباح الخير, اندونسيا",
     "Start Booking" : "ابدا الحجز",
     "per night" : "فى الليله",
-    "Discount 20% Off" : "خصم 20%",
-    "Pick a Date" : "اختر تاريخ",
+    "Discount" : "خصم",
     "You will pay" :"ستقوم بدفع",
     "per" : "ل",
     "Person" : "اشخاص",
@@ -26,10 +25,27 @@
     "diningroom" :"غرف طعام",
     "unit ready" : "اسعافات",
     "refigrator" : "ثلاجه",
-    "television" :"تليفيزيون"
+    "television" :"تليفيزيون",
+    "Pick a Date" : "اختر تاريخ",
 
 
-
+    "Forget Busy Work": "انسى الانشغال بالعمل",
+    "Start Next Vacation":"ابدأ اجازة جديده",
+    "We provide what you need to enjoy your holiday with family":"نحن نقدم احتياجاتك للاستمتاع بالاجازه مع عائلتك",
+    "Time to make another memorable moments" : "حان الوقت لعمل ذكريات جديده",
+    "Capacity" :"عدد الافراد",
+    "Most popular ads" :"الاعلان الاكثر مشاهده",
+    "Card title" : "عنوان الكارت",
+    "This content is a little bit longer":"هذا المحتوى اطول قليلا",
+    "Houses with beauty backyard":"منازل بجنينه خلقيه جميله",
+    "Ads":"اعلانات",
+    "Happy Family" :"عائله سعيده",
+    "What a great trip with my family and":"رحله عظيمه مع العائله",
+    "Hotels with large living room":"فنادق بغرف كبيره",
+    "I should try again next time soon":"يجب ان اجرب ثانيا قريبا",
+    "Explore ALL Rooms":"استعراض كل الغرف",
+    "Explore ALL Favorites":"استعراض كل التفضيلات"
+    
 
 
 }
