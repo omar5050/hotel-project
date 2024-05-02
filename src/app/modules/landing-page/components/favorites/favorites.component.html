@@ -1,13 +1,13 @@
 <div>
-    <h2 class="text-center" [style.color]="true?'#152C5B':''">Explore ALL Favorites </h2>
+    <h2 class="text-center" [style.color]="true?'#152C5B':''">{{'Explore ALL Favorites'|translate}} </h2>
 
 </div>
 
 
 
 <section class="py-5">
-    <app-landing class="py-5" [totalCountL]="totalCount" [landingItem]="totalCard"
-     [landPge]="isPge"
+    <app-landing (deletFavIdL)="reciveFav($event)" class="py-5" [totalCountL]="totalCount" [landingItem]="totalCard"
+     [landPge]="isPge" [roomIdL]="roomIdFav" 
        >
     </app-landing>
 

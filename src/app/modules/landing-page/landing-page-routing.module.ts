@@ -13,6 +13,7 @@ const routes: Routes = [
   {
     path: '', component: LandingPageComponent, children: [
 
+
       { path: '', component: HomeComponent },
       { path: 'home', component: HomeComponent },
       { path: '', component: HomeComponent },
@@ -21,8 +22,14 @@ const routes: Routes = [
 
       { path: 'fav/:id',canActivate:[userGuardGuard], component: FavoritesComponent },
       { path: 'review', component: ReviewsComponent },
-      { path: 'roomdetails', component: RoomDetailsComponent },
+
+    
       { path: 'payment', component: PaymentComponent },
+
+      { path: 'roomdetails/:id', component: RoomDetailsComponent },
+
+
+
 
 
 

@@ -1,0 +1,54 @@
+.anchor-color {
+  color: rgb(77, 77, 77);
+}
+
+.text-second {
+  color: #152c5b;
+}
+
+.text-main {
+  color: #3252df;
+}
+
+.bg-layer-active {
+  background-color: rgba(26, 27, 30, 0.17);
+  color: rgba(255, 255, 255, 0.17);
+}
+
+.bg-second {
+  background-color: #203fc7;
+}
+
+button {
+  background-color: #3252df;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  box-shadow: 5px 10px 18px rgba(50, 82, 223, 0.3);
+  text-align: center;
+  font-size: 20px;
+}
+
+.btn-second-bg-color {
+  background-color: #203fc7;
+  box-shadow: none;
+  border-radius: 8px;
+}
+
+.form-control {
+  background-color: rgb(247, 247, 247);
+  border: none;
+  padding: 15px 5px;
+}
+
+section {
+  padding: 10px 30px;
+}
+
+.h4 {
+  color: rgb(73, 73, 73);
+}
+
+a {
+  cursor: pointer;
+}/*# sourceMappingURL=add-edit-facility.component.css.map */

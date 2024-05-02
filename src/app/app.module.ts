@@ -10,6 +10,8 @@ import { GlobalInterceptor } from './core/interceptor/global.interceptor';
 import { NgxSpinnerModule } from "ngx-spinner";
 import {TranslateLoader, TranslateModule} from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import * as moment from 'moment';
+
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http,'./assets/i18n/', '.json');
