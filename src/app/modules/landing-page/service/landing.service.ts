@@ -70,7 +70,7 @@ onPayBooking(id:any):Observable<any>{
 
 
 
-  // }
+  }
 
 
   getRoomDetails(roomId:any): Observable<any>{
@@ -79,4 +79,3 @@ onPayBooking(id:any):Observable<any>{
 }
 
 
-}
