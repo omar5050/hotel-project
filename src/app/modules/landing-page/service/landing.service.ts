@@ -1,4 +1,9 @@
+
+import { AnimationKeyframesSequenceMetadata } from '@angular/animations';
+
+
 import { HttpClient, HttpHeaders } from '@angular/common/http';
+
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
@@ -55,6 +60,10 @@ removeFav(Id:any,roomId:string|any):Observable<any>{
   return this.http.delete(`portal/favorite-rooms/${Id}`, options );
 
 }
+
+onPayBooking(id:any):Observable<any>{
+  return this.http.post(`portal/booking/${id}/pay`,{'token':''});
+
   // removeFav(roomId: any): Observable<any> {
   //   console.log(roomId);
   //   return this.http.delete(`portal/favorite-rooms/${roomId}`);
@@ -63,7 +72,11 @@ removeFav(Id:any,roomId:string|any):Observable<any>{
 
   // }
 
+
   getRoomDetails(roomId:any): Observable<any>{
     return this.http.get(`portal/rooms//${roomId}`)
   }
+}
+
+
 }
